@@ -194,3 +194,8 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Custom
+/src/AbpCompanyName.AbpProjectName.WebMpa/Logs
+/src/AbpCompanyName.AbpProjectName.WebSpaAngular/Logs
+/src/AbpCompanyName.AbpProjectName.WebSpaDurandal/Logs
