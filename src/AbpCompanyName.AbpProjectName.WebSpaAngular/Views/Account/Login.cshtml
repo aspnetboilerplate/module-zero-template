@@ -1,4 +1,5 @@
-﻿@section Styles
+﻿@model AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account.LoginFormViewModel
+@section Styles
 {
     <link href="~/Views/Account/Login.css" rel="stylesheet" />
 }
@@ -10,14 +11,30 @@
     <div id="LoginArea" class="row">
         <div class="col-lg-12">
             <div class="well bs-component">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="@(Url.Action("Login","Account"))?returnUrl=@(Model.ReturnUrl)">
                     <fieldset>
                         <legend>Login</legend>
+
+                        @if (Model.IsMultiTenancyEnabled)
+                        {
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    <input type="text" class="form-control" id="TenancyName" placeholder="Tenancy name">
+                                    <span class="text-muted">Can be empty to login as host.</span>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <input type="hidden" id="TenancyName" value="">
+                        }
+
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control floating-label" id="EmailAddressInput" placeholder="User name or email">
+                                <input type="text" class="form-control " id="EmailAddressInput" placeholder="User name or email">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <input type="password" class="form-control" id="PasswordInput" placeholder="Password">
@@ -30,6 +47,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <button id="LoginButton" class="btn btn-primary"><i class="fa fa-sign-out"></i> Login</button>

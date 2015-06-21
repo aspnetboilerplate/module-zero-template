@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Auditing;
 using Abp.Authorization.Users;
+using Abp.Configuration.Startup;
 using Abp.UI;
 using Abp.Web.Mvc.Models;
 using AbpCompanyName.AbpProjectName.Users;
@@ -14,6 +16,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
     public class AccountController : AbpProjectNameControllerBase
     {
         private readonly UserManager _userManager;
+        private readonly IMultiTenancyConfig _multiTenancyConfig;
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -23,9 +26,10 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             }
         }
 
-        public AccountController(UserManager userManager)
+        public AccountController(UserManager userManager, IMultiTenancyConfig multiTenancyConfig)
         {
             _userManager = userManager;
+            _multiTenancyConfig = multiTenancyConfig;
         }
 
         public ActionResult Login(string returnUrl = "")
@@ -35,12 +39,16 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 returnUrl = Request.ApplicationPath;
             }
 
-            ViewBag.ReturnUrl = returnUrl;
-
-            return View();
+            return View(
+                new LoginFormViewModel
+                {
+                    ReturnUrl = returnUrl,
+                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled
+                });
         }
 
         [HttpPost]
+        [DisableAuditing]
         public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "")
         {
             if (!ModelState.IsValid)
