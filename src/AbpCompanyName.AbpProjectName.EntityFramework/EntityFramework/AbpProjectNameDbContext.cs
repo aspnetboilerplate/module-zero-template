@@ -8,10 +8,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFramework
 {
     public class AbpProjectNameDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
-        //TODO: Define an IDbSet for each Entity...
-
-        //Example:
-        //public virtual IDbSet<User> Users { get; set; }
+        //TODO: Define an IDbSet for your Entities...
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
