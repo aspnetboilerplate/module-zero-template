@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Localization;
+using Abp.Localization.Sources;
 using Abp.Localization.Sources.Xml;
 using Abp.Modules;
 
@@ -20,10 +21,13 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
             Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn"));
 
             //Add/remove localization sources here
+            //Add/remove localization sources here
             Configuration.Localization.Sources.Add(
-                new XmlLocalizationSource(
+                new DictionaryBasedLocalizationSource(
                     AbpProjectNameConsts.LocalizationSourceName,
-                    HttpContext.Current.Server.MapPath("~/Localization/AbpProjectName")
+                    new XmlFileLocalizationDictionaryProvider(
+                        HttpContext.Current.Server.MapPath("~/Localization/AbpProjectName")
+                        )
                     )
                 );
 
