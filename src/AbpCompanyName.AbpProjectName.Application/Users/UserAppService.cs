@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Abp.Authorization;
+using AbpCompanyName.AbpProjectName.Users.Dto;
 
 namespace AbpCompanyName.AbpProjectName.Users
 {
@@ -21,6 +22,12 @@ namespace AbpCompanyName.AbpProjectName.Users
             var permission = _permissionManager.GetPermission(input.PermissionName);
 
             await _userManager.ProhibitPermissionAsync(user, permission);
+        }
+
+        //Example for working primitive method parameters.
+        public async Task RemoveFromRole(long userId, string roleName)
+        {
+            CheckErrors(await _userManager.RemoveFromRoleAsync(userId, roleName));
         }
     }
 }

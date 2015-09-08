@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Abp.Application.Services;
+using Abp.IdentityFramework;
 using Abp.Runtime.Session;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
+using Microsoft.AspNet.Identity;
 
 namespace AbpCompanyName.AbpProjectName
 {
@@ -35,6 +37,11 @@ namespace AbpCompanyName.AbpProjectName
         protected virtual Task<Tenant> GetCurrentTenantAsync()
         {
             return TenantManager.GetByIdAsync(AbpSession.GetTenantId());
+        }
+
+        protected virtual void CheckErrors(IdentityResult identityResult)
+        {
+            identityResult.CheckErrors(LocalizationManager);
         }
     }
 }

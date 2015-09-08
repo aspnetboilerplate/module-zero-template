@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 
-namespace AbpCompanyName.AbpProjectName.Roles.Dtos
+namespace AbpCompanyName.AbpProjectName.Roles.Dto
 {
     public class UpdateRolePermissionsInput : IInputDto
     {

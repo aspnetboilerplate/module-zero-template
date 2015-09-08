@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 
-namespace AbpCompanyName.AbpProjectName.Users
+namespace AbpCompanyName.AbpProjectName.Users.Dto
 {
     public class ProhibitPermissionInput : IInputDto
     {

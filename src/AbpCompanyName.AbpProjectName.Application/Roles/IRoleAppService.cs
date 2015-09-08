@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using AbpCompanyName.AbpProjectName.Roles.Dtos;
+using AbpCompanyName.AbpProjectName.Roles.Dto;
 
 namespace AbpCompanyName.AbpProjectName.Roles
 {
