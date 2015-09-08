@@ -28,7 +28,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
             var adminRoleForTenancyOwner = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == "Admin");
             if (adminRoleForTenancyOwner == null)
             {
-                adminRoleForTenancyOwner = _context.Roles.Add(new Role {Name = "Admin", DisplayName = "Admin"});
+                adminRoleForTenancyOwner = _context.Roles.Add(new Role { Name = "Admin", DisplayName = "Admin", IsStatic = true });
                 _context.SaveChanges();
             }
 
@@ -61,7 +61,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
             var defaultTenant = _context.Tenants.FirstOrDefault(t => t.TenancyName == "Default");
             if (defaultTenant == null)
             {
-                defaultTenant = _context.Tenants.Add(new Tenant {TenancyName = "Default", Name = "Default"});
+                defaultTenant = _context.Tenants.Add(new Tenant { TenancyName = "Default", Name = "Default" });
                 _context.SaveChanges();
             }
 
@@ -70,7 +70,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
             var adminRoleForDefaultTenant = _context.Roles.FirstOrDefault(r => r.TenantId == defaultTenant.Id && r.Name == "Admin");
             if (adminRoleForDefaultTenant == null)
             {
-                adminRoleForDefaultTenant = _context.Roles.Add(new Role { TenantId = defaultTenant.Id, Name = "Admin", DisplayName = "Admin" });
+                adminRoleForDefaultTenant = _context.Roles.Add(new Role { TenantId = defaultTenant.Id, Name = "Admin", DisplayName = "Admin", IsStatic = true });
                 _context.SaveChanges();
             }
 
