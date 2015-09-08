@@ -40,8 +40,8 @@
       <HintPath>..\packages\Abp.AutoMapper.0.7.0.3\lib\net451\Abp.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero, Version=0.6.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.0.6.9.0\lib\net451\Abp.Zero.dll</HintPath>
+    <Reference Include="Abp.Zero, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.7.0.0\lib\net451\Abp.Zero.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">

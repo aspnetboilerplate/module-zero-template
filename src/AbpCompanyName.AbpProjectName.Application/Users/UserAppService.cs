@@ -24,7 +24,7 @@ namespace AbpCompanyName.AbpProjectName.Users
             await _userManager.ProhibitPermissionAsync(user, permission);
         }
 
-        //Example for working primitive method parameters.
+        //Example for primitive method parameters.
         public async Task RemoveFromRole(long userId, string roleName)
         {
             CheckErrors(await _userManager.RemoveFromRoleAsync(userId, roleName));
