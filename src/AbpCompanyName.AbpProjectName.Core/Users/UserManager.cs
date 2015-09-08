@@ -5,6 +5,7 @@ using Abp.Configuration.Startup;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
@@ -22,7 +23,8 @@ namespace AbpCompanyName.AbpProjectName.Users
             IUnitOfWorkManager unitOfWorkManager,
             ISettingManager settingManager,
             IUserManagementConfig userManagementConfig,
-            IIocResolver iocResolver)
+            IIocResolver iocResolver,
+            ICacheManager cacheManager)
             : base(
                 store,
                 roleManager,
@@ -32,7 +34,8 @@ namespace AbpCompanyName.AbpProjectName.Users
                 unitOfWorkManager,
                 settingManager,
                 userManagementConfig,
-                iocResolver
+                iocResolver,
+                cacheManager
             )
         {
         }

@@ -1,7 +1,7 @@
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
-using Abp.Runtime.Session;
+using Abp.Runtime.Caching;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 
@@ -15,16 +15,16 @@ namespace AbpCompanyName.AbpProjectName.Users
             IRepository<UserRole, long> userRoleRepository,
             IRepository<Role> roleRepository,
             IRepository<UserPermissionSetting, long> userPermissionSettingRepository,
-            IAbpSession session,
-            IUnitOfWorkManager unitOfWorkManager)
+            IUnitOfWorkManager unitOfWorkManager,
+            ICacheManager cacheManager)
             : base(
-                userRepository,
-                userLoginRepository,
-                userRoleRepository,
-                roleRepository,
-                userPermissionSettingRepository,
-                session,
-                unitOfWorkManager)
+              userRepository,
+              userLoginRepository,
+              userRoleRepository,
+              roleRepository,
+              userPermissionSettingRepository,
+              unitOfWorkManager,
+              cacheManager)
         {
         }
     }

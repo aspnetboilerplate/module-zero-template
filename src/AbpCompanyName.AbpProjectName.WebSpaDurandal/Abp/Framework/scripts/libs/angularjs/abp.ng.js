@@ -8,8 +8,8 @@
 
     abp.ng.http = {
         defaultError: {
-            message: 'Ajax request is not succeed!',
-            details: 'Error detail is not sent by server.'
+            message: 'Ajax request did not succeed!',
+            details: 'Error detail not sent by server.'
         },
 
         logError: function (error) {
@@ -87,7 +87,7 @@
 
                     'request': function (config) {
                         if (endsWith(config.url, '.cshtml')) {
-                            config.url = abp.appPath + 'AbpAppView/Load?viewUrl=' + config.url;
+                            config.url = abp.appPath + 'AbpAppView/Load?viewUrl=' + config.url + '&_t=' + abp.pageLoadTime.getTime();
                         }
 
                         return config;
