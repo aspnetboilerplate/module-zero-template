@@ -21,7 +21,9 @@ using AbpCompanyName.AbpProjectName.Users;
 using AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.OAuth;
 using MyCompanyName.AbpZeroTemplate.Web.Controllers.Results;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
@@ -43,8 +45,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
         }
 
         public AccountController(
-            TenantManager tenantManager, 
-            UserManager userManager, 
+            TenantManager tenantManager,
+            UserManager userManager,
             RoleManager roleManager,
             IUnitOfWorkManager unitOfWorkManager,
             IMultiTenancyConfig multiTenancyConfig)
@@ -84,9 +86,9 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 loginModel.Password,
                 loginModel.TenancyName
                 );
-            
+
             await SignInAsync(loginResult.User, loginResult.Identity, loginModel.RememberMe);
-            
+
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
                 returnUrl = Request.ApplicationPath;
@@ -232,7 +234,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
 
                 user.UserName = model.UserName;
                 user.Password = new PasswordHasher().HashPassword(model.Password);
-                
+
                 //Switch to the tenant
                 _unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant);
                 _unitOfWorkManager.Current.SetFilterParameter(AbpDataFilters.MayHaveTenant, AbpDataFilters.Parameters.TenantId, tenant.Id);
@@ -247,7 +249,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 //Save user
                 CheckErrors(await _userManager.CreateAsync(user));
                 await _unitOfWorkManager.Current.SaveChangesAsync();
-                
+
                 //Directly login if possible
                 if (user.IsActive)
                 {
@@ -266,7 +268,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                         await SignInAsync(loginResult.User, loginResult.Identity);
                         return Redirect(Url.Action("Index", "Home"));
                     }
-                    
+
                     Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
                 }
 
@@ -448,6 +450,33 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             }
 
             return foundName != null && foundSurname != null;
+        }
+
+        #endregion
+
+        #region Token based auth
+
+        public async Task<string> Authenticate(string user, string password)
+        {
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
+            {
+                return "failed";
+            }
+
+            var userIdentity = await _userManager.FindAsync(user, password);
+            if (userIdentity == null)
+            {
+                return "failed";
+            }
+
+            var identity = await _userManager.CreateIdentityAsync(userIdentity, Startup.OAuthBearerOptions.AuthenticationType); //TODO: Move to a static field!
+            var ticket = new AuthenticationTicket(identity, new AuthenticationProperties());
+            
+            var currentUtc = new SystemClock().UtcNow;
+            ticket.Properties.IssuedUtc = currentUtc;
+            ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromMinutes(30));
+            
+            return Startup.OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
         }
 
         #endregion

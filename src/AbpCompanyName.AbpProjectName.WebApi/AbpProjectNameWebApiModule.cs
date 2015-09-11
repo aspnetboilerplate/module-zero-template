@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
+using System.Web.Http;
 using Abp.Application.Services;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
 using Abp.WebApi.Controllers.Dynamic.Builders;
@@ -16,6 +18,8 @@ namespace AbpCompanyName.AbpProjectName
             DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(AbpProjectNameApplicationModule).Assembly, "app")
                 .Build();
+
+            Configuration.Modules.AbpWebApi().HttpConfiguration.Filters.Add(new HostAuthenticationFilter("Bearer"));
         }
     }
 }
