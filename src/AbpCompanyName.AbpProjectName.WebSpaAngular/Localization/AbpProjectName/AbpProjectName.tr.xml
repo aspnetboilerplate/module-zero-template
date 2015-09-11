@@ -12,5 +12,28 @@
     <text name="AboutFormat" value="{0} Hakkında" />
     <text name="About_AspNetBoilerplateDescription" value="ASP.NET Boilerplate, en iyi teknikler ve araçlar kullanarak web uygulamaları geliştirmek için bir başlangıç noktasıdır! ASP.NET Boilerplate &lt;strong&gt;Katmanlı Mimari&lt;/strong&gt; ve &lt;strong&gt;Domain Driven Design (DDD)&lt;/strong&gt; teknikleri kullanarak uygulama geliştirme için temel altyapıyı sağlar." />
     <text name="ForMoreInformation" value="Daha fazla bilgi için" />
+
+    <text name="FormIsNotValidMessage" value="Form geçerli değil. Lütfen kontrol edip hataları düzeltin." />
+    <text name="TenantNameCanNotBeEmpty" value="Müşteri adı boş bırakılamaz." />
+
+    <text name="InvalidUserNameOrPassword" value="Kullanıcı adı ya da şifre hatalı." />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="{0} isminde bir müşteri tanımlı değildir." />
+    <text name="TenantIsNotActive" value="{0} isimli müşteri aktif edilmemiştir." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="{0} isimli kullanıcı pasife alınmıştır ve sisteme giremez." />
+    <text name="PleaseEnterLoginInformation" value="Lütfen giriş bilgilerinizi girin" />
+    <text name="TenancyName" value="Müşteri adı" />
+    <text name="UserNameOrEmail" value="Kullanıcı adı ya da e-posta" />
+    <text name="Password" value="Şifre" />
+    <text name="RememberMe" value="Beni hatırla" />
+    <text name="LogIn" value="Giriş" />
+
+    <text name="LoginFailed" value="Giriş başarısız!" />
+    
+    <text name="NameSurname" value="Name surname" />
+    <text name="UserName" value="User name" />
+    <text name="Name" value="Name" />
+    <text name="Surname" value="Surname" />
+    <text name="EmailAddress" value="Email address" />
+
   </texts>
 </localizationDictionary>
