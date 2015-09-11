@@ -22,16 +22,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
             Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn"));
 
-            //Add/remove localization sources here
-            Configuration.Localization.Sources.Add(
-                new DictionaryBasedLocalizationSource(
-                    AbpProjectNameConsts.LocalizationSourceName,
-                    new XmlFileLocalizationDictionaryProvider(
-                        HttpContext.Current.Server.MapPath("~/Localization/AbpProjectName")
-                        )
-                    )
-                );
-
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<AbpProjectNameNavigationProvider>();
         }

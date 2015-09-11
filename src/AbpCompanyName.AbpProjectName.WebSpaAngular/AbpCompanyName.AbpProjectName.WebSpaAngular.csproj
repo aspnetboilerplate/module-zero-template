@@ -321,9 +321,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Localization\AbpProjectName\AbpProjectName-zh-CN.xml" />
-    <Content Include="Localization\AbpProjectName\AbpProjectName.tr.xml" />
-    <Content Include="Localization\AbpProjectName\AbpProjectName.xml" />
     <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
     <Content Include="App\Main\views\home\home.cshtml" />

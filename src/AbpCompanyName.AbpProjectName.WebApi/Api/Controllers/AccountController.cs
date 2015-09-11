@@ -10,10 +10,11 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
 {
     public class AccountController : AbpApiController
     {
-        private readonly UserManager _userManager;
         public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
 
-        static AccountController ()
+        private readonly UserManager _userManager;
+
+        static AccountController()
         {
             OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
         }

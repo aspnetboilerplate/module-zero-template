@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using Abp.Localization.Sources;
+using Abp.Localization.Sources.Xml;
 using Abp.Modules;
 using Abp.Zero;
 
@@ -11,6 +13,17 @@ namespace AbpCompanyName.AbpProjectName
         {
             //Remove the following line to disable multi-tenancy.
             Configuration.MultiTenancy.IsEnabled = true;
+
+            //Add/remove localization sources here
+            Configuration.Localization.Sources.Add(
+                new DictionaryBasedLocalizationSource(
+                    AbpProjectNameConsts.LocalizationSourceName,
+                    new XmlEmbeddedFileLocalizationDictionaryProvider(
+                        Assembly.GetExecutingAssembly(),
+                        "AbpCompanyName.AbpProjectName.Localization.Source"
+                        )
+                    )
+                );
         }
 
         public override void Initialize()
