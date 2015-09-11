@@ -1,4 +1,5 @@
-﻿@*
+﻿@using Abp.Web.Mvc.Extensions
+@*
     IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
     
     This _Layout.cshtml is not used actually. It's left here if you want to add some classic style (MPA)
@@ -22,6 +23,7 @@
 
     <link href="~/Content/themes/base/all.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-cosmo.min.css" rel="stylesheet">
+    @Html.IncludeStyle("~/Content/font-awesome.min.css")
     <link href="~/Content/toastr.min.css" rel="stylesheet" />
     <link href="~/Content/flags/famfamfam-flags.css" rel="stylesheet" />
 

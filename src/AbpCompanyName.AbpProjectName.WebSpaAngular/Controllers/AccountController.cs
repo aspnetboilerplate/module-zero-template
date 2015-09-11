@@ -151,19 +151,21 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
         #endregion
 
         #region Register
-        public ActionResult RegisterView()
+
+        public ActionResult Register()
         {
             return RegisterView(new RegisterViewModel());
         }
 
         private ActionResult RegisterView(RegisterViewModel model)
         {
+            ViewBag.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
+
             return View("Register", model);
         }
 
         [HttpPost]
         [UnitOfWork]
-        [ValidateAntiForgeryToken]
         public virtual async Task<ActionResult> Register(RegisterViewModel model)
         {
             try

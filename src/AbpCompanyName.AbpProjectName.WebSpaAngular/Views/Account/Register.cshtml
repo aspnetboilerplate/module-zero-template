@@ -1,4 +1,5 @@
-﻿@model AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account.RegisterViewModel
+﻿@using Abp.Extensions
+@model AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account.RegisterViewModel
 @section Styles
 {
     <link href="~/Views/Account/Login.css" rel="stylesheet" />
@@ -11,46 +12,61 @@
     <div id="LoginArea" class="row">
         <div class="col-lg-12">
             <div class="well bs-component">
-                <form class="form-horizontal" action="@(Url.Action("Login","Account"))?returnUrl=@(Model.ReturnUrl)">
+                <form class="form-horizontal" action="@(Url.Action("Register","Account"))" method="POST">
                     <fieldset>
-                        <legend>Login</legend>
+                        <legend>Register</legend>
 
-                        @if (Model.IsMultiTenancyEnabled)
+                        @if (@ViewBag.ErrorMessage != null)
+                        {
+                            <div class="alert alert-danger">
+                                <i class="fa fa-warning"></i> @ViewBag.ErrorMessage
+                            </div>
+                        }
+
+                        @if (ViewBag.IsMultiTenancyEnabled)
                         {
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" class="form-control" id="TenancyName" placeholder="Tenancy name">
-                                    <span class="text-muted">Can be empty to login as host.</span>
+                                    <input type="text" class="form-control" name="TenancyName" placeholder="@L("TenancyName")" value="@Model.TenancyName" required maxlength="@AbpCompanyName.AbpProjectName.MultiTenancy.Tenant.MaxTenancyNameLength">
                                 </div>
                             </div>
                         }
-                        else
-                        {
-                            <input type="hidden" id="TenancyName" value="">
-                        }
+
+                        <input type="hidden" name="IsExternalLogin" value="@Model.IsExternalLogin.ToString()" />
 
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="text" class="form-control " id="EmailAddressInput" placeholder="User name or email">
+                                <input type="text" class="form-control" name="Name" value="@Model.Name" placeholder="@L("Name")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxNameLength">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <input type="password" class="form-control" id="PasswordInput" placeholder="Password">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="RememberMeInput">
-                                        <span class="ripple"></span>
-                                        <span class="check"></span> Remember me
-                                    </label>
-                                </div>
+                                <input type="text" class="form-control" name="Surname" value="@Model.Surname" placeholder="@L("Surname")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxSurnameLength">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <button id="LoginButton" class="btn btn-primary"><i class="fa fa-sign-out"></i> Login</button>
+                                <input type="email" class="form-control" name="EmailAddress" value="@Model.EmailAddress" placeholder="@L("EmailAddress")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxEmailAddressLength">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control" name="UserName" value="@Model.UserName" placeholder="@L("UserName")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxUserNameLength">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="password" class="form-control" name="Password" placeholder="@L("Password")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxPlainPasswordLength">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <button type="submit" id="RegisterButton" class="btn btn-primary"><i class="fa fa-sign-in"></i> Register</button>
                             </div>
                         </div>
                     </fieldset>
