@@ -7,6 +7,7 @@ using Abp.Localization;
 using Abp.Localization.Sources;
 using Abp.Localization.Sources.Xml;
 using Abp.Modules;
+using AbpCompanyName.AbpProjectName.Api;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaDurandal
 {

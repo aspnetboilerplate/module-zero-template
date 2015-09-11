@@ -6,7 +6,7 @@ using Abp.Modules;
 using Abp.WebApi;
 using Abp.WebApi.Controllers.Dynamic.Builders;
 
-namespace AbpCompanyName.AbpProjectName
+namespace AbpCompanyName.AbpProjectName.Api
 {
     [DependsOn(typeof(AbpWebApiModule), typeof(AbpProjectNameApplicationModule))]
     public class AbpProjectNameWebApiModule : AbpModule

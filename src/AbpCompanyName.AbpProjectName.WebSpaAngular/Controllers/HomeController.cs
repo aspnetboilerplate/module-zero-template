@@ -8,7 +8,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
     {
         public ActionResult Index()
         {
-            var userId = AbpSession.UserId;
             return View("~/App/Main/views/layout/layout.cshtml"); //Layout of the angular application.
         }
 	}

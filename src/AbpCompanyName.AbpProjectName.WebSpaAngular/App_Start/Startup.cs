@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using AbpCompanyName.AbpProjectName.Api.Controllers;
 using AbpCompanyName.AbpProjectName.WebSpaAngular;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
@@ -16,12 +17,10 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 {
     public class Startup
     {
-        public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
 
         public void Configuration(IAppBuilder app)
         {
-            OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
-            app.UseOAuthBearerAuthentication(OAuthBearerOptions);
+            app.UseOAuthBearerAuthentication(AccountController.OAuthBearerOptions);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {

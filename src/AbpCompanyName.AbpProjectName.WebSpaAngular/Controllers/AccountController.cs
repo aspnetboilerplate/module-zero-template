@@ -21,9 +21,7 @@ using AbpCompanyName.AbpProjectName.Users;
 using AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.OAuth;
 using MyCompanyName.AbpZeroTemplate.Web.Controllers.Results;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
@@ -450,33 +448,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             }
 
             return foundName != null && foundSurname != null;
-        }
-
-        #endregion
-
-        #region Token based auth
-
-        public async Task<string> Authenticate(string user, string password)
-        {
-            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
-            {
-                return "failed";
-            }
-
-            var userIdentity = await _userManager.FindAsync(user, password);
-            if (userIdentity == null)
-            {
-                return "failed";
-            }
-
-            var identity = await _userManager.CreateIdentityAsync(userIdentity, Startup.OAuthBearerOptions.AuthenticationType); //TODO: Move to a static field!
-            var ticket = new AuthenticationTicket(identity, new AuthenticationProperties());
-            
-            var currentUtc = new SystemClock().UtcNow;
-            ticket.Properties.IssuedUtc = currentUtc;
-            ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromMinutes(30));
-            
-            return Startup.OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
         }
 
         #endregion
