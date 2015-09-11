@@ -17,6 +17,15 @@
                 })
             );
         });
+
+        $('a.social-login-link').click(function () {
+            var $a = $(this);
+            var $form = $a.closest('form');
+            $form.find('input[name=provider]').val($a.attr('data-provider'));
+            $form.submit();
+        });
+
+        $('#LoginForm input:first-child').focus();
     });
 
 })();
