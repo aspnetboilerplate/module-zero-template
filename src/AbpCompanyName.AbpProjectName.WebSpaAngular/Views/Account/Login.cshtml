@@ -61,17 +61,6 @@
 
                 @{
                     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().ToList();
-                    Func<string, string> getSocialIconClass = (provider) =>
-                    {
-                        provider = provider.ToLower(CultureInfo.InvariantCulture);
-
-                        if (provider == "google")
-                        {
-                            return "google";
-                        }
-
-                        return provider;
-                    };
                 }
 
                 @if (loginProviders.Count > 0)
