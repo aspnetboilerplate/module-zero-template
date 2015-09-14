@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Abp.Web.Models;
 using Abp.WebApi.Controllers;
 using AbpCompanyName.AbpProjectName.Users;
 using Microsoft.Owin.Infrastructure;
@@ -24,17 +25,17 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
             _userManager = userManager;
         }
 
-        public async Task<string> Authenticate(string username, string password)
+        public async Task<AjaxResponse> Authenticate(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                return "FAILED";
+                return new AjaxResponse(new ErrorInfo("username and password can not be empty"));
             }
 
             var userIdentity = await _userManager.FindAsync(username, password);
             if (userIdentity == null)
             {
-                return "FAILED";
+                return new AjaxResponse(new ErrorInfo("Invalid user name or password."));
             }
 
             var identity = await _userManager.CreateIdentityAsync(userIdentity, OAuthBearerOptions.AuthenticationType);
@@ -44,7 +45,7 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
             ticket.Properties.IssuedUtc = currentUtc;
             ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromMinutes(30));
 
-            return OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
+            return new AjaxResponse(OAuthBearerOptions.AccessTokenFormat.Protect(ticket));
         }
     }
 }
