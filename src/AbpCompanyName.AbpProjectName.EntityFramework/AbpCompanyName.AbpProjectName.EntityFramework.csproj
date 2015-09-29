@@ -116,6 +116,10 @@
     <Compile Include="Migrations\201509081207232_UpdateModuleZeroTo_0_6_9.Designer.cs">
       <DependentUpon>201509081207232_UpdateModuleZeroTo_0_6_9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509290947427_Upgrade_To_ModuleZero_0_7_1.cs" />
+    <Compile Include="Migrations\201509290947427_Upgrade_To_ModuleZero_0_7_1.Designer.cs">
+      <DependentUpon>201509290947427_Upgrade_To_ModuleZero_0_7_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AbpProjectNameDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultTenantRoleAndUserBuilder.cs" />
@@ -138,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509081207232_UpdateModuleZeroTo_0_6_9.resx">
       <DependentUpon>201509081207232_UpdateModuleZeroTo_0_6_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509290947427_Upgrade_To_ModuleZero_0_7_1.resx">
+      <DependentUpon>201509290947427_Upgrade_To_ModuleZero_0_7_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
