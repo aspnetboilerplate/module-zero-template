@@ -55,7 +55,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",
                         "~/Abp/Framework/scripts/libs/abp.toastr.js",
                         "~/Abp/Framework/scripts/libs/abp.blockUI.js",
-                        "~/Abp/Framework/scripts/libs/abp.spin.js"
+                        "~/Abp/Framework/scripts/libs/abp.spin.js",
+                        "~/Abp/Framework/scripts/libs/abp.sweet-alert.js"
                     )
                 );
 

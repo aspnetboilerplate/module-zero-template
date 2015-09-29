@@ -1,13 +1,13 @@
-﻿@using System.Globalization
+﻿@using Abp.Web.Mvc.Extensions
 @using Microsoft.Owin.Security
 @model AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account.LoginFormViewModel
 @section Styles
 {
-    <link href="~/Views/Account/Login.css" rel="stylesheet" />
+    @Html.IncludeStyle("~/Views/Account/Login.css")
 }
 @section Scripts
 {
-    <script src="~/Views/Account/Login.js"></script>
+    @Html.IncludeScript("~/Views/Account/Login.js")
 }
 <div class="container">
     <div id="LoginArea" class="row">
