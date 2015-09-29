@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,36 +41,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.7.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.7.0.4\lib\net451\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.7.1.0\lib\net451\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.7.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.0.7.0.3\lib\net451\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.0.7.1.0\lib\net451\Abp.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.EntityFramework, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.EntityFramework.0.7.0.0\lib\net451\Abp.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.EntityFramework, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.0.7.1.0\lib\net451\Abp.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.7.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.0.7.0.4\lib\net451\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.0.7.1.0\lib\net451\Abp.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.7.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.0.7.0.4\lib\net451\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.0.7.1.0\lib\net451\Abp.Web.Api.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Mvc.0.7.0.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
+    <Reference Include="Abp.Web.Mvc, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.0.7.1.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.0.7.0.0\lib\net451\Abp.Zero.dll</HintPath>
+    <Reference Include="Abp.Zero, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.7.1.0\lib\net451\Abp.Zero.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.0.0\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.1.0\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime">
@@ -377,9 +378,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Abp\Framework\styles\abp.mixings.less" />
-    <Content Include="Abp\Framework\styles\abp.less" />
-    <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -392,6 +390,9 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Abp\Framework\styles\abp.mixings.less" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
