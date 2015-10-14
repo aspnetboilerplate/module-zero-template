@@ -7,7 +7,6 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
-using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security.Twitter;
 using Owin;
 
@@ -17,7 +16,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 {
     public class Startup
     {
-
         public void Configuration(IAppBuilder app)
         {
             app.UseOAuthBearerAuthentication(AccountController.OAuthBearerOptions);

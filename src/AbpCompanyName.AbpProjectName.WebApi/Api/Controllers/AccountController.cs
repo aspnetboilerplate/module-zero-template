@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Abp.Authorization.Users;
 using Abp.UI;
 using Abp.Web.Models;
@@ -30,6 +31,7 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
             _userManager = userManager;
         }
 
+        [HttpPost]
         public async Task<AjaxResponse> Authenticate(LoginModel loginModel)
         {
             CheckModelState();
