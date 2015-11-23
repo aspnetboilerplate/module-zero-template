@@ -3,12 +3,17 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Modules;
+using Abp.Web.Mvc;
 using Abp.Zero.Configuration;
 using AbpCompanyName.AbpProjectName.Api;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 {
-    [DependsOn(typeof(AbpProjectNameDataModule), typeof(AbpProjectNameApplicationModule), typeof(AbpProjectNameWebApiModule))]
+    [DependsOn(
+        typeof(AbpProjectNameDataModule), 
+        typeof(AbpProjectNameApplicationModule), 
+        typeof(AbpProjectNameWebApiModule),
+        typeof(AbpWebMvcModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
         public override void PreInitialize()

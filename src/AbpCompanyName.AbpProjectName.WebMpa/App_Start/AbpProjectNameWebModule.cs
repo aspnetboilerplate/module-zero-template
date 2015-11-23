@@ -6,14 +6,17 @@ using System.Web.Routing;
 using Abp.Localization;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
-using Abp.Localization.Sources;
-using Abp.Localization.Sources.Xml;
 using Abp.Modules;
+using Abp.Web.Mvc;
 using AbpCompanyName.AbpProjectName.Api;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa
 {
-    [DependsOn(typeof(AbpProjectNameDataModule), typeof(AbpProjectNameApplicationModule), typeof(AbpProjectNameWebApiModule))]
+    [DependsOn(
+        typeof(AbpProjectNameDataModule), 
+        typeof(AbpProjectNameApplicationModule), 
+        typeof(AbpProjectNameWebApiModule),
+        typeof(AbpWebMvcModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
         public override void PreInitialize()
@@ -23,7 +26,6 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
             Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn"));
 
-            //Add/remove localization sources here
             //Add/remove localization sources here
             Configuration.Localization.Sources.Add(
                 new DictionaryBasedLocalizationSource(
