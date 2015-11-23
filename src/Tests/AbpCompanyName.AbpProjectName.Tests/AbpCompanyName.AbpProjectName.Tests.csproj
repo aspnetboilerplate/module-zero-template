@@ -50,12 +50,12 @@
       <HintPath>..\..\packages\Abp.TestBase.0.7.4.1\lib\net451\Abp.TestBase.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.Zero.0.7.4.0\lib\net451\Abp.Zero.dll</HintPath>
+    <Reference Include="Abp.Zero, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.Zero.0.7.4.1\lib\net451\Abp.Zero.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.Zero.EntityFramework.0.7.4.0\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.Zero.EntityFramework.0.7.4.1\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -82,8 +82,8 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.DynamicFilters, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.DynamicFilters.1.4.3\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    <Reference Include="EntityFramework.DynamicFilters, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.DynamicFilters.1.4.4\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">

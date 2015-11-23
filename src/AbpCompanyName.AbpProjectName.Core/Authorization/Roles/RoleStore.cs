@@ -1,7 +1,6 @@
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
-using Abp.Runtime.Caching;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
 
@@ -12,13 +11,11 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Roles
         public RoleStore(
             IRepository<Role> roleRepository,
             IRepository<UserRole, long> userRoleRepository,
-            IRepository<RolePermissionSetting, long> rolePermissionSettingRepository,
-            ICacheManager cacheManager)
+            IRepository<RolePermissionSetting, long> rolePermissionSettingRepository)
             : base(
                 roleRepository,
                 userRoleRepository,
-                rolePermissionSettingRepository,
-                cacheManager)
+                rolePermissionSettingRepository)
         {
         }
     }
