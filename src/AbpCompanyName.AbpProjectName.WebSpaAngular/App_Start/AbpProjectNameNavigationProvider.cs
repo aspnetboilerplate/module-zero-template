@@ -17,18 +17,18 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
+                        "Home",
+                        new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
+                        url: "#/",
+                        icon: "fa fa-home"
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "Tenants",
                         L("Tenants"),
                         url: "#tenants",
                         icon: "fa fa-globe",
                         requiredPermissionName: PermissionNames.Pages_Tenants
-                        )
-                ).AddItem(
-                    new MenuItemDefinition(
-                        "Home",
-                        new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
-                        url: "#/",
-                        icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(

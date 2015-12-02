@@ -42,6 +42,7 @@
     <text name="Save" value="Kaydet" />
     <text name="Cancel" value="İptal" />
     <text name="TenantName_Regex_Description" value="Müşteri adı en az 2 karakter olmalı, bir harfle başlamalı ve harf, rakam, tire ya da alt çizgi ile devam etmelidir." />
+    <text name="DefaultPasswordIs" value="Varsayılan şifre {0}" />
 
   </texts>
 </localizationDictionary>

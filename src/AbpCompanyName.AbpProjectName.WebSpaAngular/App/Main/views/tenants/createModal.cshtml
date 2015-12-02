@@ -26,6 +26,8 @@
                 <input type="email" name="AdminEmailAddress" class="form-control" ng-model="vm.tenant.adminEmailAddress" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxEmailAddressLength">
             </div>
 
+            <p>@L("DefaultPasswordIs", AbpCompanyName.AbpProjectName.Users.User.DefaultPassword)</p>
+
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
