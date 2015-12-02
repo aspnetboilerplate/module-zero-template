@@ -28,12 +28,20 @@
     <text name="LogIn" value="Giriş" />
 
     <text name="LoginFailed" value="Giriş başarısız!" />
-    
-    <text name="NameSurname" value="Name surname" />
-    <text name="UserName" value="User name" />
-    <text name="Name" value="Name" />
-    <text name="Surname" value="Surname" />
-    <text name="EmailAddress" value="Email address" />
+
+    <text name="NameSurname" value="Ad soyad" />
+    <text name="UserName" value="Kullanıcı adı" />
+    <text name="Name" value="İsim" />
+    <text name="Surname" value="Soyisim" />
+    <text name="EmailAddress" value="E-posta adresi" />
+
+    <text name="Tenants" value="Müşteriler" />
+    <text name="SavedSuccessfully" value="Başarıyla kaydedildi" />
+    <text name="CreateNewTenant" value="Yeni müşteri oluştur" />
+    <text name="AdminEmailAddress" value="Yönetici e-posta adresi" />
+    <text name="Save" value="Kaydet" />
+    <text name="Cancel" value="İptal" />
+    <text name="TenantName_Regex_Description" value="Müşteri adı en az 2 karakter olmalı, bir harfle başlamalı ve harf, rakam, tire ya da alt çizgi ile devam etmelidir." />
 
   </texts>
 </localizationDictionary>

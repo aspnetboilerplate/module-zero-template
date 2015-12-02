@@ -29,5 +29,19 @@
     
     <text name="LoginFailed" value="Login failed!" />
 
+    <text name="NameSurname" value="Name surname" />
+    <text name="UserName" value="User name" />
+    <text name="Name" value="Name" />
+    <text name="Surname" value="Surname" />
+    <text name="EmailAddress" value="Email address" />
+
+    <text name="Tenants" value="Tenants" />
+    <text name="SavedSuccessfully" value="Saved successfully" />
+    <text name="CreateNewTenant" value="Create new tenant" />
+    <text name="AdminEmailAddress" value="Admin email address" />
+    <text name="Save" value="Save" />
+    <text name="Cancel" value="Cancel" />
+    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+
   </texts>
 </localizationDictionary>

@@ -73,6 +73,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             //~/Bundles/App/Main/js
             bundles.Add(
                 new ScriptBundle("~/Bundles/App/Main/js")
+                    .IncludeDirectory("~/Common/Scripts", "*.js", true)
                     .IncludeDirectory("~/App/Main", "*.js", true)
                 );
         }

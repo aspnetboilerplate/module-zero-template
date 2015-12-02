@@ -1,9 +1,14 @@
 using System.Linq;
+using Abp.Authorization;
+using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
+using Abp.MultiTenancy;
+using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.EntityFramework;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
+using Microsoft.AspNet.Identity;
 
 namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 {
@@ -23,35 +28,57 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 
         private void CreateUserAndRoles()
         {
-            //Admin role for tenancy owner
+            //Admin role for host
 
-            var adminRoleForTenancyOwner = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == "Admin");
-            if (adminRoleForTenancyOwner == null)
+            var adminRoleForHost = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == StaticRoleNames.Host.Admin);
+            if (adminRoleForHost == null)
             {
-                adminRoleForTenancyOwner = _context.Roles.Add(new Role { Name = "Admin", DisplayName = "Admin", IsStatic = true });
+                adminRoleForHost = _context.Roles.Add(new Role { Name = StaticRoleNames.Host.Admin, DisplayName = StaticRoleNames.Host.Admin, IsStatic = true });
+                _context.SaveChanges();
+
+                //Grant all tenant permissions
+                var permissions = PermissionFinder
+                    .GetAllPermissions(new AbpProjectNameAuthorizationProvider())
+                    .Where(p => p.MultiTenancySides.HasFlag(MultiTenancySides.Host))
+                    .ToList();
+
+                foreach (var permission in permissions)
+                {
+                    if (!permission.IsGrantedByDefault)
+                    {
+                        _context.Permissions.Add(
+                            new RolePermissionSetting
+                            {
+                                Name = permission.Name,
+                                IsGranted = true,
+                                RoleId = adminRoleForHost.Id
+                            });
+                    }
+                }
+
                 _context.SaveChanges();
             }
 
-            //Admin user for tenancy owner
+            //Admin user for tenancy host
 
-            var adminUserForTenancyOwner = _context.Users.FirstOrDefault(u => u.TenantId == null && u.UserName == "admin");
-            if (adminUserForTenancyOwner == null)
+            var adminUserForHost = _context.Users.FirstOrDefault(u => u.TenantId == null && u.UserName == User.AdminUserName);
+            if (adminUserForHost == null)
             {
-                adminUserForTenancyOwner = _context.Users.Add(
+                adminUserForHost = _context.Users.Add(
                     new User
                     {
                         TenantId = null,
-                        UserName = "admin",
+                        UserName = User.AdminUserName,
                         Name = "System",
                         Surname = "Administrator",
                         EmailAddress = "admin@aspnetboilerplate.com",
                         IsEmailConfirmed = true,
-                        Password = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==" //123qwe
+                        Password = new PasswordHasher().HashPassword(User.DefaultPassword)
                     });
 
                 _context.SaveChanges();
 
-                _context.UserRoles.Add(new UserRole(adminUserForTenancyOwner.Id, adminRoleForTenancyOwner.Id));
+                _context.UserRoles.Add(new UserRole(adminUserForHost.Id, adminRoleForHost.Id));
 
                 _context.SaveChanges();
             }
@@ -67,28 +94,50 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 
             //Admin role for 'Default' tenant
 
-            var adminRoleForDefaultTenant = _context.Roles.FirstOrDefault(r => r.TenantId == defaultTenant.Id && r.Name == "Admin");
+            var adminRoleForDefaultTenant = _context.Roles.FirstOrDefault(r => r.TenantId == defaultTenant.Id && r.Name == StaticRoleNames.Tenants.Admin);
             if (adminRoleForDefaultTenant == null)
             {
-                adminRoleForDefaultTenant = _context.Roles.Add(new Role { TenantId = defaultTenant.Id, Name = "Admin", DisplayName = "Admin", IsStatic = true });
+                adminRoleForDefaultTenant = _context.Roles.Add(new Role { TenantId = defaultTenant.Id, Name = StaticRoleNames.Tenants.Admin, DisplayName = StaticRoleNames.Tenants.Admin, IsStatic = true });
+                _context.SaveChanges();
+
+                //Grant all tenant permissions
+                var permissions = PermissionFinder
+                    .GetAllPermissions(new AbpProjectNameAuthorizationProvider())
+                    .Where(p => p.MultiTenancySides.HasFlag(MultiTenancySides.Tenant))
+                    .ToList();
+
+                foreach (var permission in permissions)
+                {
+                    if (!permission.IsGrantedByDefault)
+                    {
+                        _context.Permissions.Add(
+                            new RolePermissionSetting
+                            {
+                                Name = permission.Name,
+                                IsGranted = true,
+                                RoleId = adminRoleForDefaultTenant.Id
+                            });
+                    }
+                }
+
                 _context.SaveChanges();
             }
 
             //Admin for 'Default' tenant
 
-            var adminUserForDefaultTenant = _context.Users.FirstOrDefault(u => u.TenantId == defaultTenant.Id && u.UserName == "admin");
+            var adminUserForDefaultTenant = _context.Users.FirstOrDefault(u => u.TenantId == defaultTenant.Id && u.UserName == User.AdminUserName);
             if (adminUserForDefaultTenant == null)
             {
                 adminUserForDefaultTenant = _context.Users.Add(
                     new User
                     {
                         TenantId = defaultTenant.Id,
-                        UserName = "admin",
+                        UserName = User.AdminUserName,
                         Name = "System",
                         Surname = "Administrator",
                         EmailAddress = "admin@aspnetboilerplate.com",
                         IsEmailConfirmed = true,
-                        Password = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==" //123qwe
+                        Password = new PasswordHasher().HashPassword(User.DefaultPassword)
                     });
                 _context.SaveChanges();
 

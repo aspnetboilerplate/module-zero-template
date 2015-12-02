@@ -88,7 +88,11 @@
   <ItemGroup>
     <Compile Include="AbpProjectNameConsts.cs" />
     <Compile Include="AbpProjectNameCoreModule.cs" />
+    <Compile Include="Authorization\AbpProjectNameAuthorizationProvider.cs" />
     <Compile Include="Authorization\PermissionChecker.cs" />
+    <Compile Include="Authorization\PermissionNames.cs" />
+    <Compile Include="Authorization\Roles\AppRoleConfig.cs" />
+    <Compile Include="Authorization\Roles\StaticRoleNames.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />

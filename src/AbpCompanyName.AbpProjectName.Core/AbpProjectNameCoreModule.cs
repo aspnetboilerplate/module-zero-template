@@ -1,10 +1,11 @@
 ﻿using System.Reflection;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
-using Abp.Localization.Sources;
-using Abp.Localization.Sources.Xml;
 using Abp.Modules;
 using Abp.Zero;
+using Abp.Zero.Configuration;
+using AbpCompanyName.AbpProjectName.Authorization;
+using AbpCompanyName.AbpProjectName.Authorization.Roles;
 
 namespace AbpCompanyName.AbpProjectName
 {
@@ -26,6 +27,10 @@ namespace AbpCompanyName.AbpProjectName
                         )
                     )
                 );
+
+            AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
+
+            Configuration.Authorization.Providers.Add<AbpProjectNameAuthorizationProvider>();
         }
 
         public override void Initialize()

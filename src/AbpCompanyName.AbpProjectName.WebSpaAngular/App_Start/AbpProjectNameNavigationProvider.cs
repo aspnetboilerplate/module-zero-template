@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
+using AbpCompanyName.AbpProjectName.Authorization;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 {
@@ -16,6 +17,14 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
+                        "Tenants",
+                        L("Tenants"),
+                        url: "#tenants",
+                        icon: "fa fa-globe",
+                        requiredPermissionName: PermissionNames.Pages_Tenants
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "Home",
                         new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
                         url: "#/",
@@ -29,6 +38,11 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         icon: "fa fa-info"
                         )
                 );
+        }
+
+        private static ILocalizableString L(string name)
+        {
+            return new LocalizableString(name, AbpProjectNameConsts.LocalizationSourceName);
         }
     }
 }

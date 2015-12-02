@@ -269,10 +269,15 @@
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\services\appSession.js" />
+    <Content Include="App\Main\views\directives\autoFocus.js" />
+    <Content Include="App\Main\views\directives\enterKey.js" />
     <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\home\home.js" />
     <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\tenants\createModal.js" />
+    <Content Include="App\Main\views\tenants\index.js" />
+    <Content Include="Common\Scripts\helpers.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -394,6 +399,8 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="App\Main\views\tenants\index.cshtml" />
+    <Content Include="App\Main\views\tenants\createModal.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1174,7 +1181,9 @@
     <Content Include="Views\Account\Login.min.css">
       <DependentUpon>Login.css</DependentUpon>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
