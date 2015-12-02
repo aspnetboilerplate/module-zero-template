@@ -5,6 +5,7 @@ using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Uow;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
+using AbpCompanyName.AbpProjectName.Editions;
 using AbpCompanyName.AbpProjectName.MultiTenancy.Dto;
 using AbpCompanyName.AbpProjectName.Users;
 
@@ -14,11 +15,13 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy
     {
         private readonly TenantManager _tenantManager;
         private readonly RoleManager _roleManager;
+        private readonly EditionManager _editionManager;
 
-        public TenantAppService(TenantManager tenantManager, RoleManager roleManager)
+        public TenantAppService(TenantManager tenantManager, RoleManager roleManager, EditionManager editionManager)
         {
             _tenantManager = tenantManager;
             _roleManager = roleManager;
+            _editionManager = editionManager;
         }
 
         public ListResultOutput<TenantListDto> GetTenants()
@@ -35,6 +38,12 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy
         {
             //Create tenant
             var tenant = new Tenant(input.TenancyName, input.Name);
+            var defaultEdition = await _editionManager.FindByNameAsync(EditionManager.DefaultEditionName);
+            if (defaultEdition != null)
+            {
+                tenant.EditionId = defaultEdition.Id;
+            }
+
             CheckErrors(await TenantManager.CreateAsync(tenant));
             await CurrentUnitOfWork.SaveChangesAsync(); //To get new tenant's id.
 

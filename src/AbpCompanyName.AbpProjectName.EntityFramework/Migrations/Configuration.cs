@@ -1,6 +1,5 @@
 using System.Data.Entity.Migrations;
 using AbpCompanyName.AbpProjectName.Migrations.SeedData;
-using EntityFramework.DynamicFilters;
 
 namespace AbpCompanyName.AbpProjectName.Migrations
 {
@@ -14,7 +13,6 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
         protected override void Seed(AbpProjectName.EntityFramework.AbpProjectNameDbContext context)
         {
-            context.DisableAllFilters();
             new InitialDataBuilder(context).Build();
         }
     }

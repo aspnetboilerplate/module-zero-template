@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AbpProjectNameDataModule.cs" />
+    <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
     <Compile Include="Migrations\SeedData\DefaultLanguagesBuilder.cs" />
     <Compile Include="Migrations\SeedData\DefaultTenantRoleAndUserBuilder.cs" />
     <Compile Include="Migrations\SeedData\InitialDataBuilder.cs" />

@@ -1,4 +1,5 @@
 ﻿using AbpCompanyName.AbpProjectName.EntityFramework;
+using EntityFramework.DynamicFilters;
 
 namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 {
@@ -13,6 +14,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 
         public void Build()
         {
+            _context.DisableAllFilters();
+
+            new DefaultEditionsBuilder(_context).Build();
             new DefaultTenantRoleAndUserBuilder(_context).Build();
             new DefaultLanguagesBuilder(_context).Build();
         }
