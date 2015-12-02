@@ -43,6 +43,12 @@
     <text name="Cancel" value="İptal" />
     <text name="TenantName_Regex_Description" value="Müşteri adı en az 2 karakter olmalı, bir harfle başlamalı ve harf, rakam, tire ya da alt çizgi ile devam etmelidir." />
     <text name="DefaultPasswordIs" value="Varsayılan şifre {0}" />
-
+    <text name="CanBeEmptyToLoginAsHost" value="Host olarak giriş yapmak için boş bırakılabilir." />
+    <text name="Register" value="Kayıt ol" />
+    <text name="OrLoginWith" value="Ya da şununla giriş yap" />
+    <text name="WaitingForActivationMessage" value="Hesabınız sistem yöneticisi tarafından etkinleştirilmek için bekliyor." />
+    <text name="TenantSelection" value="Müşteri seçimi" />
+    <text name="TenantSelection_Detail" value="Lütfen aşağıdaki müşterilerden birisini seçin." />
+    
   </texts>
 </localizationDictionary>

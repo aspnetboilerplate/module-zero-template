@@ -10,17 +10,10 @@
     <li><span class="text-muted">@L("EmailAddress"):</span> @Model.EmailAddress</li>
 </ul>
 <div>
-    @if (Model.IsEmailConfirmationRequired)
-    {
-        <div class="alert alert-warning" role="alert">
-            A confirmation mail sent to @Model.EmailAddress. Please click link in the email in order to confirm your mail address.
-        </div>
-    }
-    
     @if (!Model.IsActive)
     {
         <div class="alert alert-warning" role="alert">
-            Your account is waiting to be activated by system admin.
+            @L("WaitingForActivationMessage")
         </div>
     }
 </div>

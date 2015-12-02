@@ -15,14 +15,14 @@
             <div class="well bs-component">
                 <form id="LoginForm" class="form-horizontal" action="@(Url.Action("Login", "Account"))?returnUrl=@(Model.ReturnUrl)" method="POST">
                     <fieldset>
-                        <legend>Login</legend>
+                        <legend>@L("LogIn")</legend>
 
                         @if (Model.IsMultiTenancyEnabled)
                         {
                             <div class="form-group">
                                 <div class="col-lg-12">
                                     <input type="text" class="form-control" id="TenancyName" placeholder="Tenancy name" required maxlength="@AbpCompanyName.AbpProjectName.MultiTenancy.Tenant.MaxTenancyNameLength">
-                                    <span class="text-muted">Can be empty to login as host.</span>
+                                    <span class="text-muted">@L("CanBeEmptyToLoginAsHost")</span>
                                 </div>
                             </div>
                         }
@@ -44,7 +44,7 @@
                                     <label>
                                         <input type="checkbox" id="RememberMeInput">
                                         <span class="ripple"></span>
-                                        <span class="check"></span> Remember me
+                                        <span class="check"></span> @L("RememberMe")
                                     </label>
                                 </div>
                             </div>
@@ -52,8 +52,8 @@
 
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <button id="LoginButton" type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
-                                <a class="btn btn-success" href="@Url.Action("Register")"><i class="fa fa-sign-in"></i> Register</a>
+                                <button id="LoginButton" type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> @L("LogIn")</button>
+                                <a class="btn btn-success" href="@Url.Action("Register")"><i class="fa fa-sign-in"></i> @L("Register")</a>
                             </div>
                         </div>
                     </fieldset>
@@ -65,7 +65,7 @@
 
                 @if (loginProviders.Count > 0)
                 {
-                    <p>Or login with:</p>
+                    <p>@L("OrLoginWith"):</p>
 
                     using (Html.BeginForm("ExternalLogin", "Account", method: FormMethod.Post))
                     {

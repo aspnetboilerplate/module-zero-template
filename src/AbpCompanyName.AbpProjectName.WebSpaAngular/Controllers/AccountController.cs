@@ -213,7 +213,11 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                         }
                     };
 
-                    model.UserName = model.EmailAddress;
+                    if (model.UserName.IsNullOrEmpty())
+                    {
+                        model.UserName = model.EmailAddress;
+                    }
+
                     model.Password = Users.User.CreateRandomPassword();
 
                     if (string.Equals(externalLoginInfo.Email, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
@@ -277,8 +281,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                     NameAndSurname = user.Name + " " + user.Surname,
                     UserName = user.UserName,
                     EmailAddress = user.EmailAddress,
-                    IsActive = user.IsActive,
-                    IsEmailConfirmationRequired = false
+                    IsActive = user.IsActive
                 });
             }
             catch (UserFriendlyException ex)
