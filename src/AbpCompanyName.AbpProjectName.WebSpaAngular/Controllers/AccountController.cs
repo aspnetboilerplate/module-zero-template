@@ -56,6 +56,45 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             _multiTenancyConfig = multiTenancyConfig;
         }
 
+
+        #region ChangePassword
+
+        [Abp.Authorization.AbpAuthorize]
+        public ActionResult ChangePassword(string returnUrl = "")
+        {
+            if (string.IsNullOrWhiteSpace(returnUrl))
+            {
+                returnUrl = Request.ApplicationPath;
+            }
+
+            return PartialView(
+                new ChangePasswordViewModel
+                {
+                    ReturnUrl = returnUrl
+                });
+        }
+
+        [Abp.Authorization.AbpAuthorize]
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordViewModel input)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new UserFriendlyException(L("FormIsNotValidMessage"));
+            }
+
+            IdentityResult result = _userManager.ChangePassword(AbpSession.UserId.Value, input.OldPassword, input.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                throw new UserFriendlyException("Something did not work out, sorry");
+            }
+
+            return Redirect(input.ReturnUrl);
+        }
+
+        #endregion ChangePassword
+
         #region Login / Logout
 
         public ActionResult Login(string returnUrl = "")

@@ -115,6 +115,9 @@
     <EmbeddedResource Include="Localization\Source\AbpProjectName-tr.xml" />
     <EmbeddedResource Include="Localization\Source\AbpProjectName.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Localization\Source\AbpProjectName-de-de.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

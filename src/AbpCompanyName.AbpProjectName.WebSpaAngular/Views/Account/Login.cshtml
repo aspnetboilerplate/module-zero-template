@@ -66,6 +66,7 @@
                 @if (loginProviders.Count > 0)
                 {
                     <p>@L("OrLoginWith"):</p>
+                    
 
                     using (Html.BeginForm("ExternalLogin", "Account", method: FormMethod.Post))
                     {
