@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace YourTurn.Web.Models.Account
+namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account
 {
     public class ChangePasswordViewModel
     {
