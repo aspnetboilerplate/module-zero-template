@@ -51,6 +51,37 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
             return new AjaxResponse(OAuthBearerOptions.AccessTokenFormat.Protect(ticket));
         }
 
+        [HttpGet]
+        [Abp.WebApi.Authorization.AbpApiAuthorize]
+        public async Task<ProfileInfo> ProfileInfo()
+        {
+            var user = await _userManager.GetUserByIdAsync(AbpSession.UserId.Value);
+
+            var logins = await _userManager.GetLoginsAsync(AbpSession.UserId.Value);
+
+            //user.AuthenticationSource
+
+            var loginStrings = new System.Collections.Generic.List<string>();
+            foreach (var l in logins)
+            {
+                loginStrings.Add(l.LoginProvider);
+            }
+
+            var pInfo = new ProfileInfo()
+            {
+                EmailAddress = user.EmailAddress,
+                Name = user.Name,
+                Surname = user.Surname,
+                TenantId = 0, //user.TenantId.HasValue ? user.TenantId.Value : 0,
+                TenantName = "", //user.TenantId.HasValue ? user.Tenant.Name : "",
+                UserId = user.Id,
+                UserName = user.Name,
+                LoginProvider = loginStrings
+            };
+
+            return pInfo;            
+        }
+
         private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
         {
             var loginResult = await _userManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
@@ -94,5 +125,7 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
                 throw new UserFriendlyException("Invalid request!");
             }
         }
+
+
     }
 }

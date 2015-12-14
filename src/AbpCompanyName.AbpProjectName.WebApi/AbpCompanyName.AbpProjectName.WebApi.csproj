@@ -139,6 +139,7 @@
     <Compile Include="Api\AbpProjectNameWebApiModule.cs" />
     <Compile Include="Api\Controllers\AccountController.cs" />
     <Compile Include="Api\Models\LoginModel.cs" />
+    <Compile Include="Api\Models\ProfileInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,56 @@
+﻿<div ng-controller="app.views.account.profile as vm">
+    <h1><i class="fa fa-user"></i> @L("Profile Information")</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-horizontal">
+                <div class="form-group" ng-show="accountData.tenantId != 0">
+                    <label class="col-sm-2 control-label">@L("TenancyName")</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{accountData.tenantName}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">@L("Name")</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{accountData.name}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">@L("Surname")</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{accountData.surname}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">@L("UserName")</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{accountData.userName}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">@L("EmailAddress")</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{accountData.emailAddress}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-show="accountData.loginProvider.length > 0">
+                    <label class="col-sm-2 control-label">@L("LogIn")</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">
+                            <span ng-repeat="l in accountData.loginProvider">
+                                <a class="btn btn-default btn-sm social-login-link">
+                                    <i class="fa fa-{{l | lowercase}}"></i> {{l}}
+                                </a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -28,6 +28,14 @@
                 $urlRouterProvider.otherwise('/tenants');
             }
 
+            if (abp.session.userId) {
+                $stateProvider
+                    .state('profile', {
+                        url: '/account/profile',
+                        templateUrl: '/App/Main/views/account/profile.cshtml'
+                    });
+            }
+
             $stateProvider
                 .state('home', {
                     url: '/',
