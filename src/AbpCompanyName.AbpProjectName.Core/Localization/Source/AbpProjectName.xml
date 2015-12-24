@@ -26,12 +26,6 @@
     <text name="Password" value="Password" />
     <text name="RememberMe" value="Remember me" />
     <text name="LogIn" value="Log in" />
-    <text name="ChangePassword" value="Change your password" />
-    <text name="OldPassword" value="Current password" />
-    <text name="NewPassword" value="New password" />
-    <text name="ConfirmPassword" value="Confirm new password" />
-    <text name="PasswordLengthError" value="The {0} must be at least {2} characters long." />
-    <text name="PasswordConfirmError" value="The new password and confirmation password do not match." />
 
     <text name="LoginFailed" value="Login failed!" />
 
