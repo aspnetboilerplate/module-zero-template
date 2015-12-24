@@ -15,23 +15,28 @@ using AbpCompanyName.AbpProjectName.Users;
 using Castle.MicroKernel.Registration;
 using EntityFramework.DynamicFilters;
 
-namespace AbpCompanyName.AbpProjectName.Tests.Sessions
+namespace AbpCompanyName.AbpProjectName.Tests
 {
     public abstract class AbpProjectNameTestBase : AbpIntegratedTestBase
     {
         protected AbpProjectNameTestBase()
         {
+            //Seed initial data
+            UsingDbContext(context => new InitialDataBuilder(context).Build());
+
+            LoginAsDefaultTenantAdmin();
+        }
+
+        protected override void PreInitialize()
+        {
+            base.PreInitialize();
+
             //Fake DbConnection using Effort!
             LocalIocManager.IocContainer.Register(
                 Component.For<DbConnection>()
                     .UsingFactoryMethod(Effort.DbConnectionFactory.CreateTransient)
                     .LifestyleSingleton()
                 );
-
-            //Seed initial data
-            UsingDbContext(context => new InitialDataBuilder(context).Build());
-
-            LoginAsDefaultTenantAdmin();
         }
 
         protected override void AddModules(ITypeList<AbpModule> modules)
