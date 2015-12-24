@@ -5,6 +5,7 @@ using Abp.Configuration.Startup;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Organizations;
 using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
@@ -24,7 +25,11 @@ namespace AbpCompanyName.AbpProjectName.Users
             ISettingManager settingManager,
             IUserManagementConfig userManagementConfig,
             IIocResolver iocResolver,
-            ICacheManager cacheManager)
+            ICacheManager cacheManager,
+            IRepository<OrganizationUnit, long> organizationUnitRepository,
+            IRepository<UserOrganizationUnit, long> userOrganizationUnitRepository,
+            IOrganizationUnitSettings organizationUnitSettings
+            )
             : base(
                 store,
                 roleManager,
@@ -35,8 +40,10 @@ namespace AbpCompanyName.AbpProjectName.Users
                 settingManager,
                 userManagementConfig,
                 iocResolver,
-                cacheManager
-            )
+                cacheManager,
+                organizationUnitRepository,
+                userOrganizationUnitRepository,
+                organizationUnitSettings)
         {
         }
     }
