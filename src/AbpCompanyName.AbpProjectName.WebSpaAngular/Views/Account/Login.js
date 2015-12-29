@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    $(function() {
+    $(function () {
         $('#LoginButton').click(function (e) {
             e.preventDefault();
             abp.ui.setBusy(
@@ -12,7 +12,8 @@
                         tenancyName: $('#TenancyName').val(),
                         usernameOrEmailAddress: $('#EmailAddressInput').val(),
                         password: $('#PasswordInput').val(),
-                        rememberMe: $('#RememberMeInput').is(':checked')
+                        rememberMe: $('#RememberMeInput').is(':checked'),
+                        returnUrlHash: $('#ReturnUrlHash').val()
                     })
                 })
             );
@@ -24,6 +25,8 @@
             $form.find('input[name=provider]').val($a.attr('data-provider'));
             $form.submit();
         });
+
+        $('#ReturnUrlHash').val(location.hash);
 
         $('#LoginForm input:first-child').focus();
     });

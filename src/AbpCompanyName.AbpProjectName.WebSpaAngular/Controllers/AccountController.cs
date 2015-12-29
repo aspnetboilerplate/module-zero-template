@@ -75,7 +75,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
 
         [HttpPost]
         [DisableAuditing]
-        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "")
+        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
         {
             CheckModelState();
 
@@ -90,6 +90,11 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
                 returnUrl = Request.ApplicationPath;
+            }
+
+            if (!string.IsNullOrWhiteSpace(returnUrlHash))
+            {
+                returnUrl = returnUrl + returnUrlHash;
             }
 
             return Json(new MvcAjaxResponse { TargetUrl = returnUrl });
