@@ -9,7 +9,7 @@ namespace AbpCompanyName.AbpProjectName.DbMigrations
         {
             get
             {
-                return "MyAppVersionInfo";
+                return "AppVersionInfo";
             }
         }
     }
