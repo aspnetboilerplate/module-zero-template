@@ -396,6 +396,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
+    <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Models\Layout\UserMenuOrLoginLinkViewModel.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
     <Compile Include="Models\Account\LoginViewModel.cs" />
@@ -427,6 +428,7 @@
     <Content Include="Views\Account\RegisterResult.cshtml" />
     <Content Include="Views\Account\TenantSelection.cshtml" />
     <Content Include="Views\Layout\_UserMenuOrLoginLink.cshtml" />
+    <Content Include="Views\Tenants\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

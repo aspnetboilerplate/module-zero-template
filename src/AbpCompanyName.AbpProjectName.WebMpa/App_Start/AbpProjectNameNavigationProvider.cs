@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
+using AbpCompanyName.AbpProjectName.Authorization;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa
 {
@@ -17,19 +18,32 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                 .AddItem(
                     new MenuItemDefinition(
                         "Home",
-                        new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
+                        L("HomePage"),
                         url: "/",
                         icon: "fa fa-home",
                         requiresAuthentication: true
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "Tenants",
+                        L("Tenants"),
+                        url: "/Tenants",
+                        icon: "fa fa-globe",
+                        requiredPermissionName: PermissionNames.Pages_Tenants
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "About",
-                        new LocalizableString("About", AbpProjectNameConsts.LocalizationSourceName),
+                        L("About"),
                         url: "/About",
                         icon: "fa fa-info"
                         )
                 );
+        }
+
+        private static ILocalizableString L(string name)
+        {
+            return new LocalizableString(name, AbpProjectNameConsts.LocalizationSourceName);
         }
     }
 }
