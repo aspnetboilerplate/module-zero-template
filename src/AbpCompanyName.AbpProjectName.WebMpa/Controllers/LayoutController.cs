@@ -1,7 +1,9 @@
 ﻿using System.Web.Mvc;
 using Abp.Application.Navigation;
+using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Threading;
+using AbpCompanyName.AbpProjectName.Sessions;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
@@ -10,11 +12,19 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
     {
         private readonly IUserNavigationManager _userNavigationManager;
         private readonly ILocalizationManager _localizationManager;
+        private readonly ISessionAppService _sessionAppService;
+        private readonly IMultiTenancyConfig _multiTenancyConfig;
 
-        public LayoutController(IUserNavigationManager userNavigationManager, ILocalizationManager localizationManager)
+        public LayoutController(
+            IUserNavigationManager userNavigationManager, 
+            ILocalizationManager localizationManager,
+            ISessionAppService sessionAppService, 
+            IMultiTenancyConfig multiTenancyConfig)
         {
             _userNavigationManager = userNavigationManager;
             _localizationManager = localizationManager;
+            _sessionAppService = sessionAppService;
+            _multiTenancyConfig = multiTenancyConfig;
         }
 
         [ChildActionOnly]
@@ -39,6 +49,31 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                         };
 
             return PartialView("_LanguageSelection", model);
+        }
+
+
+        [ChildActionOnly]
+        public PartialViewResult UserMenuOrLoginLink()
+        {
+            UserMenuOrLoginLinkViewModel model;
+
+            if (AbpSession.UserId.HasValue)
+            {
+                model = new UserMenuOrLoginLinkViewModel
+                {
+                    LoginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations()),
+                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,
+                };
+            }
+            else
+            {
+                model = new UserMenuOrLoginLinkViewModel
+                {
+                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled                    
+                };
+            }
+
+            return PartialView("_UserMenuOrLoginLink", model);
         }
     }
 }

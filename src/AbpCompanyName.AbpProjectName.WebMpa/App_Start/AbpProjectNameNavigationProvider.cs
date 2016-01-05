@@ -19,7 +19,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "Home",
                         new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
                         url: "/",
-                        icon: "fa fa-home"
+                        icon: "fa fa-home",
+                        requiresAuthentication: true
                         )
                 ).AddItem(
                     new MenuItemDefinition(
