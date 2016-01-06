@@ -7,8 +7,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 {
     public class DefaultLanguagesBuilder
     {
-        private readonly AbpProjectNameDbContext _context;
         public static List<ApplicationLanguage> InitialLanguages { get; private set; }
+
+        private readonly AbpProjectNameDbContext _context;
 
         static DefaultLanguagesBuilder()
         {
