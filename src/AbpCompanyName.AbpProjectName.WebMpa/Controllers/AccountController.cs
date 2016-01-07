@@ -18,11 +18,11 @@ using Abp.Web.Mvc.Models;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
+using AbpCompanyName.AbpProjectName.WebMpa.Controllers.Results;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using MyCompanyName.AbpZeroTemplate.Web.Controllers.Results;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
 {
