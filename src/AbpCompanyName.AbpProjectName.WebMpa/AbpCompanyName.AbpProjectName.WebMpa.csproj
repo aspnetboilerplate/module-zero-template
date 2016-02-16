@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AbpCompanyName.AbpProjectName.WebMpa</RootNamespace>
     <AssemblyName>AbpCompanyName.AbpProjectName.WebMpa</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -42,36 +42,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.7.8.0\lib\net452\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.8.0.1\lib\net461\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.0.7.8.0\lib\net452\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.0.8.0.1\lib\net461\Abp.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.EntityFramework.0.7.8.0\lib\net452\Abp.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.0.8.0.1\lib\net461\Abp.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.0.7.8.0\lib\net452\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.HangFire, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.HangFire.0.8.0.1\lib\net461\Abp.HangFire.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.0.7.8.0\lib\net452\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Owin, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Owin.0.8.0.1\lib\net461\Abp.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Mvc.0.7.8.0\lib\net452\Abp.Web.Mvc.dll</HintPath>
+    <Reference Include="Abp.Web, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.0.8.0.1\lib\net461\Abp.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.0.7.7.0\lib\net452\Abp.Zero.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.0.8.0.1\lib\net461\Abp.Web.Api.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.7.0\lib\net452\Abp.Zero.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.0.8.0.1\lib\net461\Abp.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.SignalR.0.8.0.1\lib\net461\Abp.Web.SignalR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.8.0.1\lib\net461\Abp.Zero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.0.8.0.1\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -110,6 +122,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Hangfire.Core, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.5.3\lib\net45\Hangfire.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.5.3\lib\net45\Hangfire.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +140,10 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -179,9 +203,9 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.0.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
@@ -249,6 +273,7 @@
     <Content Include="Abp\Framework\scripts\libs\abp.blockUI.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.jquery.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.jtable.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.signalr.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.sweet-alert.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />

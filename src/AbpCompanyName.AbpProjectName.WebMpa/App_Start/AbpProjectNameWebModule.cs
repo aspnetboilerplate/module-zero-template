@@ -2,17 +2,23 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Abp.Hangfire;
+using Abp.Hangfire.Configuration;
 using Abp.Zero.Configuration;
 using Abp.Modules;
 using Abp.Web.Mvc;
+using Abp.Web.SignalR;
 using AbpCompanyName.AbpProjectName.Api;
+using Hangfire;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa
 {
     [DependsOn(
-        typeof(AbpProjectNameDataModule), 
-        typeof(AbpProjectNameApplicationModule), 
+        typeof(AbpProjectNameDataModule),
+        typeof(AbpProjectNameApplicationModule),
         typeof(AbpProjectNameWebApiModule),
+        typeof(AbpWebSignalRModule),
+         typeof(AbpHangfireModule),
         typeof(AbpWebMvcModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
@@ -23,6 +29,12 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<AbpProjectNameNavigationProvider>();
+
+            //Configure Hangfire
+            Configuration.BackgroundJobs.UseHangfire(configuration =>
+            {
+                configuration.GlobalConfiguration.UseSqlServerStorage("Default");
+            });
         }
 
         public override void Initialize()

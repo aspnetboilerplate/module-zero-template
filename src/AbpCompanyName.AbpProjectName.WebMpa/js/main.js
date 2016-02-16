@@ -4,6 +4,10 @@
         return;
     }
 
+    abp.event.on('abp.notifications.received', function (userNotification) {
+        console.log(userNotification);
+    });
+
     $.fn.serializeFormToObject = function () {
         //serialize to array
         var data = $(this).serializeArray();

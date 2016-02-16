@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using Abp.Owin;
 using AbpCompanyName.AbpProjectName.Api.Controllers;
 using AbpCompanyName.AbpProjectName.WebMpa;
 using Microsoft.AspNet.Identity;
@@ -18,6 +19,9 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseAbp();
+            app.MapSignalR();
+
             app.UseOAuthBearerAuthentication(AccountController.OAuthBearerOptions);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
