@@ -20,16 +20,15 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
         public void Configuration(IAppBuilder app)
         {
             app.UseAbp();
-            app.MapSignalR();
-
+           
             app.UseOAuthBearerAuthentication(AccountController.OAuthBearerOptions);
-
+            
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login")
             });
-
+           
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             if (IsTrue("ExternalAuth.Facebook.IsEnabled"))
@@ -46,6 +45,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
             {
                 app.UseGoogleAuthentication(CreateGoogleAuthOptions());
             }
+
+            app.MapSignalR();
         }
 
         private static FacebookAuthenticationOptions CreateFacebookAuthOptions()

@@ -20,7 +20,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
         public void Configuration(IAppBuilder app)
         {
             app.UseAbp();
-            app.MapSignalR();
 
             app.UseOAuthBearerAuthentication(AccountController.OAuthBearerOptions);
 
@@ -46,6 +45,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             {
                 app.UseGoogleAuthentication(CreateGoogleAuthOptions());
             }
+
+            app.MapSignalR();
         }
 
         private static FacebookAuthenticationOptions CreateFacebookAuthOptions()

@@ -18,7 +18,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
         typeof(AbpProjectNameApplicationModule),
         typeof(AbpProjectNameWebApiModule),
         typeof(AbpWebSignalRModule),
-         typeof(AbpHangfireModule),
+        typeof(AbpHangfireModule),
         typeof(AbpWebMvcModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
