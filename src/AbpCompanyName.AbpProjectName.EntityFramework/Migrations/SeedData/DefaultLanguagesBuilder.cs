@@ -19,7 +19,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
                 new ApplicationLanguage(null, "tr", "Türkçe", "famfamfam-flag-tr"),
                 new ApplicationLanguage(null, "zh-CN", "简体中文", "famfamfam-flag-cn"),
                 new ApplicationLanguage(null, "pt-BR", "Português-BR", "famfamfam-flag-br"),
-                new ApplicationLanguage(null, "es", "Español", "famfamfam-flag-es")
+                new ApplicationLanguage(null, "es", "Español", "famfamfam-flag-es"),
+                new ApplicationLanguage(null, "fr", "Français", "famfamfam-flag-fr")
             };
         }
 
