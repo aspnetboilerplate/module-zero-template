@@ -43,5 +43,6 @@
     <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
     <text name="Logout" value="Logout" />
 
+    <text name="RegisterFormUserNameInvalidMessage">Please dont enter an email address for username.</text>
   </texts>
 </localizationDictionary>

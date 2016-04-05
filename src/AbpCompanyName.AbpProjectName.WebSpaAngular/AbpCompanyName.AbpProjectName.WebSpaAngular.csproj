@@ -1216,6 +1216,7 @@
     <Content Include="Views\Account\Login.min.css">
       <DependentUpon>Login.css</DependentUpon>
     </Content>
+    <Content Include="Views\Account\Register.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -43,5 +43,6 @@
     <text name="TenantSelection_Detail" value="Lütfen aşağıdaki müşterilerden birisini seçin." />
     <text name="Logout" value="Çıkış" />
 
+    <text name="RegisterFormUserNameInvalidMessage">Lütfen kullanıcı adı alanına e-posta adresi girmeyin.</text>
   </texts>
 </localizationDictionary>
