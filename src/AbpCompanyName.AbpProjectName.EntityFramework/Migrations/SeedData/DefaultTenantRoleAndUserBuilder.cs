@@ -113,6 +113,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
                         _context.Permissions.Add(
                             new RolePermissionSetting
                             {
+                                TenantId = defaultTenant.Id,
                                 Name = permission.Name,
                                 IsGranted = true,
                                 RoleId = adminRoleForDefaultTenant.Id
