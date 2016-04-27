@@ -3,7 +3,7 @@ using AbpCompanyName.AbpProjectName.Users;
 
 namespace AbpCompanyName.AbpProjectName.MultiTenancy
 {
-    public class Tenant : AbpTenant<Tenant, User>
+    public class Tenant : AbpTenant<User>
     {
         public Tenant()
         {
