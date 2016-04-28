@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using Abp;
 using Abp.Collections;
 using Abp.Configuration.Startup;
+using Abp.Domain.Uow;
 using Abp.Modules;
 using Abp.Runtime.Session;
 using Abp.TestBase;
@@ -13,16 +16,32 @@ using AbpCompanyName.AbpProjectName.Migrations.SeedData;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
 using Castle.MicroKernel.Registration;
+using Effort;
 using EntityFramework.DynamicFilters;
 
 namespace AbpCompanyName.AbpProjectName.Tests
 {
     public abstract class AbpProjectNameTestBase : AbpIntegratedTestBase
     {
+        private DbConnection _hostDb;
+        private Dictionary<int, DbConnection> _tenantDbs; //only used for db per tenant architecture
+
         protected AbpProjectNameTestBase()
         {
-            //Seed initial data
-            UsingDbContext(context => new InitialDataBuilder(context).Build());
+            //Seed initial data for host
+            AbpSession.TenantId = null;
+            UsingDbContext(context =>
+            {
+                new InitialHostDbBuilder(context).Create();
+                new DefaultTenantCreator(context).Create();
+            });
+
+            //Seed initial data for default tenant
+            AbpSession.TenantId = 1;
+            UsingDbContext(context =>
+            {
+                new TenantRoleAndUserBuilder(context, 1).Create();
+            });
 
             LoginAsDefaultTenantAdmin();
         }
@@ -31,11 +50,57 @@ namespace AbpCompanyName.AbpProjectName.Tests
         {
             base.PreInitialize();
 
-            //Fake DbConnection using Effort!
+            /* You can switch database architecture here: */
+            UseSingleDatabase();
+            //UseDatabasePerTenant();
+        }
+
+        /* Uses single database for host and all tenants.
+         */
+        private void UseSingleDatabase()
+        {
+            _hostDb = DbConnectionFactory.CreateTransient();
+
             LocalIocManager.IocContainer.Register(
                 Component.For<DbConnection>()
-                    .UsingFactoryMethod(Effort.DbConnectionFactory.CreateTransient)
+                    .UsingFactoryMethod(() => _hostDb)
                     .LifestyleSingleton()
+                );
+        }
+
+        /* Uses single database for host and Default tenant,
+         * but dedicated databases for all other tenants.
+         */
+        private void UseDatabasePerTenant()
+        {
+            _hostDb = DbConnectionFactory.CreateTransient();
+            _tenantDbs = new Dictionary<int, DbConnection>();
+
+            LocalIocManager.IocContainer.Register(
+                Component.For<DbConnection>()
+                    .UsingFactoryMethod((kernel) =>
+                    {
+                        lock (_tenantDbs)
+                        {
+                            var currentUow = kernel.Resolve<ICurrentUnitOfWorkProvider>().Current;
+                            var abpSession = kernel.Resolve<IAbpSession>();
+
+                            var tenantId = currentUow != null ? currentUow.GetTenantId() : abpSession.TenantId;
+
+                            if (tenantId == null || tenantId == 1) //host and default tenant are stored in host db
+                            {
+                                return _hostDb;
+                            }
+
+                            if (!_tenantDbs.ContainsKey(tenantId.Value))
+                            {
+                                _tenantDbs[tenantId.Value] = DbConnectionFactory.CreateTransient();
+                            }
+
+                            return _tenantDbs[tenantId.Value];
+                        }
+                    }, true)
+                    .LifestyleTransient()
                 );
         }
 
@@ -48,29 +113,98 @@ namespace AbpCompanyName.AbpProjectName.Tests
             modules.Add<AbpProjectNameDataModule>();
         }
 
-        public void UsingDbContext(Action<AbpProjectNameDbContext> action)
+        #region UsingDbContext
+
+        protected IDisposable UsingTenantId(int? tenantId)
         {
-            using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
+            var previousTenantId = AbpSession.TenantId;
+            AbpSession.TenantId = tenantId;
+            return new DisposeAction(() => AbpSession.TenantId = previousTenantId);
+        }
+
+        protected void UsingDbContext(Action<AbpProjectNameDbContext> action)
+        {
+            UsingDbContext(AbpSession.TenantId, action);
+        }
+
+        protected Task UsingDbContextAsync(Action<AbpProjectNameDbContext> action)
+        {
+            return UsingDbContextAsync(AbpSession.TenantId, action);
+        }
+
+        protected T UsingDbContext<T>(Func<AbpProjectNameDbContext, T> func)
+        {
+            return UsingDbContext(AbpSession.TenantId, func);
+        }
+
+        protected Task<T> UsingDbContextAsync<T>(Func<AbpProjectNameDbContext, Task<T>> func)
+        {
+            return UsingDbContextAsync(AbpSession.TenantId, func);
+        }
+
+        protected void UsingDbContext(int? tenantId, Action<AbpProjectNameDbContext> action)
+        {
+            using (UsingTenantId(tenantId))
             {
-                context.DisableAllFilters();
-                action(context);
-                context.SaveChanges();
+                using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
+                {
+                    context.DisableAllFilters();
+                    action(context);
+                    context.SaveChanges();
+                }
             }
         }
 
-        public T UsingDbContext<T>(Func<AbpProjectNameDbContext, T> func)
+        protected async Task UsingDbContextAsync(int? tenantId, Action<AbpProjectNameDbContext> action)
+        {
+            using (UsingTenantId(tenantId))
+            {
+                using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
+                {
+                    context.DisableAllFilters();
+                    action(context);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
+
+        protected T UsingDbContext<T>(int? tenantId, Func<AbpProjectNameDbContext, T> func)
         {
             T result;
 
-            using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
+            using (UsingTenantId(tenantId))
             {
-                context.DisableAllFilters();
-                result = func(context);
-                context.SaveChanges();
+                using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
+                {
+                    context.DisableAllFilters();
+                    result = func(context);
+                    context.SaveChanges();
+                }
             }
 
             return result;
         }
+
+        protected async Task<T> UsingDbContextAsync<T>(int? tenantId, Func<AbpProjectNameDbContext, Task<T>> func)
+        {
+            T result;
+
+            using (UsingTenantId(tenantId))
+            {
+                using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
+                {
+                    context.DisableAllFilters();
+                    result = await func(context);
+                    await context.SaveChangesAsync();
+                }
+            }
+
+            return result;
+        }
+
+        #endregion
+
+        #region Login
 
         protected void LoginAsHostAdmin()
         {
@@ -88,7 +222,10 @@ namespace AbpCompanyName.AbpProjectName.Tests
 
             AbpSession.TenantId = null;
 
-            var user = UsingDbContext(context => context.Users.FirstOrDefault(u => u.TenantId == AbpSession.TenantId && u.UserName == userName));
+            var user =
+                UsingDbContext(
+                    context =>
+                        context.Users.FirstOrDefault(u => u.TenantId == AbpSession.TenantId && u.UserName == userName));
             if (user == null)
             {
                 throw new Exception("There is no user: " + userName + " for host.");
@@ -107,7 +244,10 @@ namespace AbpCompanyName.AbpProjectName.Tests
 
             AbpSession.TenantId = tenant.Id;
 
-            var user = UsingDbContext(context => context.Users.FirstOrDefault(u => u.TenantId == AbpSession.TenantId && u.UserName == userName));
+            var user =
+                UsingDbContext(
+                    context =>
+                        context.Users.FirstOrDefault(u => u.TenantId == AbpSession.TenantId && u.UserName == userName));
             if (user == null)
             {
                 throw new Exception("There is no user: " + userName + " for tenant: " + tenancyName);
@@ -116,6 +256,8 @@ namespace AbpCompanyName.AbpProjectName.Tests
             AbpSession.UserId = user.Id;
         }
 
+        #endregion
+        
         /// <summary>
         /// Gets current user if <see cref="IAbpSession.UserId"/> is not null.
         /// Throws exception if it's null.
