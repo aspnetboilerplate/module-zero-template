@@ -1,10 +1,11 @@
 using System.Data.Entity.Migrations;
+using Abp.Zero.EntityFramework;
 using AbpCompanyName.AbpProjectName.Migrations.SeedData;
 using EntityFramework.DynamicFilters;
 
 namespace AbpCompanyName.AbpProjectName.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<AbpProjectName.EntityFramework.AbpProjectNameDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<AbpProjectName.EntityFramework.AbpProjectNameDbContext>, ISupportSeedMode
     {
         public SeedMode SeedMode { get; set; }
 

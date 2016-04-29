@@ -161,6 +161,7 @@
     <Compile Include="Migrations\201604281237494_Added_ConnectionString_To_Tenant.Designer.cs">
       <DependentUpon>201604281237494_Added_ConnectionString_To_Tenant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AbpProjectNameDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsCreator.cs" />
@@ -169,7 +170,6 @@
     <Compile Include="Migrations\SeedData\DefaultTenantCreator.cs" />
     <Compile Include="Migrations\SeedData\HostRoleAndUserCreator.cs" />
     <Compile Include="Migrations\SeedData\InitialHostDbBuilder.cs" />
-    <Compile Include="Migrations\SeedData\SeedMode.cs" />
     <Compile Include="Migrations\SeedData\TenantRoleAndUserBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

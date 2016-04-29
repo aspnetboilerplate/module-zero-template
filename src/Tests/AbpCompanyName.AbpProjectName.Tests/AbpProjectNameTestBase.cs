@@ -109,8 +109,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             base.AddModules(modules);
 
             //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<AbpProjectNameApplicationModule>();
-            modules.Add<AbpProjectNameDataModule>();
+            modules.Add<AbpProjectNameTestModule>();
         }
 
         #region UsingDbContext

@@ -7,7 +7,8 @@
             vm.tenant = {
                 tenancyName: '',
                 name: '',
-                adminEmailAddress: ''
+                adminEmailAddress: '',
+                connectionString: ''
             };
 
             vm.save = function () {

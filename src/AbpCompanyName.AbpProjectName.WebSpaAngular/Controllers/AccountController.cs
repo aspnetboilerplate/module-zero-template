@@ -243,8 +243,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 user.Password = new PasswordHasher().HashPassword(model.Password);
 
                 //Switch to the tenant
-                _unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant);
-                _unitOfWorkManager.Current.SetFilterParameter(AbpDataFilters.MayHaveTenant, AbpDataFilters.Parameters.TenantId, tenant.Id);
+                _unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant); //TODO: Needed?
+                _unitOfWorkManager.Current.SetTenantId(tenant.Id);
 
                 //Add default roles
                 user.Roles = new List<UserRole>();
