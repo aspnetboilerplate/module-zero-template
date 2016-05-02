@@ -158,6 +158,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sessions\SessionAppService_Tests.cs" />
     <Compile Include="AbpProjectNameTestBase.cs" />
+    <Compile Include="Users\UserAppService_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
