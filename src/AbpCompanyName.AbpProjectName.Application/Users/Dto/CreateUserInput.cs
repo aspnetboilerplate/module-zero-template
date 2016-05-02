@@ -9,16 +9,16 @@ namespace AbpCompanyName.AbpProjectName.Users.Dto
     public class CreateUserInput : IInputDto
     {
         [Required]
+        [StringLength(AbpUserBase.MaxUserNameLength)]
+        public string UserName { get; set; }
+
+        [Required]
         [StringLength(User.MaxNameLength)]
         public string Name { get; set; }
 
         [Required]
         [StringLength(User.MaxSurnameLength)]
         public string Surname { get; set; }
-
-        [Required]
-        [StringLength(AbpUserBase.MaxUserNameLength)]
-        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]

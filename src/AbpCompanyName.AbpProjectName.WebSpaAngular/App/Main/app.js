@@ -18,6 +18,16 @@
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
 
+            if (abp.auth.hasPermission('Pages.Users')) {
+                $stateProvider
+                    .state('users', {
+                        url: '/users',
+                        templateUrl: '/App/Main/views/users/index.cshtml',
+                        menu: 'Users' //Matches to name of 'Users' menu in AbpProjectNameNavigationProvider
+                    });
+                $urlRouterProvider.otherwise('/users');
+            }
+
             if (abp.auth.hasPermission('Pages.Tenants')) {
                 $stateProvider
                     .state('tenants', {

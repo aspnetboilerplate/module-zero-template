@@ -66,7 +66,6 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
                 adminUserForHost = _context.Users.Add(
                     new User
                     {
-                        TenantId = null,
                         UserName = User.AdminUserName,
                         Name = "System",
                         Surname = "Administrator",

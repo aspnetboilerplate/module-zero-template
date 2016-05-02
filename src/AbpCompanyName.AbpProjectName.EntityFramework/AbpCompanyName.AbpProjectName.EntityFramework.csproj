@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201604281237494_Added_ConnectionString_To_Tenant.Designer.cs">
       <DependentUpon>201604281237494_Added_ConnectionString_To_Tenant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605021116147_Created_Table_AbpUserAccounts.cs" />
+    <Compile Include="Migrations\201605021116147_Created_Table_AbpUserAccounts.Designer.cs">
+      <DependentUpon>201605021116147_Created_Table_AbpUserAccounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AbpProjectNameDataModule.cs" />
@@ -222,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604281237494_Added_ConnectionString_To_Tenant.resx">
       <DependentUpon>201604281237494_Added_ConnectionString_To_Tenant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605021116147_Created_Table_AbpUserAccounts.resx">
+      <DependentUpon>201605021116147_Created_Table_AbpUserAccounts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

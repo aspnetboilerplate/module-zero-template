@@ -44,6 +44,13 @@
     <text name="Logout" value="Logout" />
 
     <text name="RegisterFormUserNameInvalidMessage">Please dont enter an email address for username.</text>
+
     <text name="DatabaseConnectionString" value="Database connection string" />
+    <text name="Users" value="Users" />
+    <text name="IsActive" value="Is active" />
+    <text name="FullName" value="Full name" />
+    <text name="CreateNewUser" value="Create new user" />
+    <text name="Yes" value="Yes" />
+    <text name="No" value="No" />
   </texts>
 </localizationDictionary>

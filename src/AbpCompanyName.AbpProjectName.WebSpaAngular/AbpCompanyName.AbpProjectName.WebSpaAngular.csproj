@@ -305,6 +305,8 @@
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\home\home.js" />
     <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\users\createModal.js" />
+    <Content Include="App\Main\views\users\index.js" />
     <Content Include="App\Main\views\tenants\createModal.js" />
     <Content Include="App\Main\views\tenants\index.js" />
     <Content Include="Common\Scripts\helpers.js" />
@@ -433,6 +435,8 @@
     <Content Include="Abp\Framework\styles\abp.mixings.less" />
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="App\Main\views\users\createModal.cshtml" />
+    <Content Include="App\Main\views\users\index.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

@@ -4,11 +4,14 @@ using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
+using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Users.Dto;
+using Microsoft.AspNet.Identity;
 
 namespace AbpCompanyName.AbpProjectName.Users
 {
     /* THIS IS JUST A SAMPLE. */
+    [AbpAuthorize(PermissionNames.Pages_Users)]
     public class UserAppService : AbpProjectNameAppServiceBase, IUserAppService
     {
         private readonly IRepository<User, long> _userRepository;
@@ -46,7 +49,10 @@ namespace AbpCompanyName.AbpProjectName.Users
         public async Task CreateUser(CreateUserInput input)
         {
             var user = input.MapTo<User>();
+
             user.TenantId = AbpSession.TenantId;
+            user.Password = new PasswordHasher().HashPassword(input.Password);
+            user.IsEmailConfirmed = true;
 
             await UserManager.CreateAsync(user);
         }

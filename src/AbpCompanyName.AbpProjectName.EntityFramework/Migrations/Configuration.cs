@@ -13,6 +13,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "AbpProjectName";
+            SeedMode = SeedMode.Host;
         }
 
         protected override void Seed(AbpProjectName.EntityFramework.AbpProjectNameDbContext context)
