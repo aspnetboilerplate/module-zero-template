@@ -1,4 +1,5 @@
-﻿@using Abp.Web.Mvc.Extensions
+﻿@using Abp.MultiTenancy
+@using Abp.Web.Mvc.Extensions
 @using AbpCompanyName.AbpProjectName.MultiTenancy
 @model Abp.Application.Services.Dto.ListResultOutput<AbpCompanyName.AbpProjectName.MultiTenancy.Dto.TenantListDto>
 @{
@@ -56,6 +57,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label>@L("DatabaseConnectionString")</label>
+                        <input type="text" name="ConnectionString" class="form-control" maxlength="@AbpTenantBase.MaxConnectionStringLength">
+                    </div>
+
+                    <div class="form-group">
                         <label>@L("AdminEmailAddress")</label>
                         <input type="email" name="AdminEmailAddress" class="form-control" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxEmailAddressLength">
                     </div>
@@ -65,7 +71,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
-                    <button type="submit" class="btn btn-primary blue" ng-disabled="tenantCreateForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+                    <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
                 </div>
             </form>
         </div>

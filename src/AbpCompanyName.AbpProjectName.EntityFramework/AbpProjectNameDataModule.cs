@@ -11,6 +11,8 @@ namespace AbpCompanyName.AbpProjectName
     {
         public override void PreInitialize()
         {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<AbpProjectNameDbContext>());
+
             Configuration.DefaultNameOrConnectionString = "Default";
         }
 

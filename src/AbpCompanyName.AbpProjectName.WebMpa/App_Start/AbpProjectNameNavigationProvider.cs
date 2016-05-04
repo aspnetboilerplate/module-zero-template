@@ -33,6 +33,14 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "Users",
+                        L("Users"),
+                        url: "/Users",
+                        icon: "fa fa-users",
+                        requiredPermissionName: PermissionNames.Pages_Users
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "About",
                         L("About"),
                         url: "/About",

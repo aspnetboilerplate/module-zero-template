@@ -5,16 +5,16 @@ using AbpCompanyName.AbpProjectName.EntityFramework;
 
 namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 {
-    public class DefaultEditionsBuilder
+    public class DefaultEditionsCreator
     {
         private readonly AbpProjectNameDbContext _context;
 
-        public DefaultEditionsBuilder(AbpProjectNameDbContext context)
+        public DefaultEditionsCreator(AbpProjectNameDbContext context)
         {
             _context = context;
         }
 
-        public void Build()
+        public void Create()
         {
             CreateEditions();
         }

@@ -5,13 +5,13 @@ using AbpCompanyName.AbpProjectName.EntityFramework;
 
 namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 {
-    public class DefaultLanguagesBuilder
+    public class DefaultLanguagesCreator
     {
         public static List<ApplicationLanguage> InitialLanguages { get; private set; }
 
         private readonly AbpProjectNameDbContext _context;
 
-        static DefaultLanguagesBuilder()
+        static DefaultLanguagesCreator()
         {
             InitialLanguages = new List<ApplicationLanguage>
             {
@@ -24,12 +24,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
             };
         }
 
-        public DefaultLanguagesBuilder(AbpProjectNameDbContext context)
+        public DefaultLanguagesCreator(AbpProjectNameDbContext context)
         {
             _context = context;
         }
 
-        public void Build()
+        public void Create()
         {
             CreateLanguages();
         }

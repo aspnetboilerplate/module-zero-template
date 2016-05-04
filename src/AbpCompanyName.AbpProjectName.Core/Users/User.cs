@@ -1,12 +1,11 @@
 ﻿using System;
 using Abp.Authorization.Users;
 using Abp.Extensions;
-using AbpCompanyName.AbpProjectName.MultiTenancy;
 using Microsoft.AspNet.Identity;
 
 namespace AbpCompanyName.AbpProjectName.Users
 {
-    public class User : AbpUser<Tenant, User>
+    public class User : AbpUser<User>
     {
         public const string DefaultPassword = "123qwe";
 

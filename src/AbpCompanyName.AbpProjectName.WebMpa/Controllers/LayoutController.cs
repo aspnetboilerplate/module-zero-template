@@ -2,6 +2,7 @@
 using Abp.Application.Navigation;
 using Abp.Configuration.Startup;
 using Abp.Localization;
+using Abp.Runtime.Session;
 using Abp.Threading;
 using AbpCompanyName.AbpProjectName.Sessions;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
@@ -32,7 +33,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         {
             var model = new TopMenuViewModel
                         {
-                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.UserId)),
+                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
                             ActiveMenuItemName = activeMenu
                         };
 

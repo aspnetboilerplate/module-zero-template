@@ -32,6 +32,14 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "Users",
+                        L("Users"),
+                        url: "#users",
+                        icon: "fa fa-users",
+                        requiredPermissionName: PermissionNames.Pages_Users
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "About",
                         new LocalizableString("About", AbpProjectNameConsts.LocalizationSourceName),
                         url: "#/about",

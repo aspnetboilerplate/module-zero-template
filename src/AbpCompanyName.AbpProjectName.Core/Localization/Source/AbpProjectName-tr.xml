@@ -44,5 +44,13 @@
     <text name="Logout" value="Çıkış" />
 
     <text name="RegisterFormUserNameInvalidMessage">Lütfen kullanıcı adı alanına e-posta adresi girmeyin.</text>
+
+    <text name="DatabaseConnectionString" value="Veritabanı bağlantı cümlesi" />
+    <text name="Users" value="Kullanıcılar" />
+    <text name="IsActive" value="Etkin mi" />
+    <text name="FullName" value="Tam adı" />
+    <text name="CreateNewUser" value="Yeni kullanıcı oluştur" />
+    <text name="Yes" value="Evet" />
+    <text name="No" value="Hayır" />
   </texts>
 </localizationDictionary>
