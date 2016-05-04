@@ -5,6 +5,7 @@ using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.MultiTenancy;
+using Abp.Runtime.Security;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 
 namespace AbpCompanyName.AbpProjectName.Migrator
@@ -74,7 +75,7 @@ namespace AbpCompanyName.AbpProjectName.Migrator
                 Log.Write("Name              : " + tenant.Name);
                 Log.Write("TenancyName       : " + tenant.TenancyName);
                 Log.Write("Tenant Id         : " + tenant.Id);
-                Log.Write("Connection string : " + tenant.ConnectionString);
+                Log.Write("Connection string : " + SimpleStringCipher.Instance.Decrypt(tenant.ConnectionString));
 
                 if (!migratedDatabases.Contains(tenant.ConnectionString))
                 {

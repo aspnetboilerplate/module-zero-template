@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.AutoMapper;
-using Abp.Domain.Uow;
+using Abp.Extensions;
 using Abp.MultiTenancy;
+using Abp.Runtime.Security;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.Editions;
@@ -48,6 +49,10 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy
         {
             //Create tenant
             var tenant = input.MapTo<Tenant>();
+            tenant.ConnectionString = input.ConnectionString.IsNullOrEmpty()
+                ? null
+                : SimpleStringCipher.Instance.Encrypt(input.ConnectionString);
+
             var defaultEdition = await _editionManager.FindByNameAsync(EditionManager.DefaultEditionName);
             if (defaultEdition != null)
             {
