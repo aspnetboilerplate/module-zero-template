@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
+using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
@@ -16,13 +17,16 @@ namespace AbpCompanyName.AbpProjectName.Migrator
 
         private readonly IAbpZeroDbMigrator _migrator;
         private readonly IRepository<Tenant> _tenantRepository;
+        private readonly IDbPerTenantConnectionStringResolver _connectionStringResolver;
 
         public MultiTenantMigrateExecuter(
             IAbpZeroDbMigrator migrator, 
             IRepository<Tenant> tenantRepository,
-            Log log)
+            Log log, 
+            IDbPerTenantConnectionStringResolver connectionStringResolver)
         {
             Log = log;
+            _connectionStringResolver = connectionStringResolver;
 
             _migrator = migrator;
             _tenantRepository = tenantRepository;
@@ -30,14 +34,14 @@ namespace AbpCompanyName.AbpProjectName.Migrator
 
         public void Run(bool skipConnVerification)
         {
-            var connStr = ConfigurationManager.ConnectionStrings["Default"];
-            if (connStr == null || connStr.ConnectionString.IsNullOrWhiteSpace())
+            var hostConnStr = _connectionStringResolver.GetNameOrConnectionString(new ConnectionStringResolveArgs(MultiTenancySides.Host));
+            if (hostConnStr.IsNullOrWhiteSpace())
             {
                 Log.Write("Configuration file should contain a connection string named 'Default'");
                 return;
             }
 
-            Log.Write("Host database: " + connStr.ConnectionString);
+            Log.Write("Host database: " + hostConnStr);
             if (!skipConnVerification)
             {
                 Log.Write("Continue to migration for this host database and all tenants..? (Y/N): ");
