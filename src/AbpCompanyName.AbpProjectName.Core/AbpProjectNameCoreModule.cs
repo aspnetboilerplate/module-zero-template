@@ -16,6 +16,8 @@ namespace AbpCompanyName.AbpProjectName
     {
         public override void PreInitialize()
         {
+            Configuration.Auditing.IsEnabledForAnonymousUsers = true;
+
             //Declare entity types
             Configuration.Modules.Zero().EntityTypes.Tenant = typeof(Tenant);
             Configuration.Modules.Zero().EntityTypes.Role = typeof(Role);

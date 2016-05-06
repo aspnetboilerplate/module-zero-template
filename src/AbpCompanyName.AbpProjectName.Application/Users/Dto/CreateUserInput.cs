@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
+using Abp.Auditing;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 
@@ -27,6 +28,7 @@ namespace AbpCompanyName.AbpProjectName.Users.Dto
 
         [Required]
         [StringLength(User.MaxPlainPasswordLength)]
+        [DisableAuditing]
         public string Password { get; set; }
 
         public bool IsActive { get; set; }

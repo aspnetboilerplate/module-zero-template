@@ -74,7 +74,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
         }
 
         [HttpPost]
-        [DisableAuditing]
         public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
         {
             CheckModelState();
