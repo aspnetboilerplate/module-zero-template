@@ -52,5 +52,6 @@
     <text name="CreateNewUser" value="Create new user" />
     <text name="Yes" value="Yes" />
     <text name="No" value="No" />
+    <text name="Optional" value="Optional" />
   </texts>
 </localizationDictionary>

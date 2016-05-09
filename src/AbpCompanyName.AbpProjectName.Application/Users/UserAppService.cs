@@ -54,7 +54,7 @@ namespace AbpCompanyName.AbpProjectName.Users
             user.Password = new PasswordHasher().HashPassword(input.Password);
             user.IsEmailConfirmed = true;
 
-            await UserManager.CreateAsync(user);
+            CheckErrors(await UserManager.CreateAsync(user));
         }
     }
 }
