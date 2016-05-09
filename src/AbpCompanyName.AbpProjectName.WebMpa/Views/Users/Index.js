@@ -22,7 +22,7 @@
                 location.reload(true); //reload page to see new user!
             }).always(function () {
                 abp.ui.clearBusy(_$modal);
-            });;
+            });
         });
         
         _$modal.on('shown.bs.modal', function () {
