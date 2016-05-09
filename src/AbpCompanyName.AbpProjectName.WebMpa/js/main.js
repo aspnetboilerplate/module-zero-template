@@ -1,13 +1,11 @@
 ﻿(function($) {
     
-    if (!$) {
-        return;
-    }
-   
+    //Notification handler
     abp.event.on('abp.notifications.received', function (userNotification) {
-        console.log(userNotification);
+        abp.notifications.showUiNotifyForUserNotification(userNotification);
     });
 
+    //serializeFormToObject plugin for jQuery
     $.fn.serializeFormToObject = function () {
         //serialize to array
         var data = $(this).serializeArray();
@@ -23,5 +21,12 @@
 
         return obj;
     }
+
+    //Configure blockUI
+    (function ($) {
+        if ($.blockUI) {
+            $.blockUI.defaults.baseZ = 2000;
+        }
+    })(jQuery);
 
 })(jQuery);

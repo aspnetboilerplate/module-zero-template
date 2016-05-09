@@ -19,7 +19,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                     new MenuItemDefinition(
                         "Home",
                         L("HomePage"),
-                        url: "/",
+                        url: "",
                         icon: "fa fa-home",
                         requiresAuthentication: true
                         )
@@ -27,7 +27,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                     new MenuItemDefinition(
                         "Tenants",
                         L("Tenants"),
-                        url: "/Tenants",
+                        url: "Tenants",
                         icon: "fa fa-globe",
                         requiredPermissionName: PermissionNames.Pages_Tenants
                         )
@@ -35,7 +35,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                     new MenuItemDefinition(
                         "Users",
                         L("Users"),
-                        url: "/Users",
+                        url: "Users",
                         icon: "fa fa-users",
                         requiredPermissionName: PermissionNames.Pages_Users
                         )
@@ -43,7 +43,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                     new MenuItemDefinition(
                         "About",
                         L("About"),
-                        url: "/About",
+                        url: "About",
                         icon: "fa fa-info"
                         )
                 );

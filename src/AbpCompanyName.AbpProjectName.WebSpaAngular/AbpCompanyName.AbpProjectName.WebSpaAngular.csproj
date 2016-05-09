@@ -310,6 +310,7 @@
     <Content Include="App\Main\views\users\index.js" />
     <Content Include="App\Main\views\tenants\createModal.js" />
     <Content Include="App\Main\views\tenants\index.js" />
+    <Content Include="App\Main\_libconfig.js" />
     <Content Include="Common\Scripts\helpers.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
