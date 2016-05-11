@@ -8,7 +8,7 @@
     <text name="FormIsNotValidMessage" value="I dati non sono corretti. Verifica gli errori." />
     <text name="TenantNameCanNotBeEmpty" value="Il Dominio non può essere vuoto" />
 
-    <text name="InvalidUserNameOrPassword" value="username o password errati" />
+    <text name="InvalidUserNameOrPassword" value="Username o password errati" />
     <text name="ThereIsNoTenantDefinedWithName{0}" value="Il dominio {0} non esiste" />
     <text name="TenantIsNotActive" value="Il dominio {0} non è attivo." />
     <text name="UserIsNotActiveAndCanNotLogin" value="L'utente {0} non è attivo e non può fare login." />
@@ -19,7 +19,7 @@
     <text name="RememberMe" value="Ricordati di me" />
     <text name="LogIn" value="Log in" />
 
-    <text name="LoginFailed" value="Login fallito!" />
+    <text name="LoginFailed" value="Login errato!" />
 
     <text name="NameSurname" value="Nome e Cognome" />
     <text name="UserName" value="Username" />
@@ -43,5 +43,13 @@
     <text name="TenantSelection_Detail" value="Seleziona uno dei seguenti domini." />
     <text name="Logout" value="Logout" />
 
+    <text name="DatabaseConnectionString" value="String connession Database" />
+    <text name="Users" value="Utenti" />
+    <text name="IsActive" value="Attivo" />
+    <text name="FullName" value="Nome completo" />
+    <text name="CreateNewUser" value="Nuovo utente" />
+    <text name="Yes" value="Sì" />
+    <text name="No" value="No" />
+    <text name="Optional" value="Opzionale" />
   </texts>
 </localizationDictionary>
