@@ -115,9 +115,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\AbpProjectName-zh-CN.xml" />
     <EmbeddedResource Include="Localization\Source\AbpProjectName-tr.xml" />
-    <EmbeddedResource Include="Localization\Source\AbpProjectName.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Source\AbpProjectName.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\AbpProjectName-pt-BR.xml" />
@@ -132,9 +130,7 @@
     <EmbeddedResource Include="Localization\Source\AbpProjectName-it.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Localization\Source\AbpProjectName-ja.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Source\AbpProjectName-ja.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
