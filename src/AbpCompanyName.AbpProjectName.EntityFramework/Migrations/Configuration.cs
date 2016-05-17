@@ -1,26 +1,26 @@
 using System.Data.Entity.Migrations;
+using Abp.MultiTenancy;
 using Abp.Zero.EntityFramework;
 using AbpCompanyName.AbpProjectName.Migrations.SeedData;
 using EntityFramework.DynamicFilters;
 
 namespace AbpCompanyName.AbpProjectName.Migrations
 {
-    public sealed class Configuration : DbMigrationsConfiguration<AbpProjectName.EntityFramework.AbpProjectNameDbContext>, ISupportSeedMode
+    public sealed class Configuration : DbMigrationsConfiguration<AbpProjectName.EntityFramework.AbpProjectNameDbContext>, IMultiTenantSeed
     {
-        public SeedMode SeedMode { get; set; }
+        public AbpTenantBase Tenant { get; set; }
 
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "AbpProjectName";
-            SeedMode = SeedMode.Host;
         }
 
         protected override void Seed(AbpProjectName.EntityFramework.AbpProjectNameDbContext context)
         {
             context.DisableAllFilters();
 
-            if (SeedMode == SeedMode.Host)
+            if (Tenant == null)
             {
                 //Host seed
                 new InitialHostDbBuilder(context).Create();
@@ -29,9 +29,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 new DefaultTenantCreator(context).Create();
                 new TenantRoleAndUserBuilder(context, 1).Create();
             }
-            else if (SeedMode == SeedMode.Tenant)
+            else
             {
-                //You can add seed for tenant databases...
+                //You can add seed for tenant databases and use Tenant property...
             }
 
             context.SaveChanges();
