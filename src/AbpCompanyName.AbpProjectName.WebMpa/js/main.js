@@ -1,5 +1,5 @@
-﻿(function($) {
-    
+﻿(function ($) {
+
     //Notification handler
     abp.event.on('abp.notifications.received', function (userNotification) {
         abp.notifications.showUiNotifyForUserNotification(userNotification);
@@ -20,7 +20,7 @@
         data.map(function (x) { obj[x.name] = x.value; });
 
         return obj;
-    }
+    };
 
     //Configure blockUI
     (function ($) {
