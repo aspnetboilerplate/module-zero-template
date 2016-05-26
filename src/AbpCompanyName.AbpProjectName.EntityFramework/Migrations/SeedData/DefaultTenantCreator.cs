@@ -22,10 +22,10 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
         {
             //Default tenant
 
-            var defaultTenant = _context.Tenants.FirstOrDefault(t => t.TenancyName == "Default");
+            var defaultTenant = _context.Tenants.FirstOrDefault(t => t.TenancyName == Tenant.DefaultTenantName);
             if (defaultTenant == null)
             {
-                _context.Tenants.Add(new Tenant {TenancyName = "Default", Name = "Default"});
+                _context.Tenants.Add(new Tenant {TenancyName = Tenant.DefaultTenantName, Name = Tenant.DefaultTenantName});
                 _context.SaveChanges();
             }
         }
