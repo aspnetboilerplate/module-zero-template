@@ -23,10 +23,8 @@
     };
 
     //Configure blockUI
-    (function ($) {
-        if ($.blockUI) {
-            $.blockUI.defaults.baseZ = 2000;
-        }
-    })(jQuery);
+    if ($.blockUI) {
+        $.blockUI.defaults.baseZ = 2000;
+    }
 
 })(jQuery);
