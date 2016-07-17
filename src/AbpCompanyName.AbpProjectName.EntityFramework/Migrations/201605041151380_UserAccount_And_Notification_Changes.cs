@@ -16,7 +16,7 @@ SELECT TenantId, Id AS UserId, UserName, EmailAddress, LastLoginTime, CreationTi
         
         public override void Down()
         {
-            RenameColumn("dbo.AbpUserNotifications", "NotificationId", "TenantNotificationId");
+            RenameColumn("dbo.AbpUserNotifications", "TenantNotificationId", "NotificationId");
             DropColumn("dbo.AbpUserAccounts", "LastLoginTime");
         }
     }
