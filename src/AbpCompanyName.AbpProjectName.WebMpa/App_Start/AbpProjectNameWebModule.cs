@@ -18,7 +18,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
         typeof(AbpProjectNameApplicationModule),
         typeof(AbpProjectNameWebApiModule),
         typeof(AbpWebSignalRModule),
-        typeof(AbpHangfireModule),
+        //typeof(AbpHangfireModule), - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
         typeof(AbpWebMvcModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
@@ -30,11 +30,11 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<AbpProjectNameNavigationProvider>();
 
-            //Configure Hangfire
-            Configuration.BackgroundJobs.UseHangfire(configuration =>
-            {
-                configuration.GlobalConfiguration.UseSqlServerStorage("Default");
-            });
+            //Configure Hangfire - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
+            //Configuration.BackgroundJobs.UseHangfire(configuration =>
+            //{
+            //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
+            //});
         }
 
         public override void Initialize()
