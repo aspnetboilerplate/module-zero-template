@@ -5913,3 +5913,589 @@ DEBUG 2016-05-09 17:56:29,270 [85   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2016-05-09 17:56:29,300 [76   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 34a54892-7fc2-4607-993d-598e8da54f93
 INFO  2016-05-09 17:56:53,559 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
 DEBUG 2016-05-09 17:56:53,591 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-17 21:22:33,477 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-07-17 21:22:33,489 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-07-17 21:22:33,494 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.WebMpa.AbpProjectNameWebModule, AbpCompanyName.AbpProjectName.WebMpa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,496 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameDataModule, AbpCompanyName.AbpProjectName.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,496 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,496 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,496 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,497 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,497 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameCoreModule, AbpCompanyName.AbpProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,497 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameApplicationModule, AbpCompanyName.AbpProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,497 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,497 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.Api.AbpProjectNameWebApiModule, AbpCompanyName.AbpProjectName.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,497 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,498 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,498 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,498 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,498 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,498 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:33,501 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-07-17 21:22:33,657 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 21:22:33,658 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 21:22:33,658 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 21:22:33,658 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-07-17 21:22:33,749 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-07-17 21:22:33,831 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-07-17 21:22:34,160 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpCompanyName.AbpProjectName.EntityFramework.AbpProjectNameDbContext, AbpCompanyName.AbpProjectName.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 21:22:35,721 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-07-17 21:22:35,727 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-07-17 21:22:35,740 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-07-17 21:22:35,742 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpProjectName
+DEBUG 2016-07-17 21:22:35,743 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-07-17 21:22:35,748 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-07-17 21:22:35,759 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-07-17 21:22:35,762 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@AbpProjectName'
+INFO  2016-07-17 21:22:35,762 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-07-17 21:22:35,762 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-07-17 21:22:35,762 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-07-17 21:22:35,762 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 40
+INFO  2016-07-17 21:22:35,762 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2016-07-17 21:22:35,763 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2016-07-17 21:22:35,763 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2016-07-17 21:22:35,793 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-07-17 21:22:35,804 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-07-17 21:22:35,804 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.WebMpa.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-07-17 21:22:35,956 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-07-17 21:22:35,957 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-07-17 21:22:35,967 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-07-17 21:22:35,969 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-07-17 21:22:36,001 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-07-17 21:22:36,008 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Users.Dto.CreateUserInput
+DEBUG 2016-07-17 21:22:36,008 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-07-17 21:22:36,008 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-07-17 21:22:36,039 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-17 21:22:36,043 [24791] Hangfire.Server.Worker                   - Background process 'Worker #72124791' started.
+DEBUG 2016-07-17 21:22:36,044 [618b5] Hangfire.Server.Worker                   - Background process 'Worker #814618b5' started.
+DEBUG 2016-07-17 21:22:36,058 [a749b] Hangfire.Server.Worker                   - Background process 'Worker #57da749b' started.
+DEBUG 2016-07-17 21:22:36,061 [685d0] Hangfire.Server.Worker                   - Background process 'Worker #3ae685d0' started.
+DEBUG 2016-07-17 21:22:36,105 [70808] Hangfire.Server.Worker                   - Background process 'Worker #d6870808' started.
+DEBUG 2016-07-17 21:22:36,109 [c2d8f] Hangfire.Server.Worker                   - Background process 'Worker #1f6c2d8f' started.
+DEBUG 2016-07-17 21:22:36,142 [1c8ac] Hangfire.Server.Worker                   - Background process 'Worker #2dd1c8ac' started.
+DEBUG 2016-07-17 21:22:36,153 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-07-17 21:22:36,178 [8c0a9] Hangfire.Server.Worker                   - Background process 'Worker #2438c0a9' started.
+DEBUG 2016-07-17 21:22:36,209 [20cda] Hangfire.Server.Worker                   - Background process 'Worker #82520cda' started.
+DEBUG 2016-07-17 21:22:36,240 [12e0d] Hangfire.Server.Worker                   - Background process 'Worker #1c712e0d' started.
+DEBUG 2016-07-17 21:22:36,279 [b3031] Hangfire.Server.Worker                   - Background process 'Worker #19eb3031' started.
+DEBUG 2016-07-17 21:22:36,305 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-07-17 21:22:36,305 [39650] Hangfire.Server.Worker                   - Background process 'Worker #2e139650' started.
+DEBUG 2016-07-17 21:22:36,331 [058d9] Hangfire.Server.Worker                   - Background process 'Worker #c4a058d9' started.
+DEBUG 2016-07-17 21:22:36,397 [33238] Hangfire.Server.Worker                   - Background process 'Worker #fad33238' started.
+DEBUG 2016-07-17 21:22:36,406 [92a91] Hangfire.Server.Worker                   - Background process 'Worker #43992a91' started.
+DEBUG 2016-07-17 21:22:36,443 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-07-17 21:22:36,462 [b5a10] Hangfire.Server.Worker                   - Background process 'Worker #064b5a10' started.
+DEBUG 2016-07-17 21:22:36,506 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Users.Dto.UserListDto
+DEBUG 2016-07-17 21:22:36,507 [f2a6b] Hangfire.Server.Worker                   - Background process 'Worker #856f2a6b' started.
+DEBUG 2016-07-17 21:22:36,514 [5ff04] Hangfire.Server.Worker                   - Background process 'Worker #ec75ff04' started.
+DEBUG 2016-07-17 21:22:36,555 [fd56b] Hangfire.Server.Worker                   - Background process 'Worker #f6cfd56b' started.
+DEBUG 2016-07-17 21:22:36,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-07-17 21:22:36,561 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-07-17 21:22:36,612 [5dde5] Hangfire.Server.Worker                   - Background process 'Worker #ebb5dde5' started.
+DEBUG 2016-07-17 21:22:36,621 [83ee8] Hangfire.Server.Worker                   - Background process 'Worker #a6f83ee8' started.
+DEBUG 2016-07-17 21:22:36,632 [0e87e] Hangfire.Server.Worker                   - Background process 'Worker #e410e87e' started.
+DEBUG 2016-07-17 21:22:36,636 [74e6a] Hangfire.Server.Worker                   - Background process 'Worker #36474e6a' started.
+DEBUG 2016-07-17 21:22:36,653 [7d93c] Hangfire.Server.Worker                   - Background process 'Worker #98d7d93c' started.
+DEBUG 2016-07-17 21:22:36,674 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-07-17 21:22:36,674 [91959] Hangfire.Server.Worker                   - Background process 'Worker #47691959' started.
+DEBUG 2016-07-17 21:22:36,684 [91da5] Hangfire.Server.Worker                   - Background process 'Worker #24f91da5' started.
+DEBUG 2016-07-17 21:22:36,696 [87d71] Hangfire.Server.Worker                   - Background process 'Worker #ee187d71' started.
+DEBUG 2016-07-17 21:22:36,709 [a46e8] Hangfire.Server.Worker                   - Background process 'Worker #650a46e8' started.
+DEBUG 2016-07-17 21:22:36,717 [d1cea] Hangfire.Server.Worker                   - Background process 'Worker #1b1d1cea' started.
+DEBUG 2016-07-17 21:22:36,728 [d7b56] Hangfire.Server.Worker                   - Background process 'Worker #dc1d7b56' started.
+DEBUG 2016-07-17 21:22:36,739 [3be2d] Hangfire.Server.Worker                   - Background process 'Worker #7513be2d' started.
+DEBUG 2016-07-17 21:22:36,744 [ed9e1] Hangfire.Server.Worker                   - Background process 'Worker #249ed9e1' started.
+DEBUG 2016-07-17 21:22:36,765 [407a2] Hangfire.Server.Worker                   - Background process 'Worker #090407a2' started.
+DEBUG 2016-07-17 21:22:36,778 [2038b] Hangfire.Server.Worker                   - Background process 'Worker #b212038b' started.
+DEBUG 2016-07-17 21:22:36,802 [c9584] Hangfire.Server.Worker                   - Background process 'Worker #7b8c9584' started.
+DEBUG 2016-07-17 21:22:36,814 [eaa70] Hangfire.Server.Worker                   - Background process 'Worker #20eeaa70' started.
+DEBUG 2016-07-17 21:22:36,823 [17bf5] Hangfire.Server.Worker                   - Background process 'Worker #6ff17bf5' started.
+DEBUG 2016-07-17 21:22:36,835 [6fd6b] Hangfire.Server.Worker                   - Background process 'Worker #e1d6fd6b' started.
+DEBUG 2016-07-17 21:22:36,847 [bca4d] Hangfire.Server.Worker                   - Background process 'Worker #e95bca4d' started.
+DEBUG 2016-07-17 21:22:36,856 [748dd] Hangfire.Server.Worker                   - Background process 'Worker #1c4748dd' started.
+DEBUG 2016-07-17 21:22:36,871 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-07-17 21:22:36,876 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-07-17 21:22:37,002 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-07-17 21:22:37,003 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-07-17 21:22:37,004 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-07-17 21:22:37,005 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+ERROR 2016-07-17 21:22:44,848 [54   ] ame.WebMpa.Controllers.AccountController - An item with the same key has already been added.
+System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Abp.Localization.ApplicationLanguageManager.<GetLanguagesFromDatabaseAsync>d__17.MoveNext() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinallyAndGetResult>d__5`1.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 120
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Runtime.Caching.CacheExtensions.<>c__DisplayClass5_0`2.<<GetAsync>b__0>d.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheExtensions.cs:line 0
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Runtime.Caching.CacheBase.<GetAsync>d__12.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheBase.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Runtime.Caching.CacheExtensions.<GetAsync>d__5`2.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheExtensions.cs:line 38
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Localization.ApplicationLanguageManager.<GetLanguageDictionary>d__15.MoveNext() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:line 178
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Localization.ApplicationLanguageManager.<GetLanguagesAsync>d__8.MoveNext() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:line 60
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.<>c__DisplayClass7`1.<Run>b__5(Task`1 t)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Abp.Localization.ApplicationLanguageProvider.GetLanguages() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageProvider.cs:line 35
+   at Abp.Localization.LanguageManager.GetLanguages() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\LanguageManager.cs:line 21
+   at Abp.Localization.MultiTenantLocalizationDictionaryProvider.GetDictionaries() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs:line 56
+   at Abp.Localization.MultiTenantLocalizationDictionaryProvider.get_Dictionaries() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs:line 25
+   at Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetStringOrNull(String name, CultureInfo culture, Boolean tryDefaults) in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:line 84
+   at Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetString(String name) in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:line 61
+   at Abp.Web.Mvc.Views.AbpWebViewPage`1.L(String name) in D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Views\AbpWebViewPageOfTModel.cs:line 72
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in d:\Halil\GitHub\module-zero-template\src\AbpCompanyName.AbpProjectName.WebMpa\Views\Account\Login.cshtml:line 18
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2016-07-17 22:07:01,171 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-07-17 22:07:01,183 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-07-17 22:07:01,187 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.WebMpa.AbpProjectNameWebModule, AbpCompanyName.AbpProjectName.WebMpa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,189 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameDataModule, AbpCompanyName.AbpProjectName.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,189 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,189 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,189 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,190 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,190 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameCoreModule, AbpCompanyName.AbpProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,190 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameApplicationModule, AbpCompanyName.AbpProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,190 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,190 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.Api.AbpProjectNameWebApiModule, AbpCompanyName.AbpProjectName.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:01,194 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-07-17 22:07:01,356 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 22:07:01,356 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 22:07:01,356 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 22:07:01,356 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-07-17 22:07:01,438 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-07-17 22:07:01,506 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-07-17 22:07:01,826 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpCompanyName.AbpProjectName.EntityFramework.AbpProjectNameDbContext, AbpCompanyName.AbpProjectName.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:07:03,488 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-07-17 22:07:03,495 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-07-17 22:07:03,496 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-07-17 22:07:03,498 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpProjectName
+DEBUG 2016-07-17 22:07:03,499 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-07-17 22:07:03,504 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-07-17 22:07:03,516 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@AbpProjectName'
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 40
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2016-07-17 22:07:03,519 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2016-07-17 22:07:03,547 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-07-17 22:07:03,562 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-07-17 22:07:03,562 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.WebMpa.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-07-17 22:07:03,942 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-07-17 22:07:03,965 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-07-17 22:07:03,992 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-07-17 22:07:04,003 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-07-17 22:07:04,005 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-07-17 22:07:04,015 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-17 22:07:04,016 [dc618] Hangfire.Server.Worker                   - Background process 'Worker #618dc618' started.
+INFO  2016-07-17 22:07:04,018 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2016-07-17 22:07:04,021 [48b1f] Hangfire.Server.Worker                   - Background process 'Worker #13d48b1f' started.
+DEBUG 2016-07-17 22:07:04,027 [4049c] Hangfire.Server.Worker                   - Background process 'Worker #2334049c' started.
+DEBUG 2016-07-17 22:07:04,040 [99381] Hangfire.Server.Worker                   - Background process 'Worker #00399381' started.
+DEBUG 2016-07-17 22:07:04,079 [e5fd4] Hangfire.Server.Worker                   - Background process 'Worker #06ae5fd4' started.
+DEBUG 2016-07-17 22:07:04,079 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-07-17 22:07:04,080 [da064] Hangfire.Server.Worker                   - Background process 'Worker #275da064' started.
+DEBUG 2016-07-17 22:07:04,167 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-07-17 22:07:04,168 [342de] Hangfire.Server.Worker                   - Background process 'Worker #9f8342de' started.
+DEBUG 2016-07-17 22:07:04,203 [15803] Hangfire.Server.Worker                   - Background process 'Worker #2da15803' started.
+DEBUG 2016-07-17 22:07:04,255 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-07-17 22:07:04,262 [31f82] Hangfire.Server.Worker                   - Background process 'Worker #a7e31f82' started.
+DEBUG 2016-07-17 22:07:04,263 [9384f] Hangfire.Server.Worker                   - Background process 'Worker #df39384f' started.
+DEBUG 2016-07-17 22:07:04,343 [c9f6a] Hangfire.Server.Worker                   - Background process 'Worker #212c9f6a' started.
+DEBUG 2016-07-17 22:07:04,344 [d1eee] Hangfire.Server.Worker                   - Background process 'Worker #0bdd1eee' started.
+DEBUG 2016-07-17 22:07:04,388 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-07-17 22:07:04,389 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Users.Dto.CreateUserInput
+DEBUG 2016-07-17 22:07:04,391 [9570d] Hangfire.Server.Worker                   - Background process 'Worker #a419570d' started.
+DEBUG 2016-07-17 22:07:04,458 [91f7a] Hangfire.Server.Worker                   - Background process 'Worker #3d291f7a' started.
+DEBUG 2016-07-17 22:07:04,467 [2ab64] Hangfire.Server.Worker                   - Background process 'Worker #0762ab64' started.
+DEBUG 2016-07-17 22:07:04,485 [cfac7] Hangfire.Server.Worker                   - Background process 'Worker #227cfac7' started.
+DEBUG 2016-07-17 22:07:04,507 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-07-17 22:07:04,510 [65e77] Hangfire.Server.Worker                   - Background process 'Worker #15e65e77' started.
+DEBUG 2016-07-17 22:07:04,535 [f3642] Hangfire.Server.Worker                   - Background process 'Worker #3aff3642' started.
+DEBUG 2016-07-17 22:07:04,536 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-07-17 22:07:04,552 [eb0e0] Hangfire.Server.Worker                   - Background process 'Worker #1fceb0e0' started.
+DEBUG 2016-07-17 22:07:04,599 [7139f] Hangfire.Server.Worker                   - Background process 'Worker #f4b7139f' started.
+DEBUG 2016-07-17 22:07:04,617 [2cdf4] Hangfire.Server.Worker                   - Background process 'Worker #1c12cdf4' started.
+DEBUG 2016-07-17 22:07:04,630 [96de1] Hangfire.Server.Worker                   - Background process 'Worker #10396de1' started.
+DEBUG 2016-07-17 22:07:04,643 [1e601] Hangfire.Server.Worker                   - Background process 'Worker #70d1e601' started.
+DEBUG 2016-07-17 22:07:04,675 [9b2aa] Hangfire.Server.Worker                   - Background process 'Worker #4ee9b2aa' started.
+DEBUG 2016-07-17 22:07:04,677 [2c578] Hangfire.Server.Worker                   - Background process 'Worker #dee2c578' started.
+DEBUG 2016-07-17 22:07:04,694 [405c5] Hangfire.Server.Worker                   - Background process 'Worker #a8c405c5' started.
+DEBUG 2016-07-17 22:07:04,707 [772f9] Hangfire.Server.Worker                   - Background process 'Worker #bda772f9' started.
+DEBUG 2016-07-17 22:07:04,727 [bf2be] Hangfire.Server.Worker                   - Background process 'Worker #6cdbf2be' started.
+DEBUG 2016-07-17 22:07:04,732 [30dd4] Hangfire.Server.Worker                   - Background process 'Worker #36230dd4' started.
+DEBUG 2016-07-17 22:07:04,750 [0f042] Hangfire.Server.Worker                   - Background process 'Worker #38c0f042' started.
+DEBUG 2016-07-17 22:07:04,760 [4822f] Hangfire.Server.Worker                   - Background process 'Worker #4984822f' started.
+DEBUG 2016-07-17 22:07:04,766 [a3b52] Hangfire.Server.Worker                   - Background process 'Worker #8a7a3b52' started.
+DEBUG 2016-07-17 22:07:04,783 [3ba07] Hangfire.Server.Worker                   - Background process 'Worker #acc3ba07' started.
+DEBUG 2016-07-17 22:07:04,795 [4d495] Hangfire.Server.Worker                   - Background process 'Worker #5bb4d495' started.
+DEBUG 2016-07-17 22:07:04,807 [3d31c] Hangfire.Server.Worker                   - Background process 'Worker #7b03d31c' started.
+DEBUG 2016-07-17 22:07:04,812 [30a0c] Hangfire.Server.Worker                   - Background process 'Worker #a5b30a0c' started.
+DEBUG 2016-07-17 22:07:04,832 [b00d1] Hangfire.Server.Worker                   - Background process 'Worker #8f4b00d1' started.
+DEBUG 2016-07-17 22:07:04,858 [84c0b] Hangfire.Server.Worker                   - Background process 'Worker #92184c0b' started.
+DEBUG 2016-07-17 22:07:04,883 [0172f] Hangfire.Server.Worker                   - Background process 'Worker #c8c0172f' started.
+DEBUG 2016-07-17 22:07:04,901 [4cd70] Hangfire.Server.Worker                   - Background process 'Worker #0094cd70' started.
+DEBUG 2016-07-17 22:07:04,912 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-07-17 22:07:04,919 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-07-17 22:07:04,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Users.Dto.UserListDto
+DEBUG 2016-07-17 22:07:04,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-07-17 22:07:04,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-07-17 22:07:05,071 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-07-17 22:07:05,072 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-07-17 22:07:05,074 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-07-17 22:07:05,075 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+ERROR 2016-07-17 22:07:12,992 [6    ] ame.WebMpa.Controllers.AccountController - An item with the same key has already been added.
+System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Abp.Localization.ApplicationLanguageManager.<GetLanguagesFromDatabaseAsync>d__17.MoveNext() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinallyAndGetResult>d__5`1.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 120
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Runtime.Caching.CacheExtensions.<>c__DisplayClass5_0`2.<<GetAsync>b__0>d.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheExtensions.cs:line 0
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Runtime.Caching.CacheBase.<GetAsync>d__12.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheBase.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Runtime.Caching.CacheExtensions.<GetAsync>d__5`2.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheExtensions.cs:line 38
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Localization.ApplicationLanguageManager.<GetLanguageDictionary>d__15.MoveNext() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:line 178
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Localization.ApplicationLanguageManager.<GetLanguagesAsync>d__8.MoveNext() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:line 60
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.<>c__DisplayClass7`1.<Run>b__5(Task`1 t)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Abp.Localization.ApplicationLanguageProvider.GetLanguages() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageProvider.cs:line 35
+   at Abp.Localization.LanguageManager.GetLanguages() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\LanguageManager.cs:line 21
+   at Abp.Localization.MultiTenantLocalizationDictionaryProvider.GetDictionaries() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs:line 56
+   at Abp.Localization.MultiTenantLocalizationDictionaryProvider.get_Dictionaries() in D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs:line 25
+   at Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetStringOrNull(String name, CultureInfo culture, Boolean tryDefaults) in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:line 84
+   at Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetString(String name) in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:line 61
+   at Abp.Web.Mvc.Views.AbpWebViewPage`1.L(String name) in D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Views\AbpWebViewPageOfTModel.cs:line 72
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in d:\Halil\GitHub\module-zero-template\src\AbpCompanyName.AbpProjectName.WebMpa\Views\Account\Login.cshtml:line 18
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2016-07-17 22:12:51,295 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-07-17 22:12:51,473 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-07-17 22:12:51,478 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.WebMpa.AbpProjectNameWebModule, AbpCompanyName.AbpProjectName.WebMpa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,480 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameDataModule, AbpCompanyName.AbpProjectName.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,480 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,481 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,481 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,481 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,482 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameCoreModule, AbpCompanyName.AbpProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,482 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.AbpProjectNameApplicationModule, AbpCompanyName.AbpProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,482 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,482 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpCompanyName.AbpProjectName.Api.AbpProjectNameWebApiModule, AbpCompanyName.AbpProjectName.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,483 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,483 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,483 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,483 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,483 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,483 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:51,486 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-07-17 22:12:52,189 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 22:12:52,190 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 22:12:52,190 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-17 22:12:52,190 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-07-17 22:12:52,322 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-07-17 22:12:52,433 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-07-17 22:12:52,884 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpCompanyName.AbpProjectName.EntityFramework.AbpProjectNameDbContext, AbpCompanyName.AbpProjectName.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-17 22:12:53,659 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-07-17 22:12:53,665 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-07-17 22:12:53,667 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-07-17 22:12:53,670 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpProjectName
+DEBUG 2016-07-17 22:12:53,671 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-07-17 22:12:53,676 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-07-17 22:12:53,689 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@AbpProjectName'
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 40
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2016-07-17 22:12:53,692 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2016-07-17 22:12:53,738 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-07-17 22:12:53,750 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-07-17 22:12:53,750 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.WebMpa.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-07-17 22:12:54,088 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-07-17 22:12:54,097 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-07-17 22:12:54,101 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-07-17 22:12:54,114 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-07-17 22:12:54,115 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-07-17 22:12:54,122 [6d50a] Hangfire.Server.Worker                   - Background process 'Worker #e706d50a' started.
+DEBUG 2016-07-17 22:12:54,129 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-17 22:12:54,135 [71552] Hangfire.Server.Worker                   - Background process 'Worker #5d371552' started.
+DEBUG 2016-07-17 22:12:54,136 [bc36d] Hangfire.Server.Worker                   - Background process 'Worker #f36bc36d' started.
+DEBUG 2016-07-17 22:12:54,169 [87d4b] Hangfire.Server.Worker                   - Background process 'Worker #e2287d4b' started.
+DEBUG 2016-07-17 22:12:54,175 [e1a2c] Hangfire.Server.Worker                   - Background process 'Worker #8f7e1a2c' started.
+DEBUG 2016-07-17 22:12:54,201 [45603] Hangfire.Server.Worker                   - Background process 'Worker #50245603' started.
+DEBUG 2016-07-17 22:12:54,257 [b3e30] Hangfire.Server.Worker                   - Background process 'Worker #29ab3e30' started.
+DEBUG 2016-07-17 22:12:54,271 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-07-17 22:12:54,280 [43e3a] Hangfire.Server.Worker                   - Background process 'Worker #c6743e3a' started.
+DEBUG 2016-07-17 22:12:54,313 [6b489] Hangfire.Server.Worker                   - Background process 'Worker #aec6b489' started.
+DEBUG 2016-07-17 22:12:54,364 [7439b] Hangfire.Server.Worker                   - Background process 'Worker #ca07439b' started.
+DEBUG 2016-07-17 22:12:54,378 [02aa9] Hangfire.Server.Worker                   - Background process 'Worker #0de02aa9' started.
+DEBUG 2016-07-17 22:12:54,411 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-07-17 22:12:54,435 [bf93c] Hangfire.Server.Worker                   - Background process 'Worker #b25bf93c' started.
+DEBUG 2016-07-17 22:12:54,464 [ae5da] Hangfire.Server.Worker                   - Background process 'Worker #a4eae5da' started.
+DEBUG 2016-07-17 22:12:54,498 [2187a] Hangfire.Server.Worker                   - Background process 'Worker #fc92187a' started.
+DEBUG 2016-07-17 22:12:54,503 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-07-17 22:12:54,525 [302d3] Hangfire.Server.Worker                   - Background process 'Worker #de7302d3' started.
+DEBUG 2016-07-17 22:12:54,539 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-07-17 22:12:54,548 [4eb65] Hangfire.Server.Worker                   - Background process 'Worker #8de4eb65' started.
+DEBUG 2016-07-17 22:12:54,565 [42446] Hangfire.Server.Worker                   - Background process 'Worker #85c42446' started.
+DEBUG 2016-07-17 22:12:54,592 [26343] Hangfire.Server.Worker                   - Background process 'Worker #36326343' started.
+DEBUG 2016-07-17 22:12:54,603 [0eb31] Hangfire.Server.Worker                   - Background process 'Worker #bc80eb31' started.
+DEBUG 2016-07-17 22:12:54,613 [3ac7c] Hangfire.Server.Worker                   - Background process 'Worker #16f3ac7c' started.
+DEBUG 2016-07-17 22:12:54,625 [c2ad5] Hangfire.Server.Worker                   - Background process 'Worker #7f0c2ad5' started.
+DEBUG 2016-07-17 22:12:54,636 [7a68f] Hangfire.Server.Worker                   - Background process 'Worker #28c7a68f' started.
+DEBUG 2016-07-17 22:12:54,646 [fd610] Hangfire.Server.Worker                   - Background process 'Worker #cf1fd610' started.
+DEBUG 2016-07-17 22:12:54,656 [43b81] Hangfire.Server.Worker                   - Background process 'Worker #afe43b81' started.
+DEBUG 2016-07-17 22:12:54,667 [c5b10] Hangfire.Server.Worker                   - Background process 'Worker #ab6c5b10' started.
+DEBUG 2016-07-17 22:12:54,677 [7b529] Hangfire.Server.Worker                   - Background process 'Worker #9b67b529' started.
+DEBUG 2016-07-17 22:12:54,689 [afc10] Hangfire.Server.Worker                   - Background process 'Worker #170afc10' started.
+DEBUG 2016-07-17 22:12:54,711 [4ef1e] Hangfire.Server.Worker                   - Background process 'Worker #be54ef1e' started.
+DEBUG 2016-07-17 22:12:54,722 [fafb9] Hangfire.Server.Worker                   - Background process 'Worker #d37fafb9' started.
+DEBUG 2016-07-17 22:12:54,734 [47fa1] Hangfire.Server.Worker                   - Background process 'Worker #53c47fa1' started.
+DEBUG 2016-07-17 22:12:54,744 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-07-17 22:12:54,745 [d88ef] Hangfire.Server.Worker                   - Background process 'Worker #455d88ef' started.
+DEBUG 2016-07-17 22:12:54,755 [a6316] Hangfire.Server.Worker                   - Background process 'Worker #7cba6316' started.
+DEBUG 2016-07-17 22:12:54,787 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-07-17 22:12:54,787 [10476] Hangfire.Server.Worker                   - Background process 'Worker #84910476' started.
+DEBUG 2016-07-17 22:12:54,797 [44cf1] Hangfire.Server.Worker                   - Background process 'Worker #6a944cf1' started.
+DEBUG 2016-07-17 22:12:54,812 [20a20] Hangfire.Server.Worker                   - Background process 'Worker #f8020a20' started.
+DEBUG 2016-07-17 22:12:54,817 [b3a09] Hangfire.Server.Worker                   - Background process 'Worker #ee2b3a09' started.
+DEBUG 2016-07-17 22:12:54,835 [afc97] Hangfire.Server.Worker                   - Background process 'Worker #110afc97' started.
+DEBUG 2016-07-17 22:12:54,857 [7449a] Hangfire.Server.Worker                   - Background process 'Worker #9a17449a' started.
+DEBUG 2016-07-17 22:12:54,870 [f9e2f] Hangfire.Server.Worker                   - Background process 'Worker #ca5f9e2f' started.
+DEBUG 2016-07-17 22:12:54,884 [aa8b6] Hangfire.Server.Worker                   - Background process 'Worker #abdaa8b6' started.
+DEBUG 2016-07-17 22:12:54,895 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Users.Dto.CreateUserInput
+DEBUG 2016-07-17 22:12:54,898 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-07-17 22:12:54,904 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-07-17 22:12:54,944 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.Users.Dto.UserListDto
+DEBUG 2016-07-17 22:12:54,945 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-07-17 22:12:54,948 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AbpCompanyName.AbpProjectName.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-07-17 22:12:55,063 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-07-17 22:12:55,064 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-07-17 22:12:55,065 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-07-17 22:12:55,066 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpCompanyName.AbpProjectName.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-07-17 22:13:06,236 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ae00ce18-2fe4-4f41-b78e-447f5182ebd9","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-07-17T22:13:06.2304138+03:00","Properties":{}}
+DEBUG 2016-07-17 22:13:06,269 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ae00ce18-2fe4-4f41-b78e-447f5182ebd9
+DEBUG 2016-07-17 22:13:49,962 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ad450266-4dab-48fd-9e44-d09236abb389","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:13:49.9610444+03:00","Properties":{}}
+DEBUG 2016-07-17 22:13:49,995 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ad450266-4dab-48fd-9e44-d09236abb389
+DEBUG 2016-07-17 22:13:51,390 [56   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ad450266-4dab-48fd-9e44-d09236abb389
+DEBUG 2016-07-17 22:13:54,098 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"dc4f3835-b781-4248-b9c7-67060986011c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:13:54.0981358+03:00","Properties":{}}
+DEBUG 2016-07-17 22:13:54,107 [62   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: dc4f3835-b781-4248-b9c7-67060986011c
+DEBUG 2016-07-17 22:13:54,780 [56   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: dc4f3835-b781-4248-b9c7-67060986011c
+DEBUG 2016-07-17 22:13:56,721 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b4236819-8689-4fe1-8d11-ac4e491f0733","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:13:56.7218224+03:00","Properties":{}}
+DEBUG 2016-07-17 22:13:56,737 [65   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b4236819-8689-4fe1-8d11-ac4e491f0733
+DEBUG 2016-07-17 22:13:57,728 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b4236819-8689-4fe1-8d11-ac4e491f0733
+DEBUG 2016-07-17 22:14:00,401 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8130e799-2074-4e7d-be77-c7620e4a0c2b","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:14:00.4007794+03:00","Properties":{}}
+DEBUG 2016-07-17 22:14:00,437 [64   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8130e799-2074-4e7d-be77-c7620e4a0c2b
+DEBUG 2016-07-17 22:14:01,091 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8130e799-2074-4e7d-be77-c7620e4a0c2b
+DEBUG 2016-07-17 22:14:03,440 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6254aa2e-6575-4515-ac1b-c9a30f8d1f54","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:14:03.4397326+03:00","Properties":{}}
+DEBUG 2016-07-17 22:14:03,444 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6254aa2e-6575-4515-ac1b-c9a30f8d1f54
+DEBUG 2016-07-17 22:14:04,018 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6254aa2e-6575-4515-ac1b-c9a30f8d1f54
+DEBUG 2016-07-17 22:14:05,732 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"dd9a8999-0402-4fae-be64-49c0a6ec655e","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:14:05.7328828+03:00","Properties":{}}
+DEBUG 2016-07-17 22:14:05,777 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: dd9a8999-0402-4fae-be64-49c0a6ec655e
+DEBUG 2016-07-17 22:14:19,663 [56   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: dd9a8999-0402-4fae-be64-49c0a6ec655e
+DEBUG 2016-07-17 22:14:21,620 [60   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ae00ce18-2fe4-4f41-b78e-447f5182ebd9
+DEBUG 2016-07-17 22:14:30,137 [56   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5b08cad1-bde9-419d-b536-ca5065da55d9","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:14:30.1363321+03:00","Properties":{}}
+DEBUG 2016-07-17 22:14:30,163 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5b08cad1-bde9-419d-b536-ca5065da55d9
+DEBUG 2016-07-17 22:14:31,721 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5b08cad1-bde9-419d-b536-ca5065da55d9
+DEBUG 2016-07-17 22:14:38,176 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"888a49f0-1b55-425b-b415-013f1fafcfc1","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:14:38.1766995+03:00","Properties":{}}
+DEBUG 2016-07-17 22:14:38,182 [60   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 888a49f0-1b55-425b-b415-013f1fafcfc1
+ERROR 2016-07-17 22:15:22,980 [83   ] nHandling.AbpApiExceptionFilterAttribute - There is already an object named 'AbpAuditLogs' in the database.
+System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AbpAuditLogs' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<NonQuery>b__0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(MigrationStatement migrationStatement, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinTransaction(IEnumerable`1 migrationStatements, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinNewTransaction(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClass30.<ExecuteStatements>b__2e()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements, DbTransaction existingTransaction)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteOperations(String migrationId, VersionedModel targetModel, IEnumerable`1 operations, IEnumerable`1 systemOperations, Boolean downgrading, Boolean auto)
+   at System.Data.Entity.Migrations.DbMigrator.ApplyMigration(DbMigration migration, DbMigration lastMigration)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.Migrations.DbMigrator.UpdateInternal(String targetMigration)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClassc.<Update>b__b()
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at Abp.Zero.EntityFramework.AbpZeroDbMigrator`2.CreateOrMigrate(AbpTenantBase tenant) in D:\Halil\GitHub\module-zero\src\Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroDbMigrator.cs:line 67
+   at Abp.Zero.EntityFramework.AbpZeroDbMigrator`2.CreateOrMigrateForTenant(AbpTenantBase tenant) in D:\Halil\GitHub\module-zero\src\Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroDbMigrator.cs:line 42
+   at AbpCompanyName.AbpProjectName.MultiTenancy.TenantAppService.<CreateTenant>d__6.MoveNext() in D:\Halil\GitHub\module-zero-template\src\AbpCompanyName.AbpProjectName.Application\MultiTenancy\TenantAppService.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinally>d__1.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Uow.AbpApiUowFilter.<ExecuteActionFilterAsync>d__5.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Api\WebApi\Uow\AbpApiUowFilter.cs:line 41
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__4.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Api\WebApi\Validation\AbpApiValidationFilter.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__25.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Api\WebApi\Auditing\AbpApiAuditFilter.cs:line 75
+--- End of stack trace from previous location where exception was thrown ---
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__25.MoveNext() in D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Api\WebApi\Auditing\AbpApiAuditFilter.cs:line 82
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+ClientConnectionId:baaf7494-2cee-44df-aae2-be374e7a2eba
+Error Number:2714,State:6,Class:16
+DEBUG 2016-07-17 22:17:54,389 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-17 22:18:45,963 [62   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 888a49f0-1b55-425b-b415-013f1fafcfc1
+DEBUG 2016-07-17 22:18:53,922 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6b022ece-5605-4e91-a00d-b04fec581cfc","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:18:53.9222477+03:00","Properties":{}}
+DEBUG 2016-07-17 22:18:54,362 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6b022ece-5605-4e91-a00d-b04fec581cfc
+DEBUG 2016-07-17 22:19:04,099 [62   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6b022ece-5605-4e91-a00d-b04fec581cfc
+DEBUG 2016-07-17 22:19:22,177 [90   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e9f2d37b-8e66-421d-ae0e-767bac9c22df","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-07-17T22:19:22.1773859+03:00","Properties":{}}
+DEBUG 2016-07-17 22:19:22,194 [105  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e9f2d37b-8e66-421d-ae0e-767bac9c22df
+DEBUG 2016-07-17 22:19:24,028 [62   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e9f2d37b-8e66-421d-ae0e-767bac9c22df
+DEBUG 2016-07-17 22:19:26,298 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"409dbdad-4648-40db-8828-1653a13be0e7","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-07-17T22:19:26.298323+03:00","Properties":{}}
+DEBUG 2016-07-17 22:19:26,309 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 409dbdad-4648-40db-8828-1653a13be0e7
+DEBUG 2016-07-17 22:19:30,732 [103  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7bbc5b17-b0a9-4855-9567-8ea6a65de6e7","IpAddress":"::1","TenantId":3,"UserId":1,"ConnectTime":"2016-07-17T22:19:30.7322221+03:00","Properties":{}}
+DEBUG 2016-07-17 22:19:30,745 [111  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7bbc5b17-b0a9-4855-9567-8ea6a65de6e7
+DEBUG 2016-07-17 22:19:34,096 [103  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7bbc5b17-b0a9-4855-9567-8ea6a65de6e7
+DEBUG 2016-07-17 22:19:34,763 [111  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5a9dd853-0cf9-4fc9-abe3-94e8624647c7","IpAddress":"::1","TenantId":3,"UserId":1,"ConnectTime":"2016-07-17T22:19:34.7626777+03:00","Properties":{}}
+DEBUG 2016-07-17 22:19:34,768 [111  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5a9dd853-0cf9-4fc9-abe3-94e8624647c7
+DEBUG 2016-07-17 22:19:35,664 [110  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5a9dd853-0cf9-4fc9-abe3-94e8624647c7
+ERROR 2016-07-17 22:19:43,881 [58   ] nHandling.AbpApiExceptionFilterAttribute - The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Web.Http.HostAuthenticationFilter.<AuthenticateAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+DEBUG 2016-07-17 22:19:48,370 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d00495da-f0cd-4ab1-8ac5-295dd857ebd3","IpAddress":"::1","TenantId":3,"UserId":1,"ConnectTime":"2016-07-17T22:19:48.3691619+03:00","Properties":{}}
+DEBUG 2016-07-17 22:19:48,607 [62   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d00495da-f0cd-4ab1-8ac5-295dd857ebd3
+DEBUG 2016-07-17 22:19:50,766 [62   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d00495da-f0cd-4ab1-8ac5-295dd857ebd3
+DEBUG 2016-07-17 22:19:51,766 [111  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e8f0fa80-2167-43cd-828a-1a1f1312cd26","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-07-17T22:19:51.7662686+03:00","Properties":{}}
+DEBUG 2016-07-17 22:19:51,960 [110  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e8f0fa80-2167-43cd-828a-1a1f1312cd26
+DEBUG 2016-07-17 22:19:52,466 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e8f0fa80-2167-43cd-828a-1a1f1312cd26
+DEBUG 2016-07-17 22:20:03,413 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 409dbdad-4648-40db-8828-1653a13be0e7

@@ -46,7 +46,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 
         private void AddLanguageIfNotExists(ApplicationLanguage language)
         {
-            if (_context.Languages.Any(l => l.TenantId == language.TenantId && l.Name == language.Name))
+            if (_context.Languages.Any(l => l.TenantId == null && l.Name == language.Name))
             {
                 return;
             }

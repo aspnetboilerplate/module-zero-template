@@ -2,7 +2,6 @@
 using Abp;
 using Abp.Collections.Extensions;
 using Abp.Dependency;
-using Castle.Core.Logging;
 using Castle.Facilities.Logging;
 
 namespace AbpCompanyName.AbpProjectName.Migrator
@@ -15,7 +14,7 @@ namespace AbpCompanyName.AbpProjectName.Migrator
         {
             ParseArgs(args);
 
-            using (var bootstrapper = new AbpBootstrapper())
+            using (var bootstrapper = AbpBootstrapper.Create<AbpProjectNameMigratorModule>())
             {
                 bootstrapper.IocManager.IocContainer
                     .AddFacility<LoggingFacility>(f => f.UseLog4Net()

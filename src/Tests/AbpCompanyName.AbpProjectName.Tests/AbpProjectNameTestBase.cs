@@ -5,10 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp;
-using Abp.Collections;
 using Abp.Configuration.Startup;
 using Abp.Domain.Uow;
-using Abp.Modules;
 using Abp.Runtime.Session;
 using Abp.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFramework;
@@ -21,7 +19,7 @@ using EntityFramework.DynamicFilters;
 
 namespace AbpCompanyName.AbpProjectName.Tests
 {
-    public abstract class AbpProjectNameTestBase : AbpIntegratedTestBase
+    public abstract class AbpProjectNameTestBase : AbpIntegratedTestBase<AbpProjectNameTestModule>
     {
         private DbConnection _hostDb;
         private Dictionary<int, DbConnection> _tenantDbs; //only used for db per tenant architecture
@@ -102,14 +100,6 @@ namespace AbpCompanyName.AbpProjectName.Tests
                     }, true)
                     .LifestyleTransient()
                 );
-        }
-
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-
-            //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<AbpProjectNameTestModule>();
         }
 
         #region UsingDbContext

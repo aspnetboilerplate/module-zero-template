@@ -1,5 +1,6 @@
 ﻿using Abp.Modules;
 using Abp.MultiTenancy;
+using Abp.TestBase;
 using Abp.Zero.Configuration;
 using Castle.MicroKernel.Registration;
 using NSubstitute;
@@ -8,7 +9,8 @@ namespace AbpCompanyName.AbpProjectName.Tests
 {
     [DependsOn(
         typeof(AbpProjectNameApplicationModule),
-        typeof(AbpProjectNameDataModule))]
+        typeof(AbpProjectNameDataModule),
+        typeof(AbpTestBaseModule))]
     public class AbpProjectNameTestModule : AbpModule
     {
         public override void PreInitialize()
