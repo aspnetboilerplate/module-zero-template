@@ -213,6 +213,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                     {
                         new UserLogin
                         {
+                            TenantId = tenant.Id,
                             LoginProvider = externalLoginInfo.Login.LoginProvider,
                             ProviderKey = externalLoginInfo.Login.ProviderKey
                         }
