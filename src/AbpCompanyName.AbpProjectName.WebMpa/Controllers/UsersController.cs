@@ -7,7 +7,7 @@ using AbpCompanyName.AbpProjectName.Users;
 namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
 {
     [AbpMvcAuthorize(PermissionNames.Pages_Users)]
-    public class UsersController : Controller
+    public class UsersController : AbpProjectNameControllerBase
     {
         private readonly IUserAppService _userAppService;
 

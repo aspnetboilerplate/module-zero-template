@@ -211,6 +211,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                     {
                         new UserLogin
                         {
+                            TenantId = tenant.Id,
                             LoginProvider = externalLoginInfo.Login.LoginProvider,
                             ProviderKey = externalLoginInfo.Login.ProviderKey
                         }
