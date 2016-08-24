@@ -11,6 +11,8 @@
             vm.menu = abp.nav.menus.MainMenu;
             vm.currentMenuName = $state.current.menu;
 
+            vm.isUserSignedIn = function () { return !!appSession.user; };
+
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 vm.currentMenuName = toState.menu;
             });

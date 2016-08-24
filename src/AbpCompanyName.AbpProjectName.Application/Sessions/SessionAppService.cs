@@ -6,16 +6,18 @@ using AbpCompanyName.AbpProjectName.Sessions.Dto;
 
 namespace AbpCompanyName.AbpProjectName.Sessions
 {
-    [AbpAuthorize]
+    // [AbpAuthorize] - see issue 56: https://github.com/aspnetboilerplate/module-zero-template/issues/56
     public class SessionAppService : AbpProjectNameAppServiceBase, ISessionAppService
     {
         [DisableAuditing]
         public async Task<GetCurrentLoginInformationsOutput> GetCurrentLoginInformations()
         {
-            var output = new GetCurrentLoginInformationsOutput
+            var output = new GetCurrentLoginInformationsOutput();
+
+            if (AbpSession.UserId.HasValue)
             {
-                User = (await GetCurrentUserAsync()).MapTo<UserLoginInfoDto>()
-            };
+                output.User = (await GetCurrentUserAsync()).MapTo<UserLoginInfoDto>();
+            }
 
             if (AbpSession.TenantId.HasValue)
             {
