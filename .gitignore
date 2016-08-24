@@ -199,3 +199,5 @@ FakesAssemblies/
 /src/AbpCompanyName.AbpProjectName.WebMpa/Logs
 /src/AbpCompanyName.AbpProjectName.WebSpaAngular/Logs
 /src/AbpCompanyName.AbpProjectName.WebSpaDurandal/Logs
+/src/AbpCompanyName.AbpProjectName.WebSpaAngular/App_Data/Logs/Logs.txt
+/src/AbpCompanyName.AbpProjectName.WebMpa/App_Data/Logs/Logs.txt
