@@ -12,6 +12,7 @@
             <div class="well bs-component">
 
                 <form action="@Model.Action" method="POST">
+                    @Html.AntiForgeryToken()
                     <fieldset>
                         <legend>@L("TenantSelection")</legend>
 

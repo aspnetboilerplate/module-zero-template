@@ -10,7 +10,8 @@
     <div id="LoginArea" class="row">
         <div class="col-lg-12">
             <div class="well bs-component">
-                <form class="form-horizontal register-form" action="@(Url.Action("Register","Account"))" method="POST">
+                <form class="form-horizontal register-form" action="@(Url.Action("Register", "Account"))" method="POST">
+                    @Html.AntiForgeryToken()
                     <fieldset>
                         <legend>@L("Register")</legend>
 
@@ -30,7 +31,7 @@
                             </div>
                         }
 
-                        <input type="hidden" name="IsExternalLogin" value="@Model.IsExternalLogin.ToString()" />
+                        <input type="hidden" name="IsExternalLogin" value="@Model.IsExternalLogin.ToString()"/>
 
                         <div class="form-group">
                             <div class="col-lg-12">
