@@ -35,24 +35,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.0.11.0.0\lib\net452\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=0.11.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.0.11.0.2\lib\net452\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.11.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.AutoMapper.0.11.0.1\lib\net452\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=0.11.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.AutoMapper.0.11.0.2\lib\net452\Abp.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.EntityFramework, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.EntityFramework.0.11.0.0\lib\net452\Abp.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.EntityFramework, Version=0.11.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.EntityFramework.0.11.0.2\lib\net452\Abp.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.EntityFramework.Common, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.EntityFramework.Common.0.11.0.0\lib\net452\Abp.EntityFramework.Common.dll</HintPath>
+    <Reference Include="Abp.EntityFramework.Common, Version=0.11.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.EntityFramework.Common.0.11.0.2\lib\net452\Abp.EntityFramework.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.TestBase, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Abp.TestBase.0.11.0.0\lib\net452\Abp.TestBase.dll</HintPath>
+    <Reference Include="Abp.TestBase, Version=0.11.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.TestBase.0.11.0.2\lib\net452\Abp.TestBase.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Abp.Zero, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
