@@ -1,13 +1,12 @@
 using System.ComponentModel.DataAnnotations;
-using Abp.Application.Services.Dto;
+using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.MultiTenancy;
-using AbpCompanyName.AbpProjectName.Users;
 
 namespace AbpCompanyName.AbpProjectName.MultiTenancy.Dto
 {
     [AutoMapTo(typeof(Tenant))]
-    public class CreateTenantInput : IInputDto
+    public class CreateTenantInput
     {
         [Required]
         [StringLength(AbpTenantBase.MaxTenancyNameLength)]
@@ -19,7 +18,7 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy.Dto
         public string Name { get; set; }
 
         [Required]
-        [StringLength(User.MaxEmailAddressLength)]
+        [StringLength(AbpUserBase.MaxEmailAddressLength)]
         public string AdminEmailAddress { get; set; }
 
         [MaxLength(AbpTenantBase.MaxConnectionStringLength)]

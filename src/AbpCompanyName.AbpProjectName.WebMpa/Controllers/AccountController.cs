@@ -15,6 +15,7 @@ using Abp.Extensions;
 using Abp.Threading;
 using Abp.UI;
 using Abp.Web.Models;
+using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
@@ -33,6 +34,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         private readonly RoleManager _roleManager;
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
+        private readonly LogInManager _logInManager;
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -47,13 +49,15 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             UserManager userManager,
             RoleManager roleManager,
             IUnitOfWorkManager unitOfWorkManager,
-            IMultiTenancyConfig multiTenancyConfig)
+            IMultiTenancyConfig multiTenancyConfig,
+            LogInManager logInManager)
         {
             _tenantManager = tenantManager;
             _userManager = userManager;
             _roleManager = roleManager;
             _unitOfWorkManager = unitOfWorkManager;
             _multiTenancyConfig = multiTenancyConfig;
+            _logInManager = logInManager;
         }
 
         #region Login / Logout
@@ -100,9 +104,9 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             return Json(new AjaxResponse { TargetUrl = returnUrl });
         }
 
-        private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
+        private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
         {
-            var loginResult = await _userManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
+            var loginResult = await _logInManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
 
             switch (loginResult.Result)
             {
@@ -261,10 +265,10 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                 //Directly login if possible
                 if (user.IsActive)
                 {
-                    AbpUserManager<Tenant, Role, User>.AbpLoginResult loginResult;
+                    AbpLoginResult<Tenant, User> loginResult;
                     if (externalLoginInfo != null)
                     {
-                        loginResult = await _userManager.LoginAsync(externalLoginInfo.Login, tenant.TenancyName);
+                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login, tenant.TenancyName);
                     }
                     else
                     {
@@ -348,7 +352,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                 }
             }
 
-            var loginResult = await _userManager.LoginAsync(loginInfo.Login, tenancyName);
+            var loginResult = await _logInManager.LoginAsync(loginInfo.Login, tenancyName);
 
             switch (loginResult.Result)
             {

@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using Abp.Application.Services.Dto;
 using Abp.Auditing;
-using AbpCompanyName.AbpProjectName.MultiTenancy;
+using Abp.Authorization.Users;
+using Abp.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account
 {
-    public class RegisterViewModel : IInputDto, IValidatableObject
+    public class RegisterViewModel : IValidatableObject
     {
         /// <summary>
         /// Not required for single-tenant applications.
         /// </summary>
-        [StringLength(Tenant.MaxTenancyNameLength)]
+        [StringLength(AbpTenantBase.MaxTenancyNameLength)]
         public string TenancyName { get; set; }
 
         [Required]
@@ -24,12 +24,12 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account
         [StringLength(User.MaxSurnameLength)]
         public string Surname { get; set; }
 
-        [StringLength(User.MaxUserNameLength)]
+        [StringLength(AbpUserBase.MaxUserNameLength)]
         public string UserName { get; set; }
 
         [Required]
         [EmailAddress]
-        [StringLength(User.MaxEmailAddressLength)]
+        [StringLength(AbpUserBase.MaxEmailAddressLength)]
         public string EmailAddress { get; set; }
 
         [StringLength(User.MaxPlainPasswordLength)]

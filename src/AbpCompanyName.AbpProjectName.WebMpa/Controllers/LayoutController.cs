@@ -12,20 +12,20 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
     public class LayoutController : AbpProjectNameControllerBase
     {
         private readonly IUserNavigationManager _userNavigationManager;
-        private readonly ILocalizationManager _localizationManager;
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
+        private readonly ILanguageManager _languageManager;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager, 
-            ILocalizationManager localizationManager,
             ISessionAppService sessionAppService, 
-            IMultiTenancyConfig multiTenancyConfig)
+            IMultiTenancyConfig multiTenancyConfig,
+            ILanguageManager languageManager)
         {
             _userNavigationManager = userNavigationManager;
-            _localizationManager = localizationManager;
             _sessionAppService = sessionAppService;
             _multiTenancyConfig = multiTenancyConfig;
+            _languageManager = languageManager;
         }
 
         [ChildActionOnly]
@@ -45,13 +45,12 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         {
             var model = new LanguageSelectionViewModel
                         {
-                            CurrentLanguage = _localizationManager.CurrentLanguage,
-                            Languages = _localizationManager.GetAllLanguages()
+                            CurrentLanguage = _languageManager.CurrentLanguage,
+                            Languages = _languageManager.GetLanguages()
                         };
 
             return PartialView("_LanguageSelection", model);
         }
-
 
         [ChildActionOnly]
         public PartialViewResult UserMenuOrLoginLink()
