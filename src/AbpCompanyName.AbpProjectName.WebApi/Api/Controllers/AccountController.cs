@@ -29,6 +29,7 @@ namespace AbpCompanyName.AbpProjectName.Api.Controllers
         public AccountController(LogInManager logInManager)
         {
             _logInManager = logInManager;
+            LocalizationSourceName = AbpProjectNameConsts.LocalizationSourceName;
         }
 
         [HttpPost]
