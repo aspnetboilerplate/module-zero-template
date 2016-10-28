@@ -24,6 +24,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
                 new ApplicationLanguage(null, "it", "Italiano", "famfamfam-flag-it"),
                 new ApplicationLanguage(null, "ja", "日本語", "famfamfam-flag-jp"),
                 new ApplicationLanguage(null, "nl-NL", "Nederlands", "famfamfam-flag-nl"),
+                new ApplicationLanguage(null, "lt", "Lietuvos", "famfamfam-flag-lt"),
             };
         }
 
