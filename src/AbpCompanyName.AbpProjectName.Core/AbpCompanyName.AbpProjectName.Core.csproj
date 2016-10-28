@@ -124,6 +124,7 @@
     <EmbeddedResource Include="Localization\Source\AbpProjectName-zh-CN.xml" />
     <EmbeddedResource Include="Localization\Source\AbpProjectName-tr.xml" />
     <EmbeddedResource Include="Localization\Source\AbpProjectName.xml" />
+	<EmbeddedResource Include="Localization\Source\AbpProjectName-lt.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\AbpProjectName-pt-BR.xml" />
