@@ -56,7 +56,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "~/Abp/Framework/scripts/libs/abp.spin.js",
                         "~/Abp/Framework/scripts/libs/abp.sweet-alert.js",
 
-                        "~/Scripts/jquery.signalR-2.2.0.min.js"
+                        "~/Scripts/jquery.signalR-2.2.1.min.js"
                     )
                 );
 

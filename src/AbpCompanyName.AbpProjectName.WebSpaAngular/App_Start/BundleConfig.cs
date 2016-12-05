@@ -59,7 +59,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "~/Abp/Framework/scripts/libs/abp.sweet-alert.js",
                         "~/Abp/Framework/scripts/libs/angularjs/abp.ng.js",
 
-                        "~/Scripts/jquery.signalR-2.2.0.min.js"
+                        "~/Scripts/jquery.signalR-2.2.1.min.js"
                     )
                 );
 
