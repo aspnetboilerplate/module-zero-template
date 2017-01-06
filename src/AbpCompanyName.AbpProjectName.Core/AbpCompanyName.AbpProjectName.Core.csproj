@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.1.2.0.0\lib\net452\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.1.2.1.0\lib\net452\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Abp.Zero, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
