@@ -7,13 +7,13 @@ namespace AbpCompanyName.AbpProjectName.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Added_ConnectionString_To_Tenant : IMigrationMetadata
+    public sealed partial class AbpZero_Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Added_ConnectionString_To_Tenant));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AbpZero_Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604281237494_Added_ConnectionString_To_Tenant"; }
+            get { return "201701271145151_AbpZero_Initial"; }
         }
         
         string IMigrationMetadata.Source
