@@ -14,7 +14,7 @@
     <text name="UserIsNotActiveAndCanNotLogin" value="L'utente {0} non è attivo e non può fare login." />
     <text name="PleaseEnterLoginInformation" value="Inserisci le informazioni di login" />
     <text name="TenancyName" value="Dominio" />
-    <text name="UserNameOrEmail" value="Use name o email" />
+    <text name="UserNameOrEmail" value="Username o email" />
     <text name="Password" value="Password" />
     <text name="RememberMe" value="Ricordati di me" />
     <text name="LogIn" value="Log in" />
@@ -39,11 +39,11 @@
     <text name="Register" value="Registrati" />
     <text name="OrLoginWith" value="O entra con" />
     <text name="WaitingForActivationMessage" value="Il tuo account è in attesa di approvazione." />
-    <text name="TenantSelection" value="Selezione dominio" />
+    <text name="TenantSelection" value="Seleziona dominio" />
     <text name="TenantSelection_Detail" value="Seleziona uno dei seguenti domini." />
     <text name="Logout" value="Logout" />
 
-    <text name="DatabaseConnectionString" value="String connession Database" />
+    <text name="DatabaseConnectionString" value="Stringa di connessione al Database" />
     <text name="Users" value="Utenti" />
     <text name="IsActive" value="Attivo" />
     <text name="FullName" value="Nome completo" />
