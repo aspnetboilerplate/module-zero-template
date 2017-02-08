@@ -1,0 +1,8 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(ProjectDir)bin\AbpCompanyName.AbpProjectName.WebSpaAngular.dll" #>
+<#@ import namespace="AbpCompanyName.AbpProjectName.WebSpaAngular.d.ts.Generator" #>
+<#@ output extension=".d.ts" #>
+<# 
+    TypeScriptGenerator.Start(WriteLine);
+#>
