@@ -172,7 +172,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
         }
 
         [HttpPost]
-        [UnitOfWork]
         public virtual async Task<ActionResult> Register(RegisterViewModel model)
         {
             try
@@ -321,7 +320,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 );
         }
 
-        [UnitOfWork]
         public virtual async Task<ActionResult> ExternalLoginCallback(string returnUrl, string tenancyName = "")
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
@@ -394,7 +392,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             return RegisterView(viewModel);
         }
 
-        [UnitOfWork]
         protected virtual async Task<List<Tenant>> FindPossibleTenantsOfUserAsync(UserLoginInfo login)
         {
             List<User> allUsers;
