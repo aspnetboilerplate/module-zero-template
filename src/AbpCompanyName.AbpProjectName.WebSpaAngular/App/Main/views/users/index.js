@@ -1,7 +1,7 @@
 ﻿(function() {
     angular.module('app').controller('app.views.users.index', [
-        '$scope', '$modal', 'abp.services.app.user',
-        function ($scope, $modal, userService) {
+        '$scope', '$uibModal', 'abp.services.app.user',
+        function ($scope, $uibModal, userService) {
             var vm = this;
 
             vm.users = [];
@@ -13,7 +13,7 @@
             }
 
             vm.openUserCreationModal = function() {
-                var modalInstance = $modal.open({
+                var modalInstance = $uibModal.open({
                     templateUrl: '/App/Main/views/users/createModal.cshtml',
                     controller: 'app.views.users.createModal as vm',
                     backdrop: 'static'

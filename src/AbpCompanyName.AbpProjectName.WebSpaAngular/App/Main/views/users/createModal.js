@@ -1,7 +1,7 @@
 ﻿(function () {
     angular.module('app').controller('app.views.users.createModal', [
-        '$scope', '$modalInstance', 'abp.services.app.user',
-        function ($scope, $modalInstance, userService) {
+        '$scope', '$uibModalInstance', 'abp.services.app.user',
+        function ($scope, $uibModalInstance, userService) {
             var vm = this;
 
             vm.user = {
@@ -12,12 +12,12 @@
                 userService.createUser(vm.user)
                     .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));
-                        $modalInstance.close();
+                        $uibModalInstance.close();
                     });
             };
 
             vm.cancel = function () {
-                $modalInstance.dismiss();
+                $uibModalInstance.dismiss({});
             };
         }
     ]);

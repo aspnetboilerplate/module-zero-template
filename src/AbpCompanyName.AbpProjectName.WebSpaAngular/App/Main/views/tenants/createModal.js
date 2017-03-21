@@ -1,7 +1,7 @@
 ﻿(function () {
     angular.module('app').controller('app.views.tenants.createModal', [
-        '$scope', '$modalInstance', 'abp.services.app.tenant',
-        function ($scope, $modalInstance, tenantService) {
+        '$scope', '$uibModalInstance', 'abp.services.app.tenant',
+        function ($scope, $uibModalInstance, tenantService) {
             var vm = this;
 
             vm.tenant = {
@@ -16,14 +16,14 @@
                 tenantService.createTenant(vm.tenant)
                     .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));
-                        $modalInstance.close();
+                        $uibModalInstance.close();
                     }).finally(function () {
                         abp.ui.clearBusy();
                     });
             };
 
             vm.cancel = function () {
-                $modalInstance.dismiss();
+                $uibModalInstance.dismiss();
             };
         }
     ]);

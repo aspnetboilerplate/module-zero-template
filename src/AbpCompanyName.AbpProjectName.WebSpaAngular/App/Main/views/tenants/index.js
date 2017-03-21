@@ -1,7 +1,7 @@
 ﻿(function() {
     angular.module('app').controller('app.views.tenants.index', [
-        '$scope', '$modal', 'abp.services.app.tenant',
-        function ($scope, $modal, tenantService) {
+        '$scope', '$uibModal', 'abp.services.app.tenant',
+        function ($scope, $uibModal, tenantService) {
             var vm = this;
 
             vm.tenants = [];
@@ -13,7 +13,7 @@
             }
 
             vm.openTenantCreationModal = function() {
-                var modalInstance = $modal.open({
+                var modalInstance = $uibModal.open({
                     templateUrl: '/App/Main/views/tenants/createModal.cshtml',
                     controller: 'app.views.tenants.createModal as vm',
                     backdrop: 'static'

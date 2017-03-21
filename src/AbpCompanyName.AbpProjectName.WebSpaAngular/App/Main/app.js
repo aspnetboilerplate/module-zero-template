@@ -14,8 +14,9 @@
 
     //Configuration for Angular UI routing.
     app.config([
-        '$stateProvider', '$urlRouterProvider',
-        function($stateProvider, $urlRouterProvider) {
+        '$stateProvider', '$urlRouterProvider', '$locationProvider',
+        function ($stateProvider, $urlRouterProvider, $locationProvider) {
+            $locationProvider.hashPrefix('');
             $urlRouterProvider.otherwise('/');
 
             if (abp.auth.hasPermission('Pages.Users')) {
