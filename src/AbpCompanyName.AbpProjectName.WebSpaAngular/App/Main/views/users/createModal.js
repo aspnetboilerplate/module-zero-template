@@ -10,7 +10,7 @@
 
             vm.save = function () {
                 userService.createUser(vm.user)
-                    .success(function () {
+                    .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));
                         $modalInstance.close();
                     });
