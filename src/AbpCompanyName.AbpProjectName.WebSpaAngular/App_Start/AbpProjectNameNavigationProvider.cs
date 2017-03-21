@@ -20,7 +20,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "Home",
                         new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
                         url: "#/",
-                        icon: "fa fa-home"
+                        icon: "fa fa-home",
+                        requiresAuthentication: true
                         )
                 ).AddItem(
                     new MenuItemDefinition(

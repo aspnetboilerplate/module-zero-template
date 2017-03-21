@@ -48,5 +48,37 @@ namespace AbpCompanyName.AbpProjectName.Tests.Sessions
             output.Tenant.ShouldNotBe(null);
             output.Tenant.Name.ShouldBe(currentTenant.Name);
         }
+
+        [Fact]
+        public async Task Should_Not_Get_User_When_Not_Logged_In_As_Host()
+        {
+            //Arrange
+            LogoutAsHost();
+
+            //Act
+            var output = await _sessionAppService.GetCurrentLoginInformations();
+
+            //Assert
+            output.User.ShouldBeNull();
+            output.Tenant.ShouldBeNull();
+        }
+
+        [Fact]
+        public async Task Should_Not_Get_User_When_Not_Logged_In_As_Tenant()
+        {
+            //Arrange
+            LogoutAsDefaultTenant();
+
+            //Act
+            var output = await _sessionAppService.GetCurrentLoginInformations();
+
+            //Assert
+            var currentTenant = await GetCurrentTenantAsync();
+
+            output.User.ShouldBeNull();
+
+            output.Tenant.ShouldNotBeNull();
+            output.Tenant.Name.ShouldBe(currentTenant.Name);
+        }
     }
 }

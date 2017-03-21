@@ -205,6 +205,11 @@ namespace AbpCompanyName.AbpProjectName.Tests
             LoginAsTenant(Tenant.DefaultTenantName, User.AdminUserName);
         }
 
+        protected void LogoutAsDefaultTenant()
+        {
+            LogoutAsTenant(Tenant.DefaultTenantName);
+        }
+
         protected void LoginAsHost(string userName)
         {
             Resolve<IMultiTenancyConfig>().IsEnabled = true;
@@ -221,6 +226,14 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
 
             AbpSession.UserId = user.Id;
+        }
+
+        protected void LogoutAsHost()
+        {
+            Resolve<IMultiTenancyConfig>().IsEnabled = true;
+
+            AbpSession.TenantId = null;
+            AbpSession.UserId = null;
         }
 
         protected void LoginAsTenant(string tenancyName, string userName)
@@ -245,8 +258,20 @@ namespace AbpCompanyName.AbpProjectName.Tests
             AbpSession.UserId = user.Id;
         }
 
+        protected void LogoutAsTenant(string tenancyName)
+        {
+            var tenant = UsingDbContext(context => context.Tenants.FirstOrDefault(t => t.TenancyName == tenancyName));
+            if (tenant == null)
+            {
+                throw new Exception("There is no tenant: " + tenancyName);
+            }
+
+            AbpSession.TenantId = tenant.Id;
+            AbpSession.UserId = null;
+        }
+
         #endregion
-        
+
         /// <summary>
         /// Gets current user if <see cref="IAbpSession.UserId"/> is not null.
         /// Throws exception if it's null.
