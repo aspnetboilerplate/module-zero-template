@@ -40,7 +40,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFramework
 
         public AbpProjectNameDbContext(DbConnection existingConnection, bool contextOwnsConnection)
          : base(existingConnection, contextOwnsConnection)
-      {
+        {
 
         }
     }
