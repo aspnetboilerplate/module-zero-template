@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    
+
     var app = angular.module('app', [
         'ngAnimate',
         'ngSanitize',
@@ -14,10 +14,11 @@
 
     //Configuration for Angular UI routing.
     app.config([
-        '$stateProvider', '$urlRouterProvider', '$locationProvider',
-        function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        '$stateProvider', '$urlRouterProvider', '$locationProvider', '$qProvider',
+        function ($stateProvider, $urlRouterProvider, $locationProvider, $qProvider) {
             $locationProvider.hashPrefix('');
             $urlRouterProvider.otherwise('/');
+            $qProvider.errorOnUnhandledRejections(false);
 
             if (abp.auth.hasPermission('Pages.Users')) {
                 $stateProvider
