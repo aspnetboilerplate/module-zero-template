@@ -32,9 +32,15 @@ namespace AbpCompanyName.AbpProjectName.EntityFramework
         }
 
         //This constructor is used in tests
-        public AbpProjectNameDbContext(DbConnection connection)
-            : base(connection, true)
+        public AbpProjectNameDbContext(DbConnection existingConnection)
+         : base(existingConnection, false)
         {
+
+        }
+
+        public AbpProjectNameDbContext(DbConnection existingConnection, bool contextOwnsConnection)
+         : base(existingConnection, contextOwnsConnection)
+      {
 
         }
     }
