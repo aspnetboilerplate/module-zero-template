@@ -6,8 +6,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
     {
         public MultiTenantFactAttribute()
         {
-            var multiTenancyConfig = System.Configuration.ConfigurationManager.AppSettings["MultiTenancyEnabled"];
-            if (multiTenancyConfig != null && multiTenancyConfig == "false")
+            if (!AbpProjectNameConsts.MultiTenancyEnabled)
             {
                 Skip = "MultiTenancy is disabled.";
             }
