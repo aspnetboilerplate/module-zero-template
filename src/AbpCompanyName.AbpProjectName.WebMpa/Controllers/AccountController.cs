@@ -144,7 +144,9 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                 case AbpLoginResultType.UserIsNotActive:
                     return new UserFriendlyException(L("LoginFailed"), L("UserIsNotActiveAndCanNotLogin", usernameOrEmailAddress));
                 case AbpLoginResultType.UserEmailIsNotConfirmed:
-                    return new UserFriendlyException(L("LoginFailed"), "Your email address is not confirmed. You can not login"); //TODO: localize message
+                    return new UserFriendlyException(L("LoginFailed"), "UserEmailIsNotConfirmedAndCanNotLogin");
+                case AbpLoginResultType.LockedOut:
+                    return new UserFriendlyException(L("LoginFailed"), L("UserLockedOutMessage"));
                 default: //Can not fall to default actually. But other result types can be added in the future and we may forget to handle it
                     Logger.Warn("Unhandled login fail reason: " + result);
                     return new UserFriendlyException(L("LoginFailed"));
