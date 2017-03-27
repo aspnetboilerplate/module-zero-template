@@ -13,7 +13,8 @@
                         usernameOrEmailAddress: $('#EmailAddressInput').val(),
                         password: $('#PasswordInput').val(),
                         rememberMe: $('#RememberMeInput').is(':checked'),
-                        returnUrlHash: $('#ReturnUrlHash').val()
+                        returnUrlHash: $('#ReturnUrlHash').val(),
+                        returnUrl: $('#ReturnUrl').val()
                     })
                 })
             );
