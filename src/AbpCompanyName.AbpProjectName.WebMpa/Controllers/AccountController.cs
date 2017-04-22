@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Abp.Auditing;
+using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Configuration.Startup;
