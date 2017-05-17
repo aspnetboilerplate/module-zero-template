@@ -1229,6 +1229,10 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="d.ts.Generator\TypeScriptTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TypeScriptTemplate.d.ts</LastGenOutput>
+    </Content>
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
     </Content>
@@ -1261,6 +1265,7 @@
     <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\Account\TenantSelectionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="d.ts.Generator\TypeScriptGenerator.cs" />
     <Compile Include="Views\AbpProjectNameWebViewPageBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1310,11 +1315,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Abp\Framework\scripts\abp.d.ts" />
     <TypeScriptCompile Include="Abp\Framework\scripts\libs\abp.jquery.d.ts" />
     <TypeScriptCompile Include="Abp\Framework\scripts\libs\abp.signalr.d.ts" />
+    <TypeScriptCompile Include="d.ts.Generator\TypeScriptTemplate.d.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeScriptTemplate.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
