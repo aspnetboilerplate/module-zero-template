@@ -55,5 +55,16 @@
     <text name="Yes" value="Evet" />
     <text name="No" value="Hayır" />
     <text name="Optional" value="Opsiyonel" />
+    <text name="LeaveEmptyToSwitchToHost">Üst kullanıcıya geçiş için boş değer girin.</text>
+    
+    <text name="CurrentTenant">Geçerli müşteri</text>
+    <text name="NotSelected">Seçilmemiş</text>
+    <text name="Change">Değiştir</text>
+    <text name="ChangeTenant">Müşteri değiştir</text>
+
+    <text name="MultiLevelMenu">Çok Seviyeli Menü</text>
+    <text name="Back">Geri</text>
+    <text name="SuccessfullyRegistered">Başarıyla kayıt olundu</text>
+    <text name="WaitingForEmailActivation">E-posta adresiniz etkinleştirilmeli.</text>
   </texts>
 </localizationDictionary>

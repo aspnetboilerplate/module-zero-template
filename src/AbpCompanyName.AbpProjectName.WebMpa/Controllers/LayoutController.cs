@@ -5,6 +5,7 @@ using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.Threading;
 using AbpCompanyName.AbpProjectName.Sessions;
+using AbpCompanyName.AbpProjectName.WebMpa.Models;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers

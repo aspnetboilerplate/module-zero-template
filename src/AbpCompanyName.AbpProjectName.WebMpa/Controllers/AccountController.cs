@@ -13,15 +13,19 @@ using Abp.AutoMapper;
 using Abp.Configuration.Startup;
 using Abp.Domain.Uow;
 using Abp.Extensions;
+using Abp.Localization;
 using Abp.Threading;
 using Abp.UI;
 using Abp.Web.Models;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
+using AbpCompanyName.AbpProjectName.Sessions;
 using AbpCompanyName.AbpProjectName.Users;
 using AbpCompanyName.AbpProjectName.WebMpa.Controllers.Results;
+using AbpCompanyName.AbpProjectName.WebMpa.Models;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Account;
+using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -36,6 +40,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         private readonly LogInManager _logInManager;
+        private readonly ISessionAppService _sessionAppService;
+        private readonly ILanguageManager _languageManager;
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -51,7 +57,9 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             RoleManager roleManager,
             IUnitOfWorkManager unitOfWorkManager,
             IMultiTenancyConfig multiTenancyConfig,
-            LogInManager logInManager)
+            LogInManager logInManager,
+            ISessionAppService sessionAppService,
+            ILanguageManager languageManager)
         {
             _tenantManager = tenantManager;
             _userManager = userManager;
@@ -59,6 +67,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             _unitOfWorkManager = unitOfWorkManager;
             _multiTenancyConfig = multiTenancyConfig;
             _logInManager = logInManager;
+            _sessionAppService = sessionAppService;
+            _languageManager = languageManager;
         }
 
         #region Login / Logout
@@ -69,6 +79,9 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             {
                 returnUrl = Request.ApplicationPath;
             }
+
+            ViewBag.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
+            ViewBag.X = _sessionAppService.GetCurrentLoginInformations();
 
             return View(
                 new LoginFormViewModel
@@ -481,6 +494,38 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             }
 
             return tenant;
+        }
+
+        #endregion
+
+        #region Common Partial Views
+
+
+        [ChildActionOnly]
+        public PartialViewResult TenantChange()
+        {
+            var loginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations());
+
+            return PartialView("_TenantChange", new TenantChangeViewModel
+            {
+                Tenant = loginInformations.Tenant
+            });
+        }
+
+
+        [ChildActionOnly]
+        public PartialViewResult _AccountLanguages()
+        {
+            var model = new LanguageSelectionViewModel
+            {
+                CurrentLanguage = _languageManager.CurrentLanguage,
+                Languages = _languageManager.GetLanguages().Where(l => !l.IsDisabled).ToList()
+                    .Where(l => !l.IsDisabled)
+                    .ToList(),
+                CurrentUrl = Request.Path
+            };
+
+            return PartialView("_AccountLanguages", model);
         }
 
         #endregion
