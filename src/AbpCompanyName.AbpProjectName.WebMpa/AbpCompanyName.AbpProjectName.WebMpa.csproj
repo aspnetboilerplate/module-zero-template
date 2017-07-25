@@ -333,47 +333,6 @@
     <Content Include="Abp\Framework\styles\abp.mixings.css" />
     <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\themes\base\accordion.css" />
-    <Content Include="Content\themes\base\all.css" />
-    <Content Include="Content\themes\base\autocomplete.css" />
-    <Content Include="Content\themes\base\base.css" />
-    <Content Include="Content\themes\base\button.css" />
-    <Content Include="Content\themes\base\core.css" />
-    <Content Include="Content\themes\base\datepicker.css" />
-    <Content Include="Content\themes\base\dialog.css" />
-    <Content Include="Content\themes\base\draggable.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\menu.css" />
-    <Content Include="Content\themes\base\progressbar.css" />
-    <Content Include="Content\themes\base\resizable.css" />
-    <Content Include="Content\themes\base\selectable.css" />
-    <Content Include="Content\themes\base\selectmenu.css" />
-    <Content Include="Content\themes\base\slider.css" />
-    <Content Include="Content\themes\base\sortable.css" />
-    <Content Include="Content\themes\base\spinner.css" />
-    <Content Include="Content\themes\base\tabs.css" />
-    <Content Include="Content\themes\base\theme.css" />
-    <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
     <Content Include="css\materialize.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style.min.css" />
@@ -419,9 +378,6 @@
     <Content Include="css\themes\theme-yellow.min.css" />
     <Content Include="fonts\material-icons\materialicons.css" />
     <Content Include="fonts\roboto\roboto.css" />
-    <Content Include="Content\bootstrap-cosmo.min.css" />
-    <Content Include="Content\flags\famfamfam-flags.css" />
-    <Content Include="Content\flags\famfamfam-flags.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\user-img-background.jpg" />
@@ -2187,12 +2143,6 @@
     <Content Include="lib\Waves\Gruntfile.js" />
     <Content Include="lib\Waves\src\js\waves.js" />
     <Content Include="log4net.config" />
-    <Content Include="Content\toastr.scss" />
-    <Content Include="Content\toastr.less" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="fonts\material-icons\materialicons.woff2" />
     <Content Include="fonts\roboto\-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2" />
     <Content Include="fonts\roboto\77FXFjRbGzN4aCrSFhlh3hJtnKITppOI_IvcXXDNrsc.woff2" />
@@ -2704,6 +2654,10 @@
     <Content Include="Views\Account\_Layout.min.css">
       <DependentUpon>_Layout.css</DependentUpon>
     </Content>
+    <Content Include="Views\Account\_TenantChange.js" />
+    <Content Include="Views\Account\_TenantChangeModal.js" />
+    <Content Include="Views\Shared\_Layout.css" />
+    <Content Include="Views\Shared\_Layout.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Users\Index.js" />
     <Content Include="Web.config">
@@ -2717,6 +2671,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AbpProjectNameNavigationProvider.cs" />
     <Compile Include="App_Start\AbpProjectNameWebModule.cs" />
+    <Compile Include="App_Start\PageNames.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -2725,8 +2680,11 @@
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Models\Account\TenantChangeModalViewModel.cs" />
     <Compile Include="Models\Account\TenantChangeViewModel.cs" />
-    <Compile Include="Models\Layout\UserMenuOrLoginLinkViewModel.cs" />
+    <Compile Include="Models\Common\Modals\ModalHeaderViewModel.cs" />
+    <Compile Include="Models\Layout\RightSideBarViewModel.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
     <Compile Include="Models\Account\LoginViewModel.cs" />
     <Compile Include="Models\Account\RegisterResultViewModel.cs" />
@@ -2738,7 +2696,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Layout\TopMenuViewModel.cs" />
+    <Compile Include="Models\Layout\SideBarNavViewModel.cs" />
+    <Compile Include="Models\Layout\SideBarUserAreaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AbpProjectNameWebViewPageBase.cs" />
     <Compile Include="Views\UrlChecker.cs" />
@@ -2747,9 +2706,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Shared\_TopBar.cshtml" />
     <Content Include="Views\Layout\_LanguageSelection.cshtml" />
-    <Content Include="Views\Layout\_TopMenu.cshtml" />
+    <Content Include="Views\Layout\_SideBarNav.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Scripts\sweetalert\sweet-alert.scss" />
     <Content Include="Views\Account\Login.cshtml" />
@@ -2757,7 +2715,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\RegisterResult.cshtml" />
     <Content Include="Views\Account\TenantSelection.cshtml" />
-    <Content Include="Views\Layout\_UserMenuOrLoginLink.cshtml" />
     <Content Include="Views\Tenants\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Account\_Layout.cshtml" />
@@ -2847,6 +2804,11 @@
     <Content Include="Views\Account\_TenantChange.cshtml" />
     <Content Include="Views\Account\_AccountLanguages.cshtml" />
     <Content Include="Views\Account\_Layout.less" />
+    <Content Include="Views\Account\_TenantChangeModal.cshtml" />
+    <Content Include="Views\Shared\Modals\_ModalFooterWithSaveAndCancel.cshtml" />
+    <Content Include="Views\Shared\Modals\_ModalHeader.cshtml" />
+    <Content Include="Views\Layout\_RightSideBar.cshtml" />
+    <Content Include="Views\Layout\_SideBarUserArea.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2874,7 +2836,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\BsbAdmin\" />
+    <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

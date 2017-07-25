@@ -17,6 +17,7 @@ using Abp.UI;
 using Abp.Web.Models;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
 using AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers.Results;
@@ -228,7 +229,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                         model.UserName = model.EmailAddress;
                     }
 
-                    model.Password = Users.User.CreateRandomPassword();
+                    model.Password = Authorization.Users.User.CreateRandomPassword();
 
                     if (string.Equals(externalLoginInfo.Email, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
                     {

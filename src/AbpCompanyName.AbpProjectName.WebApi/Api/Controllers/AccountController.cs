@@ -8,6 +8,7 @@ using Abp.Web.Models;
 using Abp.WebApi.Controllers;
 using AbpCompanyName.AbpProjectName.Api.Models;
 using AbpCompanyName.AbpProjectName.Authorization;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Users;
 using Microsoft.Owin.Infrastructure;

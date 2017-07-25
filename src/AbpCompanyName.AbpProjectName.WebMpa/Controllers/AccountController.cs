@@ -14,18 +14,18 @@ using Abp.Configuration.Startup;
 using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.Localization;
+using Abp.MultiTenancy;
 using Abp.Threading;
 using Abp.UI;
 using Abp.Web.Models;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Sessions;
-using AbpCompanyName.AbpProjectName.Users;
 using AbpCompanyName.AbpProjectName.WebMpa.Controllers.Results;
 using AbpCompanyName.AbpProjectName.WebMpa.Models;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Account;
-using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -42,6 +42,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         private readonly LogInManager _logInManager;
         private readonly ISessionAppService _sessionAppService;
         private readonly ILanguageManager _languageManager;
+        private readonly ITenantCache _tenantCache;
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -59,7 +60,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             IMultiTenancyConfig multiTenancyConfig,
             LogInManager logInManager,
             ISessionAppService sessionAppService,
-            ILanguageManager languageManager)
+            ILanguageManager languageManager, 
+            ITenantCache tenantCache)
         {
             _tenantManager = tenantManager;
             _userManager = userManager;
@@ -69,6 +71,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             _logInManager = logInManager;
             _sessionAppService = sessionAppService;
             _languageManager = languageManager;
+            _tenantCache = tenantCache;
         }
 
         #region Login / Logout
@@ -81,7 +84,6 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             }
 
             ViewBag.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
-            ViewBag.X = _sessionAppService.GetCurrentLoginInformations();
 
             return View(
                 new LoginFormViewModel
@@ -100,7 +102,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             var loginResult = await GetLoginResultAsync(
                 loginModel.UsernameOrEmailAddress,
                 loginModel.Password,
-                loginModel.TenancyName
+                GetTenancyNameOrNull()
                 );
 
             await SignInAsync(loginResult.User, loginResult.Identity, loginModel.RememberMe);
@@ -243,7 +245,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                         model.UserName = model.EmailAddress;
                     }
 
-                    model.Password = Users.User.CreateRandomPassword();
+                    model.Password = Authorization.Users.User.CreateRandomPassword();
 
                     if (string.Equals(externalLoginInfo.Email, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
                     {
@@ -496,6 +498,16 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             return tenant;
         }
 
+        private string GetTenancyNameOrNull()
+        {
+            if (!AbpSession.TenantId.HasValue)
+            {
+                return null;
+            }
+
+            return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
+        }
+
         #endregion
 
         #region Common Partial Views
@@ -509,6 +521,15 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             return PartialView("_TenantChange", new TenantChangeViewModel
             {
                 Tenant = loginInformations.Tenant
+            });
+        }
+
+        public async Task<PartialViewResult> TenantChangeModal()
+        {
+            var loginInfo = await _sessionAppService.GetCurrentLoginInformations();
+            return PartialView("_TenantChangeModal", new TenantChangeModalViewModel
+            {
+                TenancyName = loginInfo.Tenant?.TenancyName
             });
         }
 

@@ -1,8 +1,8 @@
 ﻿using System.Data.Common;
 using Abp.Zero.EntityFramework;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
-using AbpCompanyName.AbpProjectName.Users;
 
 namespace AbpCompanyName.AbpProjectName.EntityFramework
 {

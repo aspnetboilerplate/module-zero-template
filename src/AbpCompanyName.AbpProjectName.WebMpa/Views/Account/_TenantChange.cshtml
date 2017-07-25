@@ -1,4 +1,9 @@
-﻿@model AbpCompanyName.AbpProjectName.WebMpa.Models.Account.TenantChangeViewModel
+﻿@using AbpCompanyName.AbpProjectName.WebMpa.Helpers
+@model AbpCompanyName.AbpProjectName.WebMpa.Models.Account.TenantChangeViewModel
+@using (Html.BeginScripts())
+{
+    <script src="@Url.Content("~/Views/Account/_TenantChange.js")" type="text/javascript"></script>
+}
 <div class="card tenant-change-component" style="margin-bottom: 3px;">
     <div class="body text-center">
         <span>
@@ -20,7 +25,7 @@
 <div class="modal fade" id="TenantChangeModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-
+            
         </div>
     </div>
 </div>

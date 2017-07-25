@@ -2,7 +2,7 @@
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Layout
 {
-    public class TopMenuViewModel
+    public class SideBarNavViewModel
     {
         public UserMenu MainMenu { get; set; }
 

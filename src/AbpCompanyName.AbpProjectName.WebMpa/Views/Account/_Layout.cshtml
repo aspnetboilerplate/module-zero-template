@@ -1,8 +1,8 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
 @using Abp.Timing
-@using Abp.Web.Mvc.Extensions
 @using AbpCompanyName.AbpProjectName
+@using AbpCompanyName.AbpProjectName.WebMpa.Helpers
 @{
     SetAntiForgeryCookie();
 }
@@ -66,5 +66,6 @@
 
     <!-- View specific scripts -->
     @RenderSection("scripts", required: false)
+    @Html.PartialViewScripts()
 </body>
 </html>

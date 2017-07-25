@@ -1,9 +1,13 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using Abp.Application.Navigation;
+using Abp.Configuration;
 using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.Threading;
+using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.Sessions;
 using AbpCompanyName.AbpProjectName.WebMpa.Models;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
@@ -18,8 +22,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         private readonly ILanguageManager _languageManager;
 
         public LayoutController(
-            IUserNavigationManager userNavigationManager, 
-            ISessionAppService sessionAppService, 
+            IUserNavigationManager userNavigationManager,
+            ISessionAppService sessionAppService,
             IMultiTenancyConfig multiTenancyConfig,
             ILanguageManager languageManager)
         {
@@ -30,51 +34,52 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         }
 
         [ChildActionOnly]
-        public PartialViewResult TopMenu(string activeMenu = "")
+        public PartialViewResult SideBarNav(string activeMenu = "")
         {
-            var model = new TopMenuViewModel
-                        {
-                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
-                            ActiveMenuItemName = activeMenu
-                        };
+            var model = new SideBarNavViewModel
+            {
+                MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
+                ActiveMenuItemName = activeMenu
+            };
 
-            return PartialView("_TopMenu", model);
+            return PartialView("_SideBarNav", model);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult SideBarUserArea()
+        {
+            var model = new SideBarUserAreaViewModel
+            {
+                LoginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations()),
+                IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,
+            };
+
+            return PartialView("_SideBarUserArea", model);
         }
 
         [ChildActionOnly]
         public PartialViewResult LanguageSelection()
         {
             var model = new LanguageSelectionViewModel
-                        {
-                            CurrentLanguage = _languageManager.CurrentLanguage,
-                            Languages = _languageManager.GetLanguages()
-                        };
+            {
+                CurrentLanguage = _languageManager.CurrentLanguage,
+                Languages = _languageManager.GetLanguages()
+            };
 
             return PartialView("_LanguageSelection", model);
         }
 
         [ChildActionOnly]
-        public PartialViewResult UserMenuOrLoginLink()
+        public PartialViewResult RightSideBar()
         {
-            UserMenuOrLoginLinkViewModel model;
+            var themeName = SettingManager.GetSettingValue(AppSettingNames.UiTheme);
 
-            if (AbpSession.UserId.HasValue)
+            var viewModel = new RightSideBarViewModel
             {
-                model = new UserMenuOrLoginLinkViewModel
-                {
-                    LoginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations()),
-                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,
-                };
-            }
-            else
-            {
-                model = new UserMenuOrLoginLinkViewModel
-                {
-                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled                    
-                };
-            }
+                CurrentTheme = UiThemes.All.FirstOrDefault(t => t.CssClass == themeName)
+            };
 
-            return PartialView("_UserMenuOrLoginLink", model);
+            return PartialView("_RightSideBar", viewModel);
         }
     }
 }

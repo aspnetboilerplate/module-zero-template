@@ -125,6 +125,9 @@
     <Compile Include="Authorization\PermissionNames.cs" />
     <Compile Include="Authorization\Roles\AppRoleConfig.cs" />
     <Compile Include="Authorization\Roles\StaticRoleNames.cs" />
+    <Compile Include="Authorization\Users\UserRegistrationManager.cs" />
+    <Compile Include="Configuration\AppSettingNames.cs" />
+    <Compile Include="Configuration\AppSettingProvider.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
@@ -133,9 +136,10 @@
     <Compile Include="Authorization\Roles\Role.cs" />
     <Compile Include="Authorization\Roles\RoleManager.cs" />
     <Compile Include="Authorization\Roles\RoleStore.cs" />
-    <Compile Include="Users\User.cs" />
-    <Compile Include="Users\UserManager.cs" />
-    <Compile Include="Users\UserStore.cs" />
+    <Compile Include="Authorization\Users\User.cs" />
+    <Compile Include="Authorization\Users\UserManager.cs" />
+    <Compile Include="Authorization\Users\UserStore.cs" />
+    <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

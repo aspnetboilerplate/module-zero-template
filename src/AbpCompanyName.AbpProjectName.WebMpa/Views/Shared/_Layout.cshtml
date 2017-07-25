@@ -1,16 +1,21 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
+@using Abp.Configuration
 @using Abp.Timing
 @using Abp.Web.Mvc.Extensions
+@using AbpCompanyName.AbpProjectName
+@using AbpCompanyName.AbpProjectName.Configuration
 @{
+    Layout = null;
     SetAntiForgeryCookie();
+    var uiTheme = SettingManager.GetSettingValue(AppSettingNames.UiTheme);
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -19,7 +24,6 @@
     <title>AbpProjectName</title>
 
     @Styles.Render("~/Bundles/vendor/css")
-    @Styles.Render("~/Bundles/css")
 
     <!-- View specific styles -->
     @RenderSection("styles", required: false)
@@ -28,25 +32,111 @@
         //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
         var abp = abp || {}; abp.appPath = '@ApplicationPath';
     </script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
-        <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
-    <![endif]-->
-
-    @Scripts.Render("~/Bundles/vendor/js/top")
-
 </head>
-<body>
-    @Html.Partial("_TopBar")
-
-    <div class="container">
-        @RenderBody()
+<body class="@("theme-" + uiTheme)">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
     </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="fa fa-cubes"></i> AbpProjectName</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
+                    @Html.Action("LanguageSelection", "Layout")
 
-    @Scripts.Render("~/Bundles/vendor/js/bottom")
-    @Scripts.Render("~/Bundles/js")
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <aside id="leftsidebar" class="sidebar">
+            
+            @Html.Action("SideBarUserArea", "Layout")
+            @Html.Action("SideBarNav","Layout", new { activeMenu = ViewBag.ActiveMenu })
+
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; @DateTime.Now.Year <a href="javascript:void(0);">AbpProjectName</a>.
+                </div>
+                <div class="version">
+                    <b>Version </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+
+        @Html.Action("RightSideBar","Layout")
+
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </section>
+
+<script src="/lib/json2/json2.js?v=w3DjWhUtDqy3bSJKv285C-2kagUtW9F64T9z3xRah8g"></script>
+<script src="/lib/jquery/dist/jquery.js?v=A5AzdeUZJBV1X2MpcCLHI_iCCTFSpBAn2RvZthKq5AM"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js?v=7cUVZbzBwtGmk5k1zSDbokMo-fTC3DBbQAk2c5PBuZo"></script>
+<script src="/lib/moment/min/moment-with-locales.js?v=5f0RFtuChrGi6osDzegxXWf5yOkmx45i7J9fM1p6P5w"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.js?v=ZDzsHzuLAtqQVxXwbgRtfAPXQ7UAoJRXBAUDvc9G9CI"></script>
+<script src="/lib/blockUI/jquery.blockUI.js?v=KKcUNqwNyTLaXzvuMyFk6JisiQq6Hk7ZtrciXnEf3Z0"></script>
+<script src="/lib/toastr/toastr.js?v=prO6YeBrp6FzpE6glX7_GlSoPssvH4_OmY6Z3YJ2c6c"></script>
+<script src="/lib/sweetalert/dist/sweetalert-dev.js?v=8Ax9AbL0t-8T2lGEE7el6KScQAziFlEufyT3R_0F-sU"></script>
+<script src="/lib/spin.js/spin.js?v=b1plKpQIB-XuGyjWec42MhmhpPzEPzFI3OC8Ia0XIoc"></script>
+<script src="/lib/spin.js/jquery.spin.js?v=i7H7HL08ldqUANgfQInE7LlU2uWUdQMCJ-Q7-_zLutY"></script>
+<script src="/lib/bootstrap-select/dist/js/bootstrap-select.js?v=tXulJKckrq2j2wo8a9hvmXLDEQwhGviPTIYmEzy1dNI"></script>
+<script src="/lib/jquery-slimscroll/jquery.slimscroll.js?v=ESVSX4dkOxamaRoYfcqPM2FfErhgfxS60fp1Fa8ou1w"></script>
+<script src="/lib/Waves/dist/waves.js?v=ZOMv1vwqpT_ezNZGhvr9jJTr_jqu3lYHB7vmpxD7HmA"></script>
+<script src="/lib/push.js/push.js?v=w347yqiscLjM_TxUKpqeUA1LDR3w5vshQpxpTsgkLhE"></script>
+<script src="/lib/abp-web-resources/Abp/Framework/scripts/abp.js?v=aqtIXErx2AnugPAN-Gcvn7lCY1auS2P9OMWNmo39JPw"></script>
+<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=UTBNdsQV5LRltJXHhq4mRGTW9HGIXpjqE7C7mAyT9Xc"></script>
+<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=QiSp17ew3zyFmdlcKq4HCIOw7UaqE8MC46Ekv50GzPs"></script>
+<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k"></script>
+<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI"></script>
+<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=RaK_bqL9zcfooV7iieu-qPXft0_1IEOHnAiysV2s5eo"></script>
+<script src="/js/admin.js"></script>
+<script src="/js/main.js?v=eIbdum5Y30d8Refo8CH9d8Gmggx4OfQG4pOp7_xiJ1g"></script>
+<script src="/Views/Shared/_Layout.js?v=RQruqClWPSu7O6l9-bzesJOrIOxROTb3CPVyIIqP_cw"></script>
 
     <script>
         //Localizing momentjs
@@ -61,7 +151,7 @@
     <script src="~/signalr/hubs"></script>
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
 
-<!-- View specific scripts -->
+    <!-- View specific scripts -->
     @RenderSection("scripts", required: false)
 </body>
 </html>

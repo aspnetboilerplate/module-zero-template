@@ -2,9 +2,10 @@ using AbpCompanyName.AbpProjectName.Sessions.Dto;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Layout
 {
-    public class UserMenuOrLoginLinkViewModel
+    public class SideBarUserAreaViewModel
     {
         public GetCurrentLoginInformationsOutput LoginInformations { get; set; }
+
         public bool IsMultiTenancyEnabled { get; set; }
 
         public string GetShownLoginName()
