@@ -5,7 +5,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
     using System.Data.Entity.Infrastructure.Annotations;
     using System.Data.Entity.Migrations;
     
-    public partial class AbpZero_Initial : DbMigration
+    public partial class Initial_Migration : DbMigration
     {
         public override void Up()
         {
@@ -104,6 +104,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         Name = c.String(nullable: false, maxLength: 10),
                         DisplayName = c.String(nullable: false, maxLength: 64),
                         Icon = c.String(maxLength: 128),
+                        IsDisabled = c.Boolean(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -238,11 +239,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Description = c.String(),
+                        TenantId = c.Int(),
+                        Name = c.String(nullable: false, maxLength: 32),
                         DisplayName = c.String(nullable: false, maxLength: 64),
                         IsStatic = c.Boolean(nullable: false),
                         IsDefault = c.Boolean(nullable: false),
-                        TenantId = c.Int(),
-                        Name = c.String(nullable: false, maxLength: 32),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -270,10 +272,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     {
                         Id = c.Long(nullable: false, identity: true),
                         AuthenticationSource = c.String(maxLength: 64),
+                        UserName = c.String(nullable: false, maxLength: 32),
+                        TenantId = c.Int(),
+                        EmailAddress = c.String(nullable: false, maxLength: 256),
                         Name = c.String(nullable: false, maxLength: 32),
                         Surname = c.String(nullable: false, maxLength: 32),
                         Password = c.String(nullable: false, maxLength: 128),
-                        IsEmailConfirmed = c.Boolean(nullable: false),
                         EmailConfirmationCode = c.String(maxLength: 328),
                         PasswordResetCode = c.String(maxLength: 328),
                         LockoutEndDateUtc = c.DateTime(),
@@ -283,10 +287,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         IsPhoneNumberConfirmed = c.Boolean(nullable: false),
                         SecurityStamp = c.String(),
                         IsTwoFactorEnabled = c.Boolean(nullable: false),
+                        IsEmailConfirmed = c.Boolean(nullable: false),
                         IsActive = c.Boolean(nullable: false),
-                        UserName = c.String(nullable: false, maxLength: 32),
-                        TenantId = c.Int(),
-                        EmailAddress = c.String(nullable: false, maxLength: 256),
                         LastLoginTime = c.DateTime(),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
@@ -417,9 +419,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         EditionId = c.Int(),
                         Name = c.String(nullable: false, maxLength: 128),
-                        IsActive = c.Boolean(nullable: false),
                         TenancyName = c.String(nullable: false, maxLength: 64),
                         ConnectionString = c.String(maxLength: 1024),
+                        IsActive = c.Boolean(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -516,116 +518,21 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         TenantId = c.Int(),
                         UserId = c.Long(nullable: false),
                         OrganizationUnitId = c.Long(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                         CreationTime = c.DateTime(nullable: false),
                         CreatorUserId = c.Long(),
                     },
                 annotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_UserOrganizationUnit_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_UserOrganizationUnit_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id);
-
-
-            CreateIndex("AbpAuditLogs", new[] { "TenantId", "ExecutionTime" });
-            CreateIndex("AbpAuditLogs", new[] { "UserId", "ExecutionTime" });
-
-            CreateIndex("AbpEditions", new[] { "Name" });
-
-            CreateIndex("AbpFeatures", new[] { "Discriminator", "TenantId", "Name" });
-            CreateIndex("AbpFeatures", new[] { "Discriminator", "EditionId", "Name" });
-            CreateIndex("AbpFeatures", new[] { "TenantId", "Name" });
-
-            CreateIndex("AbpLanguages", new[] { "TenantId", "Name" });
-
-            CreateIndex("AbpLanguageTexts", new[] { "TenantId", "LanguageName", "Source", "Key" });
-
-            CreateIndex("AbpOrganizationUnits", new[] { "TenantId", "ParentId" });
-            CreateIndex("AbpOrganizationUnits", new[] { "TenantId", "Code" });
-
-            DropIndex("AbpPermissions", new[] { "UserId" });
-            DropIndex("AbpPermissions", new[] { "RoleId" });
-            CreateIndex("AbpPermissions", new[] { "UserId", "Name" });
-            CreateIndex("AbpPermissions", new[] { "RoleId", "Name" });
-
-            CreateIndex("AbpRoles", new[] { "TenantId", "Name" });
-            CreateIndex("AbpRoles", new[] { "IsDeleted", "TenantId", "Name" });
-
-            DropIndex("AbpSettings", new[] { "UserId" });
-            CreateIndex("AbpSettings", new[] { "TenantId", "Name" });
-            CreateIndex("AbpSettings", new[] { "UserId", "Name" });
-
-            CreateIndex("AbpTenants", new[] { "TenancyName" });
-            CreateIndex("AbpTenants", new[] { "IsDeleted", "TenancyName" });
-
-            DropIndex("AbpUserLogins", new[] { "UserId" });
-            CreateIndex("AbpUserLogins", new[] { "UserId", "LoginProvider" });
-
-            CreateIndex("AbpUserOrganizationUnits", new[] { "TenantId", "UserId" });
-            CreateIndex("AbpUserOrganizationUnits", new[] { "TenantId", "OrganizationUnitId" });
-            CreateIndex("AbpUserOrganizationUnits", new[] { "UserId" });
-            CreateIndex("AbpUserOrganizationUnits", new[] { "OrganizationUnitId" });
-
-            DropIndex("AbpUserRoles", new[] { "UserId" });
-            CreateIndex("AbpUserRoles", new[] { "UserId", "RoleId" });
-            CreateIndex("AbpUserRoles", new[] { "RoleId" });
-
-            CreateIndex("AbpUsers", new[] { "TenantId", "UserName" });
-            CreateIndex("AbpUsers", new[] { "TenantId", "EmailAddress" });
-            CreateIndex("AbpUsers", new[] { "IsDeleted", "TenantId", "UserName" });
-            CreateIndex("AbpUsers", new[] { "IsDeleted", "TenantId", "EmailAddress" });
+            
         }
         
         public override void Down()
         {
-            DropIndex("AbpAuditLogs", new[] { "TenantId", "ExecutionTime" });
-            DropIndex("AbpAuditLogs", new[] { "UserId", "ExecutionTime" });
-
-            DropIndex("AbpEditions", new[] { "Name" });
-
-            DropIndex("AbpFeatures", new[] { "Discriminator", "TenantId", "Name" });
-            DropIndex("AbpFeatures", new[] { "Discriminator", "EditionId", "Name" });
-            DropIndex("AbpFeatures", new[] { "TenantId", "Name" });
-
-            DropIndex("AbpLanguages", new[] { "TenantId", "Name" });
-
-            DropIndex("AbpLanguageTexts", new[] { "TenantId", "LanguageName", "Source", "Key" });
-
-            DropIndex("AbpOrganizationUnits", new[] { "TenantId", "ParentId" });
-            DropIndex("AbpOrganizationUnits", new[] { "TenantId", "Code" });
-
-            CreateIndex("AbpPermissions", new[] { "UserId" });
-            CreateIndex("AbpPermissions", new[] { "RoleId" });
-
-            DropIndex("AbpPermissions", new[] { "UserId", "Name" });
-            DropIndex("AbpPermissions", new[] { "RoleId", "Name" });
-
-            DropIndex("AbpRoles", new[] { "TenantId", "Name" });
-            DropIndex("AbpRoles", new[] { "IsDeleted", "TenantId", "Name" });
-
-            CreateIndex("AbpSettings", new[] { "UserId" });
-            DropIndex("AbpSettings", new[] { "TenantId", "Name" });
-            DropIndex("AbpSettings", new[] { "UserId", "Name" });
-
-            DropIndex("AbpTenants", new[] { "TenancyName" });
-            DropIndex("AbpTenants", new[] { "IsDeleted", "TenancyName" });
-
-            CreateIndex("AbpUserLogins", new[] { "UserId" });
-            DropIndex("AbpUserLogins", new[] { "UserId", "LoginProvider" });
-
-            DropIndex("AbpUserOrganizationUnits", new[] { "TenantId", "UserId" });
-            DropIndex("AbpUserOrganizationUnits", new[] { "TenantId", "OrganizationUnitId" });
-            DropIndex("AbpUserOrganizationUnits", new[] { "UserId" });
-            DropIndex("AbpUserOrganizationUnits", new[] { "OrganizationUnitId" });
-
-            CreateIndex("AbpUserRoles", new[] { "UserId" });
-            DropIndex("AbpUserRoles", new[] { "UserId", "RoleId" });
-            DropIndex("AbpUserRoles", new[] { "RoleId" });
-
-            DropIndex("AbpUsers", new[] { "TenantId", "UserName" });
-            DropIndex("AbpUsers", new[] { "TenantId", "EmailAddress" });
-            DropIndex("AbpUsers", new[] { "IsDeleted", "TenantId", "UserName" });
-            DropIndex("AbpUsers", new[] { "IsDeleted", "TenantId", "EmailAddress" });
-
             DropForeignKey("dbo.AbpTenants", "LastModifierUserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpTenants", "EditionId", "dbo.AbpEditions");
             DropForeignKey("dbo.AbpTenants", "DeleterUserId", "dbo.AbpUsers");
@@ -671,6 +578,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 removedAnnotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_UserOrganizationUnit_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_UserOrganizationUnit_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpUserNotifications",
                 removedAnnotations: new Dictionary<string, object>

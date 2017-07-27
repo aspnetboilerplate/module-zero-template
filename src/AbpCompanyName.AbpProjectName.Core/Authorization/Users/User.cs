@@ -16,7 +16,7 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
 
         public static User CreateTenantAdminUser(int tenantId, string emailAddress, string password)
         {
-            return new User
+            var user = new User
             {
                 TenantId = tenantId,
                 UserName = AdminUserName,
@@ -25,6 +25,8 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
                 EmailAddress = emailAddress,
                 Password = new PasswordHasher().HashPassword(password)
             };
+
+            return user;
         }
     }
 }

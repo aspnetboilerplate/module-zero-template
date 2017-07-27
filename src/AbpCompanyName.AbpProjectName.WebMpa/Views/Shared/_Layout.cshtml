@@ -88,9 +88,9 @@
     <!-- #Top Bar -->
     <section>
         <aside id="leftsidebar" class="sidebar">
-            
+
             @Html.Action("SideBarUserArea", "Layout")
-            @Html.Action("SideBarNav","Layout", new { activeMenu = ViewBag.ActiveMenu })
+            @Html.Action("SideBarNav", "Layout", new { activeMenu = ViewBag.ActiveMenu })
 
             <!-- Footer -->
             <div class="legal">
@@ -104,7 +104,7 @@
             <!-- #Footer -->
         </aside>
 
-        @Html.Action("RightSideBar","Layout")
+        @Html.Action("RightSideBar", "Layout")
 
     </section>
 
@@ -114,29 +114,7 @@
         </div>
     </section>
 
-<script src="/lib/json2/json2.js?v=w3DjWhUtDqy3bSJKv285C-2kagUtW9F64T9z3xRah8g"></script>
-<script src="/lib/jquery/dist/jquery.js?v=A5AzdeUZJBV1X2MpcCLHI_iCCTFSpBAn2RvZthKq5AM"></script>
-<script src="/lib/bootstrap/dist/js/bootstrap.js?v=7cUVZbzBwtGmk5k1zSDbokMo-fTC3DBbQAk2c5PBuZo"></script>
-<script src="/lib/moment/min/moment-with-locales.js?v=5f0RFtuChrGi6osDzegxXWf5yOkmx45i7J9fM1p6P5w"></script>
-<script src="/lib/jquery-validation/dist/jquery.validate.js?v=ZDzsHzuLAtqQVxXwbgRtfAPXQ7UAoJRXBAUDvc9G9CI"></script>
-<script src="/lib/blockUI/jquery.blockUI.js?v=KKcUNqwNyTLaXzvuMyFk6JisiQq6Hk7ZtrciXnEf3Z0"></script>
-<script src="/lib/toastr/toastr.js?v=prO6YeBrp6FzpE6glX7_GlSoPssvH4_OmY6Z3YJ2c6c"></script>
-<script src="/lib/sweetalert/dist/sweetalert-dev.js?v=8Ax9AbL0t-8T2lGEE7el6KScQAziFlEufyT3R_0F-sU"></script>
-<script src="/lib/spin.js/spin.js?v=b1plKpQIB-XuGyjWec42MhmhpPzEPzFI3OC8Ia0XIoc"></script>
-<script src="/lib/spin.js/jquery.spin.js?v=i7H7HL08ldqUANgfQInE7LlU2uWUdQMCJ-Q7-_zLutY"></script>
-<script src="/lib/bootstrap-select/dist/js/bootstrap-select.js?v=tXulJKckrq2j2wo8a9hvmXLDEQwhGviPTIYmEzy1dNI"></script>
-<script src="/lib/jquery-slimscroll/jquery.slimscroll.js?v=ESVSX4dkOxamaRoYfcqPM2FfErhgfxS60fp1Fa8ou1w"></script>
-<script src="/lib/Waves/dist/waves.js?v=ZOMv1vwqpT_ezNZGhvr9jJTr_jqu3lYHB7vmpxD7HmA"></script>
-<script src="/lib/push.js/push.js?v=w347yqiscLjM_TxUKpqeUA1LDR3w5vshQpxpTsgkLhE"></script>
-<script src="/lib/abp-web-resources/Abp/Framework/scripts/abp.js?v=aqtIXErx2AnugPAN-Gcvn7lCY1auS2P9OMWNmo39JPw"></script>
-<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=UTBNdsQV5LRltJXHhq4mRGTW9HGIXpjqE7C7mAyT9Xc"></script>
-<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=QiSp17ew3zyFmdlcKq4HCIOw7UaqE8MC46Ekv50GzPs"></script>
-<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k"></script>
-<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI"></script>
-<script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=RaK_bqL9zcfooV7iieu-qPXft0_1IEOHnAiysV2s5eo"></script>
-<script src="/js/admin.js"></script>
-<script src="/js/main.js?v=eIbdum5Y30d8Refo8CH9d8Gmggx4OfQG4pOp7_xiJ1g"></script>
-<script src="/Views/Shared/_Layout.js?v=RQruqClWPSu7O6l9-bzesJOrIOxROTb3CPVyIIqP_cw"></script>
+    @Scripts.Render("~/Bundles/vendor/js/bottom")
 
     <script>
         //Localizing momentjs
