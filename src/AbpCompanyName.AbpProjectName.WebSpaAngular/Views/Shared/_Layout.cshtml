@@ -1,5 +1,7 @@
-﻿@using Abp.Timing
+﻿@using Abp.Configuration
+@using Abp.Timing
 @using Abp.Web.Mvc.Extensions
+@using AbpCompanyName.AbpProjectName.Configuration
 @*
     IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
 
@@ -9,7 +11,9 @@
     See App/Main/views/layout/layout.cshtml for Angular application's layout page.
 *@
 @{
+    Layout = null;
     SetAntiForgeryCookie();
+    var uiTheme = SettingManager.GetSettingValue(AppSettingNames.UiTheme);
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +77,7 @@
 
     @RenderSection("Scripts", false)
 </head>
-<body>
+<body class="@("theme-" + uiTheme)">
     @RenderBody()
 </body>
 </html>

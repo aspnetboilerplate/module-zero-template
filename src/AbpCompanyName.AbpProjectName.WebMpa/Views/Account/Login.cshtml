@@ -1,4 +1,6 @@
-﻿@using Abp.Web.Mvc.Extensions
+﻿@using Abp.MultiTenancy
+@using Abp.Web.Mvc.Extensions
+@using Microsoft.Owin.Security
 @model AbpCompanyName.AbpProjectName.WebMpa.Models.Account.LoginFormViewModel
 @section Styles
 {
@@ -40,10 +42,55 @@
                     <button id="LoginButton" class="btn btn-block bg-pink waves-effect" type="submit">@L("LogIn")</button>
                 </div>
             </div>
-         
+            @if (Model.IsSelfRegistrationAllowed)
+            {
+                <div class="row m-t-15 m-b--20">
+                    <div class="col-xs-12">
+                        <a href="@Url.Action("Register", "Account")">@L("Register")</a>
+                    </div>
+                </div>
+            }
         </form>
 
-       
-        
+        @{
+            var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().ToList();
+
+            Func<string, string> getSocialIconClass = (provider) =>
+            {
+                provider = provider.ToLowerInvariant();
+
+                if (provider == "microsoft")
+                {
+                    return "windows";
+                }
+
+                return provider;
+            };
+        }
+
+        @if (Model.MultiTenancySide == MultiTenancySides.Tenant && loginProviders.Count > 0)
+        {
+            <div class="login-options">
+                <h4>@L("LoginWith")</h4>
+                <ul class="social-icons">
+                    @using (Html.BeginForm("ExternalLogin", "Account", method: FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                        <input type="hidden" name="provider" value="" />
+
+                        foreach (AuthenticationDescription p in loginProviders)
+                        {
+                            <a class="btn btn-default btn-sm fa fa-@getSocialIconClass(p.AuthenticationType) social-login-link"
+                               title="@p.AuthenticationType"
+                               data-provider="@p.AuthenticationType"
+                               href="javascript:;"></a>
+                        }
+                    }
+                </ul>
+            </div>
+        }
+
     </div>
 </div>

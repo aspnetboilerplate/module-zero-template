@@ -2,5 +2,9 @@
   {
     "outputFile": "Views/Account/_Layout.css",
     "inputFile": "Views/Account/_Layout.less"
+  },
+  {
+    "outputFile": "Views/Account/Login.css",
+    "inputFile": "Views/Account/Login.less"
   }
 ]

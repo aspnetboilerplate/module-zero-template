@@ -27,11 +27,11 @@
                                     var tenant = Model.Tenants[i];
                                     <div class="md-radio">
                                         @{
-                                    string checkAttr = null;
-                                    if (i == 0)
-                                    {
-                                        checkAttr = "checked=\"checked\"";
-                                    }
+                                            string checkAttr = null;
+                                            if (i == 0)
+                                            {
+                                                checkAttr = "checked=\"checked\"";
+                                            }
                                         }
                                         <input type="radio" class="md-radiobtn" id="TenancyName_@(tenant.TenancyName)" name="TenancyName" value="@tenant.TenancyName" @checkAttr>
                                         <label for="TenancyName_@(tenant.TenancyName)">

@@ -7,7 +7,7 @@
             vm.tenants = [];
 
             function getTenants() {
-                tenantService.getTenants({}).then(function (result) {
+                tenantService.getAll({}).then(function (result) {
                     vm.tenants = result.data.items;
                 });
             }
