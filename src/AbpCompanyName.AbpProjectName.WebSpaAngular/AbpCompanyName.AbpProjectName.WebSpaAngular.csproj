@@ -356,6 +356,7 @@
     <Content Include="App\Main\views\layout\sidebar-nav.js" />
     <Content Include="App\Main\views\layout\sidebar-user-area.js" />
     <Content Include="App\Main\views\layout\topbar.js" />
+    <Content Include="App\Main\views\tenants\editModal.js" />
     <Content Include="App\Main\views\users\createModal.js" />
     <Content Include="App\Main\views\users\index.js" />
     <Content Include="App\Main\views\tenants\createModal.js" />
@@ -2747,6 +2748,11 @@
     <Content Include="App\Main\views\layout\sidebar-nav.cshtml" />
     <Content Include="App\Main\views\layout\sidebar-footer.cshtml" />
     <Content Include="App\Main\views\layout\right-sidebar.cshtml" />
+    <Content Include="App\Main\views\tenants\editModal.cshtml" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <None Include="Scripts\jquery-2.2.0-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
