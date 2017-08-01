@@ -1,7 +1,7 @@
 ﻿(function () {
-    angular.module('app').controller('app.views.users.createModal', [
-        '$scope', '$uibModalInstance', 'abp.services.app.user',
-        function ($scope, $uibModalInstance, userService) {
+    angular.module('app').controller('app.views.users.editModal', [
+        '$scope', '$uibModalInstance', 'abp.services.app.user', 'id',
+        function ($scope, $uibModalInstance, userService, id) {
             var vm = this;
 
             vm.user = {
@@ -10,11 +10,23 @@
 
             vm.roles = [];
 
-            function getRoles() {
+            var setAssignedRoles = function (user, roles) {
+                for (var i = 0; i < roles.length; i++) {
+                    var role = roles[i];
+                    role.isAssigned = $.inArray(role.name, user.roles) >= 0;
+                }
+            }
+
+            var init = function () {
                 userService.getRoles()
                     .then(function (result) {
-                        console.log(result);
                         vm.roles = result.data.items;
+
+                        userService.get({ id: id })
+                            .then(function (result) {
+                                vm.user = result.data;
+                                setAssignedRoles(vm.user, vm.roles);
+                            });
                     });
             }
 
@@ -31,7 +43,7 @@
                 }
 
                 vm.user.roleNames = assingnedRoles;
-                userService.create(vm.user)
+                userService.update(vm.user)
                     .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));
                         $uibModalInstance.close();
@@ -42,7 +54,7 @@
                 $uibModalInstance.dismiss({});
             };
 
-            getRoles();
+            init();
         }
     ]);
 })();
