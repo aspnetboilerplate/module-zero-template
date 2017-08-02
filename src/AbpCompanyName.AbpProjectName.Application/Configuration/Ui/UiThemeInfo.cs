@@ -1,4 +1,4 @@
-﻿namespace AbpCompanyName.AbpProjectName.Configuration
+namespace AbpCompanyName.AbpProjectName.Configuration.Ui
 {
     public class UiThemeInfo
     {

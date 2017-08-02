@@ -9,13 +9,13 @@
             vm.activateLeftSideBar = function () {
                 $timeout(function () {
                     $.AdminBSB.leftSideBar.activate();
-                }, 1000);
+                }, 2000);
             };
 
             vm.activateRightSideBar = function () {
                 $timeout(function () {
                     $.AdminBSB.rightSideBar.activate();
-                }, 1000);
+                }, 2000);
             };
 
 

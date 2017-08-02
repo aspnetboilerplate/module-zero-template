@@ -1,4 +1,4 @@
-using AbpCompanyName.AbpProjectName.Configuration;
+using AbpCompanyName.AbpProjectName.Configuration.Ui;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Layout
 {

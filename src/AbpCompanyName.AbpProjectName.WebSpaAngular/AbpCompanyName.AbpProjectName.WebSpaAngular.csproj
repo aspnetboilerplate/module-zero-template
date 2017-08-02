@@ -347,7 +347,6 @@
     <Content Include="App\Main\services\appSession.js" />
     <Content Include="App\Main\views\directives\autoFocus.js" />
     <Content Include="App\Main\views\directives\enterKey.js" />
-    <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\home\home.js" />
     <Content Include="App\Main\views\about\about.js" />
@@ -356,6 +355,9 @@
     <Content Include="App\Main\views\layout\sidebar-nav.js" />
     <Content Include="App\Main\views\layout\sidebar-user-area.js" />
     <Content Include="App\Main\views\layout\topbar.js" />
+    <Content Include="App\Main\views\roles\editModal.js" />
+    <Content Include="App\Main\views\roles\createModal.js" />
+    <Content Include="App\Main\views\roles\index.js" />
     <Content Include="App\Main\views\tenants\editModal.js" />
     <Content Include="App\Main\views\users\editModal.js" />
     <Content Include="App\Main\views\users\createModal.js" />
@@ -2224,7 +2226,6 @@
     <Content Include="lib\Waves\Gruntfile.js" />
     <Content Include="lib\Waves\src\js\waves.js" />
     <Content Include="log4net.config" />
-    <Content Include="App\Main\views\layout\header.cshtml" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -2751,6 +2752,9 @@
     <Content Include="App\Main\views\layout\right-sidebar.cshtml" />
     <Content Include="App\Main\views\tenants\editModal.cshtml" />
     <Content Include="App\Main\views\users\editModal.cshtml" />
+    <Content Include="App\Main\views\roles\index.cshtml" />
+    <Content Include="App\Main\views\roles\createModal.cshtml" />
+    <Content Include="App\Main\views\roles\editModal.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

@@ -133,8 +133,11 @@
     <Compile Include="Authorization\Accounts\Dto\RegisterOutput.cs" />
     <Compile Include="Authorization\Accounts\Dto\TenantAvailabilityState.cs" />
     <Compile Include="Authorization\Accounts\IAccountAppService.cs" />
-    <Compile Include="Configuration\UiThemeInfo.cs" />
-    <Compile Include="Configuration\UiThemes.cs" />
+    <Compile Include="Configuration\ConfigurationAppService.cs" />
+    <Compile Include="Configuration\Dto\ChangeUiThemeInput.cs" />
+    <Compile Include="Configuration\IConfigurationAppService.cs" />
+    <Compile Include="Configuration\Ui\UiThemeInfo.cs" />
+    <Compile Include="Configuration\Ui\UiThemes.cs" />
     <Compile Include="MultiTenancy\Dto\CreateTenantDto.cs" />
     <Compile Include="MultiTenancy\Dto\EditTenantDto.cs" />
     <Compile Include="MultiTenancy\Dto\TenantDto.cs" />

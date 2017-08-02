@@ -112,6 +112,23 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                     )
                 );
 
+            //Home-Index Bundles
+            bundles.Add(
+                new ScriptBundle("~/Bundles/home-index")
+                    .Include(
+                        "~/lib/jquery-countTo/jquery.countTo.js",
+                        "~/lib/raphael/raphael.js",
+                        "~/lib/morris.js/morris.js",
+                        "~/lib/chart.js/dist/Chart.bundle.js",
+                        "~/lib/Flot/jquery.flot.js",
+                        "~/lib/Flot/jquery.flot.resize.js",
+                        "~/lib/Flot/jquery.flot.pie.js",
+                        "~/lib/Flot/jquery.flot.categories.js",
+                        "~/lib/Flot/jquery.flot.time.js",
+                        "~/lib/jquery-sparkline/dist/jquery.sparkline.js"
+                    )
+            );
+
             //APPLICATION RESOURCES
 
             //~/Bundles/App/Main/css

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AbpCompanyName.AbpProjectName.Configuration
+namespace AbpCompanyName.AbpProjectName.Configuration.Ui
 {
     public static class UiThemes
     {

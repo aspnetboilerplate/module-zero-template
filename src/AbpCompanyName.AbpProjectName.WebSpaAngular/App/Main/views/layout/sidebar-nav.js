@@ -31,7 +31,7 @@
                 ])
             ];
 
-            vm.showMenuItem = function(menuItem) {
+            vm.showMenuItem = function (menuItem) {
                 if (menuItem.permissionName) {
                     return abp.auth.isGranted(menuItem.permissionName);
                 }

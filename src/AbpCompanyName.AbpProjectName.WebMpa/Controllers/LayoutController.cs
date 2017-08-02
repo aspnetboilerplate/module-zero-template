@@ -7,6 +7,7 @@ using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.Threading;
 using AbpCompanyName.AbpProjectName.Configuration;
+using AbpCompanyName.AbpProjectName.Configuration.Ui;
 using AbpCompanyName.AbpProjectName.Sessions;
 using AbpCompanyName.AbpProjectName.WebMpa.Models;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;

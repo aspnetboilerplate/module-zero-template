@@ -1,7 +1,7 @@
-﻿(function() {
+﻿(function () {
     angular.module('app').controller('app.views.users.index', [
-        '$scope', '$uibModal', 'abp.services.app.user',
-        function ($scope, $uibModal, userService) {
+        '$scope', '$timeout', '$uibModal', 'abp.services.app.user',
+        function ($scope, $timeout, $uibModal, userService) {
             var vm = this;
 
             vm.users = [];
@@ -12,13 +12,13 @@
                 });
             }
 
-            vm.openUserCreationModal = function() {
+            vm.openUserCreationModal = function () {
                 var modalInstance = $uibModal.open({
                     templateUrl: '/App/Main/views/users/createModal.cshtml',
                     controller: 'app.views.users.createModal as vm',
                     backdrop: 'static'
                 });
-                
+
                 modalInstance.rendered.then(function () {
                     $.AdminBSB.input.activate();
                 });
@@ -41,13 +41,29 @@
                 });
 
                 modalInstance.rendered.then(function () {
-                    $.AdminBSB.input.activate();
+                    $timeout(function () {
+                        $.AdminBSB.input.activate();
+                    }, 0);
                 });
 
                 modalInstance.result.then(function () {
                     getUsers();
                 });
             };
+
+            vm.delete = function (user) {
+                abp.message.confirm(
+                    "Delete user '" + user.userName + "'?",
+                    function (result) {
+                        if (result) {
+                            userService.delete({ id: user.id })
+                                .then(function () {
+                                    abp.notify.info("Deleted user: " + user.userName);
+                                    getUsers();
+                                });
+                        }
+                    });
+            }
 
             getUsers();
         }
