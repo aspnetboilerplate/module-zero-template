@@ -65,6 +65,10 @@
                     });
             }
 
+            vm.refresh = function () {
+                getUsers();
+            };
+
             getUsers();
         }
     ]);

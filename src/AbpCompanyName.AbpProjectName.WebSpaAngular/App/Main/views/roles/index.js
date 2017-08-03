@@ -63,6 +63,10 @@
                     });
             }
 
+            vm.refresh = function () {
+                getRoles();
+            };
+
             getRoles();
         }
     ]);
