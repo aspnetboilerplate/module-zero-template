@@ -68,7 +68,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                             new MenuItemDefinition(
                                 "AspNetBoilerplateHome",
                                 new FixedLocalizableString("Home"),
-                                url: "https://aspnetboilerplate.com/ref=abptmpl"
+                                url: "https://aspnetboilerplate.com?ref=abptmpl"
                             )
                         ).AddItem(
                             new MenuItemDefinition(

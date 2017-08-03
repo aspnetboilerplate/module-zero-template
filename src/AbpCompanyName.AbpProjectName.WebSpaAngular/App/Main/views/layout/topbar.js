@@ -13,14 +13,7 @@
             }
 
             vm.changeLanguage = function (languageName) {
-                abp.utils.setCookieValue(
-                    "Abp.Localization.CultureName",
-                    languageName,
-                    new Date(new Date().getTime() + 5 * 365 * 86400000), //5 year
-                    abp.appPath
-                );
-
-                location.reload();
+                location.href = abp.appPath + 'AbpLocalization/ChangeCulture?cultureName=' + languageName + '&returnUrl=' + window.location.pathname + window.location.hash;
             }
 
             init();
