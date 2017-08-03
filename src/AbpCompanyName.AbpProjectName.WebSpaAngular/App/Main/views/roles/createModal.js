@@ -24,7 +24,7 @@
 
                     assignedPermissions.push(permission.name);
                 }
-                console.log(assignedPermissions);
+                
                 vm.role.permissions = assignedPermissions;
                 roleService.create(vm.role)
                     .then(function () {

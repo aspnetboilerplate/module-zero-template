@@ -13,7 +13,6 @@
             function getRoles() {
                 userService.getRoles()
                     .then(function (result) {
-                        console.log(result);
                         vm.roles = result.data.items;
                     });
             }
