@@ -32,17 +32,7 @@ namespace AbpCompanyName.AbpProjectName
 
                 cfg.CreateMap<CreateRoleDto, Role>().ForMember(x => x.Permissions, opt => opt.Ignore());
                 cfg.CreateMap<RoleDto, Role>().ForMember(x => x.Permissions, opt => opt.Ignore());
-
-                IRepository<Role, int> repository = IocManager.Resolve<IRepository<Role, int>>();
-                // User and role
-                cfg.CreateMap<UserRole, string>().ConvertUsing((r) => {
-                    //TODO: Fix, this seems hacky
-                    Role role = repository.FirstOrDefault(r.RoleId);
-                    return role.DisplayName;
-                });
-
-                IocManager.Release(repository);
-
+                
                 cfg.CreateMap<UserDto, User>();
                 cfg.CreateMap<UserDto, User>().ForMember(x => x.Roles, opt => opt.Ignore());
 
