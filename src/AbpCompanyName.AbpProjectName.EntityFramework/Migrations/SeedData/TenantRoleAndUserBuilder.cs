@@ -5,8 +5,8 @@ using Abp.Authorization.Users;
 using Abp.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.EntityFramework;
-using AbpCompanyName.AbpProjectName.Users;
 
 namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
 {
@@ -62,7 +62,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
             var adminUser = _context.Users.FirstOrDefault(u => u.TenantId == _tenantId && u.UserName == User.AdminUserName);
             if (adminUser == null)
             {
-                adminUser = User.CreateTenantAdminUser(_tenantId, "admin@defaulttenant.com", "123qwe");
+                adminUser = User.CreateTenantAdminUser(_tenantId, "admin@defaulttenant.com", User.DefaultPassword);
                 adminUser.IsEmailConfirmed = true;
                 adminUser.IsActive = true;
 

@@ -1,8 +1,11 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
+@using Abp.Configuration
 @using Abp.Timing
 @using Abp.Web.Mvc.Extensions
+@using AbpCompanyName.AbpProjectName.Configuration
 @{
+    Layout = null;
     SetAntiForgeryCookie();
 }
 <!DOCTYPE html>
@@ -48,18 +51,29 @@
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
 
     @Scripts.Render("~/Bundles/App/Main/js")
-    
+
 </head>
-<body>
-    <div ng-app="app">
-        <div ng-controller="app.views.layout as vm">
-            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
-            <div class="container">
-                <div class="angular-animation-container row">
-                    <div ui-view class="shuffle-animation col-xs-12"></div>
-                </div>
+<body class="theme-red" ng-app="app">
+    <div class="overlay"></div>
+
+
+    <div ng-controller="app.views.layout as vm">
+        <div ng-include="'/App/Main/views/layout/topbar.cshtml'" onload="vm.activateTopBar()"></div>
+        <section>
+            <aside id="leftsidebar" class="sidebar">
+                <div ng-include="'/App/Main/views/layout/sidebar-user-area.cshtml'" onload="vm.activateLeftSideBar()"></div>
+                <div ng-include="'/App/Main/views/layout/sidebar-nav.cshtml'"></div>
+                <div ng-include="'/App/Main/views/layout/sidebar-footer.cshtml'"></div>
+            </aside>
+
+            <div ng-include="'/App/Main/views/layout/right-sidebar.cshtml'" onload="vm.activateRightSideBar()"></div>
+        </section>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div ui-view></div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>

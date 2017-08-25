@@ -1,20 +1,22 @@
 ﻿(function () {
 
     $(function () {
-        $('#LoginButton').click(function (e) {
+        var $loginForm = $('#LoginForm');
+
+        $loginForm.submit(function (e) {
             e.preventDefault();
+
+            if (!$loginForm.valid()) {
+                return;
+            }
+
             abp.ui.setBusy(
                 $('#LoginArea'),
+
                 abp.ajax({
-                    url: abp.appPath + 'Account/Login',
-                    type: 'POST',
-                    data: JSON.stringify({
-                        tenancyName: $('#TenancyName').val(),
-                        usernameOrEmailAddress: $('#EmailAddressInput').val(),
-                        password: $('#PasswordInput').val(),
-                        rememberMe: $('#RememberMeInput').is(':checked'),
-                        returnUrlHash: $('#ReturnUrlHash').val()
-                    })
+                    contentType: 'application/x-www-form-urlencoded',
+                    url: $loginForm.attr('action'),
+                    data: $loginForm.serialize()
                 })
             );
         });

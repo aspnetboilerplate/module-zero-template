@@ -1,4 +1,5 @@
-﻿@using Abp.Web.Mvc.Extensions
+﻿@using Abp.MultiTenancy
+@using Abp.Web.Mvc.Extensions
 @using Microsoft.Owin.Security
 @model AbpCompanyName.AbpProjectName.WebMpa.Models.Account.LoginFormViewModel
 @section Styles
@@ -9,87 +10,46 @@
 {
     @Html.IncludeScript("~/Views/Account/Login.js")
 }
-<div class="container">
-    <div id="LoginArea" class="row">
-        <div class="col-lg-12">
-            <div class="well bs-component">
-                <form id="LoginForm" class="form-horizontal" action="@(Url.Action("Login", "Account"))" method="POST">
-                    <fieldset>
-                        <legend>@L("LogIn")</legend>
 
-                        @if (Model.IsMultiTenancyEnabled)
-                        {
-                            <div class="form-group">
-                                <div class="col-lg-12">
-                                    <input type="text" class="form-control" id="TenancyName" placeholder="@L("TenancyName")" required maxlength="@AbpCompanyName.AbpProjectName.MultiTenancy.Tenant.MaxTenancyNameLength">
-                                    <span class="text-muted">@L("CanBeEmptyToLoginAsHost")</span>
-                                </div>
-                            </div>
-                        }
-                        else
-                        {
-                            <input type="hidden" id="TenancyName" value="">
-                        }
-
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <input type="text" class="form-control" id="EmailAddressInput" placeholder="@L("UserNameOrEmail")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxEmailAddressLength">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <input type="password" class="form-control" id="PasswordInput" placeholder="@L("Password")" required maxlength="@AbpCompanyName.AbpProjectName.Users.User.MaxPlainPasswordLength">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="RememberMeInput">
-                                        <span class="ripple"></span>
-                                        <span class="check"></span> @L("RememberMe")
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <input id="ReturnUrl" type="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
-                        <input id="ReturnUrlHash" type="hidden" name="returnUrlHash" />
-
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <button id="LoginButton" type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> @L("LogIn")</button>
-                                <a class="btn btn-success" href="@Url.Action("Register")"><i class="fa fa-sign-in"></i> @L("Register")</a>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-
-                @{
-                    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().ToList();
-                }
-
-                @if (loginProviders.Count > 0)
-                {
-                    <p>@L("OrLoginWith"):</p>
-                    
-
-                    using (Html.BeginForm("ExternalLogin", "Account", method: FormMethod.Post))
-                    {
-                        @Html.AntiForgeryToken()
-
-                        <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
-                        <input type="hidden" name="provider" value="" />
-
-                        foreach (var provider in loginProviders)
-                        {
-                            <a class="btn btn-default btn-sm social-login-link" title="@provider.AuthenticationType"
-                               data-provider="@provider.AuthenticationType"
-                               href="javascript:;">
-                                <i class="fa fa-@(provider.AuthenticationType.ToLower())"></i> @provider.AuthenticationType
-                            </a>
-                        }
-                    }
-                }
-
+<div class="card">
+    <div class="body">
+        <form id="LoginForm" method="POST" asp-action="Login">
+            <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+            <input type="hidden" name="returnUrlHash" />
+            <h4 class="text-center">@L("LogIn")</h4>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">person</i>
+                </span>
+                <div class="form-line">
+                    <input type="text" class="form-control" name="UsernameOrEmailAddress" placeholder="@L("UserNameOrEmail")" required autofocus maxlength="100">
+                </div>
             </div>
-        </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">lock</i>
+                </span>
+                <div class="form-line">
+                    <input type="password" class="form-control" name="Password" placeholder="@L("Password")" required maxlength="100">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 p-t-5">
+                    <input type="checkbox" name="RememberMe" id="rememberme" class="filled-in chk-col-pink" value="true">
+                    <label for="rememberme">@L("RememberMe")</label>
+                </div>
+                <div class="col-xs-4">
+                    <button id="LoginButton" class="btn btn-block bg-pink waves-effect" type="submit">@L("LogIn")</button>
+                </div>
+            </div>
+            @if (Model.IsSelfRegistrationAllowed)
+            {
+                <div class="row m-t-15 m-b--20">
+                    <div class="col-xs-12">
+                        <a href="@Url.Action("Register", "Account")">@L("Register")</a>
+                    </div>
+                </div>
+            }
+        </form>
     </div>
 </div>

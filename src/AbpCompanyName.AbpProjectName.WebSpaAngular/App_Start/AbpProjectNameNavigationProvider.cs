@@ -41,6 +41,15 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "Roles",
+                        L("Roles"),
+                        url: "#users",
+                        icon: "fa fa-tag",
+                        requiredPermissionName: PermissionNames.Pages_Roles
+                    )
+                )
+                .AddItem(
+                    new MenuItemDefinition(
                         "About",
                         new LocalizableString("About", AbpProjectNameConsts.LocalizationSourceName),
                         url: "#/about",

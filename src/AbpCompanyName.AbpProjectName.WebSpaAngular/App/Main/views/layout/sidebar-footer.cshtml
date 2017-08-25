@@ -1,0 +1,9 @@
+﻿@using AbpCompanyName.AbpProjectName
+<div class="legal" ng-controller="app.views.layout.sidebarFooter as vm">
+    <div class="copyright">
+        &copy; {{vm.currentYear}} <a href="javascript:void(0);">AbpProjectName</a>.
+    </div>
+    <div class="version">
+        <b>Version </b> v@(AppVersionHelper.Version) [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]
+    </div>
+</div>

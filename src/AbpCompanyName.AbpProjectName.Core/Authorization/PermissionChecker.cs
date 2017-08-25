@@ -1,11 +1,10 @@
 ﻿using Abp.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
-using AbpCompanyName.AbpProjectName.MultiTenancy;
-using AbpCompanyName.AbpProjectName.Users;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 
 namespace AbpCompanyName.AbpProjectName.Authorization
 {
-    public class PermissionChecker : PermissionChecker<Tenant, Role, User>
+    public class PermissionChecker : PermissionChecker<Role, User>
     {
         public PermissionChecker(UserManager userManager)
             : base(userManager)

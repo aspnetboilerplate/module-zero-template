@@ -2,25 +2,18 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using Abp.Authorization.Users;
-using Abp.MultiTenancy;
-using AbpCompanyName.AbpProjectName.Users;
+using Abp.Extensions;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Account
 {
     public class RegisterViewModel : IValidatableObject
     {
-        /// <summary>
-        /// Not required for single-tenant applications.
-        /// </summary>
-        [StringLength(AbpTenantBase.MaxTenancyNameLength)]
-        public string TenancyName { get; set; }
-
         [Required]
-        [StringLength(User.MaxNameLength)]
+        [StringLength(AbpUserBase.MaxNameLength)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(User.MaxSurnameLength)]
+        [StringLength(AbpUserBase.MaxSurnameLength)]
         public string Surname { get; set; }
 
         [StringLength(AbpUserBase.MaxUserNameLength)]
@@ -31,17 +24,22 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Account
         [StringLength(AbpUserBase.MaxEmailAddressLength)]
         public string EmailAddress { get; set; }
 
-        [StringLength(User.MaxPlainPasswordLength)]
+        [StringLength(AbpUserBase.MaxPlainPasswordLength)]
         public string Password { get; set; }
 
         public bool IsExternalLogin { get; set; }
 
+        public string ExternalLoginAuthSchema { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            var emailRegex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
-            if (!UserName.Equals(EmailAddress) && emailRegex.IsMatch(UserName))
+            if (!UserName.IsNullOrEmpty())
             {
-                yield return new ValidationResult("Username cannot be an email address unless it's same with your email address !");
+                var emailRegex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+                if (!UserName.Equals(EmailAddress) && emailRegex.IsMatch(UserName))
+                {
+                    yield return new ValidationResult("Username cannot be an email address unless it's same with your email address !");
+                }
             }
         }
     }

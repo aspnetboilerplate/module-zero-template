@@ -30,6 +30,16 @@
                 $urlRouterProvider.otherwise('/users');
             }
 
+            if (abp.auth.hasPermission('Pages.Roles')) {
+                $stateProvider
+                    .state('roles', {
+                        url: '/roles',
+                        templateUrl: '/App/Main/views/roles/index.cshtml',
+                        menu: 'Roles' //Matches to name of 'Tenants' menu in AbpProjectNameNavigationProvider
+                    });
+                $urlRouterProvider.otherwise('/roles');
+            }
+
             if (abp.auth.hasPermission('Pages.Tenants')) {
                 $stateProvider
                     .state('tenants', {
@@ -53,4 +63,5 @@
                 });
         }
     ]);
+
 })();

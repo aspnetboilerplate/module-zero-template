@@ -55,5 +55,26 @@
     <text name="Yes" value="Evet" />
     <text name="No" value="Hayır" />
     <text name="Optional" value="Opsiyonel" />
+    <text name="LeaveEmptyToSwitchToHost">Üst kullanıcıya geçiş için boş değer girin.</text>
+    
+    <text name="CurrentTenant">Geçerli müşteri</text>
+    <text name="NotSelected">Seçilmemiş</text>
+    <text name="Change">Değiştir</text>
+    <text name="ChangeTenant">Müşteri değiştir</text>
+
+    <text name="MultiLevelMenu">Çok Seviyeli Menü</text>
+    <text name="Back">Geri</text>
+    <text name="SuccessfullyRegistered">Başarıyla kayıt olundu</text>
+    <text name="WaitingForEmailActivation">E-posta adresiniz etkinleştirilmeli.</text>
+    <text name="Roles">Roller</text>
+    
+    <text name="Actions">İşlemler</text>
+    <text name="RoleName">Rol Adı</text>
+    <text name="DisplayName">Görünen Ad</text>
+    <text name="CreateNewRole">Yeni Rol Oluştur</text>
+    <text name="EditRole">Rolü Düzenle</text>
+    <text name="EditUser">Kullanıcı Düenle</text>
+    <text name="Edit">Düzenle</text>
+    <text name="Delete">Sil</text>
   </texts>
 </localizationDictionary>

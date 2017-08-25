@@ -6,20 +6,26 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Auditing;
 using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Configuration.Startup;
 using Abp.Domain.Uow;
 using Abp.Extensions;
+using Abp.Localization;
+using Abp.MultiTenancy;
+using Abp.Runtime.Session;
 using Abp.Threading;
 using Abp.UI;
 using Abp.Web.Models;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
+using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
-using AbpCompanyName.AbpProjectName.Users;
+using AbpCompanyName.AbpProjectName.Sessions;
 using AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers.Results;
+using AbpCompanyName.AbpProjectName.WebSpaAngular.Models;
 using AbpCompanyName.AbpProjectName.WebSpaAngular.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -35,6 +41,9 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         private readonly LogInManager _logInManager;
+        private readonly ISessionAppService _sessionAppService;
+        private readonly ILanguageManager _languageManager;
+        private readonly ITenantCache _tenantCache;
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -50,7 +59,10 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             RoleManager roleManager,
             IUnitOfWorkManager unitOfWorkManager,
             IMultiTenancyConfig multiTenancyConfig,
-            LogInManager logInManager)
+            LogInManager logInManager,
+            ISessionAppService sessionAppService,
+            ILanguageManager languageManager,
+            ITenantCache tenantCache)
         {
             _tenantManager = tenantManager;
             _userManager = userManager;
@@ -58,6 +70,9 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             _unitOfWorkManager = unitOfWorkManager;
             _multiTenancyConfig = multiTenancyConfig;
             _logInManager = logInManager;
+            _sessionAppService = sessionAppService;
+            _languageManager = languageManager;
+            _tenantCache = tenantCache;
         }
 
         #region Login / Logout
@@ -69,15 +84,20 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 returnUrl = Request.ApplicationPath;
             }
 
+            ViewBag.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
+
             return View(
                 new LoginFormViewModel
                 {
                     ReturnUrl = returnUrl,
-                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled
+                    IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled,
+                    IsSelfRegistrationAllowed = IsSelfRegistrationEnabled(),
+                    MultiTenancySide = AbpSession.MultiTenancySide
                 });
         }
 
         [HttpPost]
+        [DisableAuditing]
         public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
         {
             CheckModelState();
@@ -85,8 +105,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             var loginResult = await GetLoginResultAsync(
                 loginModel.UsernameOrEmailAddress,
                 loginModel.Password,
-                loginModel.TenancyName
-                );
+                GetTenancyNameOrNull()
+            );
 
             await SignInAsync(loginResult.User, loginResult.Identity, loginModel.RememberMe);
 
@@ -174,6 +194,16 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             return View("Register", model);
         }
 
+        private bool IsSelfRegistrationEnabled()
+        {
+            if (!AbpSession.TenantId.HasValue)
+            {
+                return false; //No registration enabled for host users!
+            }
+
+            return true;
+        }
+
         [HttpPost]
         public virtual async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -181,22 +211,9 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             {
                 CheckModelState();
 
-                //Get tenancy name and tenant
-                if (!_multiTenancyConfig.IsEnabled)
-                {
-                    model.TenancyName = Tenant.DefaultTenantName;
-                }
-                else if (model.TenancyName.IsNullOrEmpty())
-                {
-                    throw new UserFriendlyException(L("TenantNameCanNotBeEmpty"));
-                }
-
-                var tenant = await GetActiveTenantAsync(model.TenancyName);
-
                 //Create user
                 var user = new User
                 {
-                    TenantId = tenant.Id,
                     Name = model.Name,
                     Surname = model.Surname,
                     EmailAddress = model.EmailAddress,
@@ -217,7 +234,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                     {
                         new UserLogin
                         {
-                            TenantId = tenant.Id,
                             LoginProvider = externalLoginInfo.Login.LoginProvider,
                             ProviderKey = externalLoginInfo.Login.ProviderKey
                         }
@@ -228,7 +244,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                         model.UserName = model.EmailAddress;
                     }
 
-                    model.Password = Users.User.CreateRandomPassword();
+                    model.Password = Authorization.Users.User.CreateRandomPassword();
 
                     if (string.Equals(externalLoginInfo.Email, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
                     {
@@ -249,7 +265,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
 
                 //Switch to the tenant
                 _unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant); //TODO: Needed?
-                _unitOfWorkManager.Current.SetTenantId(tenant.Id);
+                _unitOfWorkManager.Current.SetTenantId(AbpSession.GetTenantId());
 
                 //Add default roles
                 user.Roles = new List<UserRole>();
@@ -268,11 +284,11 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                     AbpLoginResult<Tenant, User> loginResult;
                     if (externalLoginInfo != null)
                     {
-                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login, tenant.TenancyName);
+                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login, GetTenancyNameOrNull());
                     }
                     else
                     {
-                        loginResult = await GetLoginResultAsync(user.UserName, model.Password, tenant.TenancyName);
+                        loginResult = await GetLoginResultAsync(user.UserName, model.Password, GetTenancyNameOrNull());
                     }
 
                     if (loginResult.Result == AbpLoginResultType.Success)
@@ -287,7 +303,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                 //If can not login, show a register result page
                 return View("RegisterResult", new RegisterResultViewModel
                 {
-                    TenancyName = tenant.TenancyName,
+                    TenancyName = GetTenancyNameOrNull(),
                     NameAndSurname = user.Name + " " + user.Surname,
                     UserName = user.UserName,
                     EmailAddress = user.EmailAddress,
@@ -320,7 +336,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                     {
                         ReturnUrl = returnUrl
                     })
-                );
+            );
         }
 
         public virtual async Task<ActionResult> ExternalLoginCallback(string returnUrl, string tenancyName = "")
@@ -356,7 +372,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             switch (loginResult.Result)
             {
                 case AbpLoginResultType.Success:
-                    await SignInAsync(loginResult.User, loginResult.Identity, false);
+                    await SignInAsync(loginResult.User, loginResult.Identity);
 
                     if (string.IsNullOrWhiteSpace(returnUrl))
                     {
@@ -380,7 +396,6 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
 
             var viewModel = new RegisterViewModel
             {
-                TenancyName = tenancyName,
                 EmailAddress = loginInfo.Email,
                 Name = name,
                 Surname = surname,
@@ -479,6 +494,57 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             }
 
             return tenant;
+        }
+
+        private string GetTenancyNameOrNull()
+        {
+            if (!AbpSession.TenantId.HasValue)
+            {
+                return null;
+            }
+
+            return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
+        }
+
+        #endregion
+
+        #region Common Partial Views
+
+
+        [ChildActionOnly]
+        public PartialViewResult TenantChange()
+        {
+            var loginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations());
+
+            return PartialView("_TenantChange", new TenantChangeViewModel
+            {
+                Tenant = loginInformations.Tenant
+            });
+        }
+
+        public async Task<PartialViewResult> TenantChangeModal()
+        {
+            var loginInfo = await _sessionAppService.GetCurrentLoginInformations();
+            return PartialView("_TenantChangeModal", new TenantChangeModalViewModel
+            {
+                TenancyName = loginInfo.Tenant?.TenancyName
+            });
+        }
+
+
+        [ChildActionOnly]
+        public PartialViewResult _AccountLanguages()
+        {
+            var model = new LanguageSelectionViewModel
+            {
+                CurrentLanguage = _languageManager.CurrentLanguage,
+                Languages = _languageManager.GetLanguages().Where(l => !l.IsDisabled).ToList()
+                    .Where(l => !l.IsDisabled)
+                    .ToList(),
+                CurrentUrl = Request.Path
+            };
+
+            return PartialView("_AccountLanguages", model);
         }
 
         #endregion

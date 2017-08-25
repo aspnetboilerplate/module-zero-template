@@ -13,7 +13,7 @@
 
             vm.save = function () {
                 abp.ui.setBusy();
-                tenantService.createTenant(vm.tenant)
+                tenantService.create(vm.tenant)
                     .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));
                         $uibModalInstance.close();

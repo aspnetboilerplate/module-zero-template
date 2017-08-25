@@ -55,5 +55,28 @@
     <text name="Yes" value="Yes" />
     <text name="No" value="No" />
     <text name="Optional" value="Optional" />
+    <text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
+
+    <text name="CurrentTenant">Current tenant</text>
+    <text name="NotSelected">Not selected</text>
+    <text name="Change">Change</text>
+    <text name="ChangeTenant">Change tenant</text>
+
+    <text name="MultiLevelMenu">Multi Level Menu</text>
+    <text name="Back">Back</text>
+    <text name="SuccessfullyRegistered">Successfully registered</text>
+    <text name="WaitingForEmailActivation">Your email address should be activated</text>
+    <text name="Roles">Roles</text>
+
+    <text name="Actions">Actions</text>
+    <text name="RoleName">Role Name</text>
+    <text name="DisplayName">Display Name</text>
+    <text name="CreateNewRole">Create New Role</text>
+    <text name="EditRole">Edit Role</text>
+    <text name="EditUser">Edit User</text>
+    <text name="Edit">Edit</text>
+    <text name="Delete">Delete</text>
+
+
   </texts>
 </localizationDictionary>
