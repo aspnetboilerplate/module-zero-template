@@ -48,49 +48,49 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abp, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.3.0.0-beta3\lib\netstandard2.0\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.3.0.0-rc2\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
     <Reference Include="Abp.AutoMapper, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.3.0.0-beta3\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+      <HintPath>..\packages\Abp.AutoMapper.3.0.0-rc2\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Castle.Log4Net, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Castle.Log4Net.3.0.0-beta3\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
+      <HintPath>..\packages\Abp.Castle.Log4Net.3.0.0-rc2\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
     </Reference>
     <Reference Include="Abp.EntityFramework, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.EntityFramework.3.0.0-beta3\lib\net461\Abp.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Abp.EntityFramework.3.0.0-rc2\lib\net461\Abp.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Abp.EntityFramework.Common, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.EntityFramework.Common.3.0.0-beta3\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+      <HintPath>..\packages\Abp.EntityFramework.Common.3.0.0-rc2\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
     </Reference>
     <Reference Include="Abp.HangFire, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.HangFire.3.0.0-beta3\lib\netstandard2.0\Abp.HangFire.dll</HintPath>
+      <HintPath>..\packages\Abp.HangFire.3.0.0-rc2\lib\netstandard2.0\Abp.HangFire.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Owin, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Owin.3.0.0-beta3\lib\net461\Abp.Owin.dll</HintPath>
+      <HintPath>..\packages\Abp.Owin.3.0.0-rc2\lib\net461\Abp.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Web, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.3.0.0-beta3\lib\net461\Abp.Web.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.3.0.0-rc2\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Web.Api, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.3.0.0-beta3\lib\net461\Abp.Web.Api.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Api.3.0.0-rc2\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Web.Common, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Common.3.0.0-beta3\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Common.3.0.0-rc2\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Web.Mvc, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Mvc.3.0.0-beta3\lib\net461\Abp.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Mvc.3.0.0-rc2\lib\net461\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Web.SignalR, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.SignalR.3.0.0-beta3\lib\net461\Abp.Web.SignalR.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.SignalR.3.0.0-rc2\lib\net461\Abp.Web.SignalR.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.3.0.0-beta3\lib\net461\Abp.Zero.dll</HintPath>
+      <HintPath>..\packages\Abp.Zero.3.0.0-rc2\lib\net461\Abp.Zero.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero.Common, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.Common.3.0.0-beta3\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+      <HintPath>..\packages\Abp.Zero.Common.3.0.0-rc2\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero.EntityFramework, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.EntityFramework.3.0.0-beta3\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Abp.Zero.EntityFramework.3.0.0-rc2\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -120,11 +120,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Hangfire.Core, Version=1.6.15.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hangfire.Core.1.6.15\lib\net45\Hangfire.Core.dll</HintPath>
+    <Reference Include="Hangfire.Core, Version=1.6.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.6.16\lib\net45\Hangfire.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Hangfire.SqlServer, Version=1.6.15.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hangfire.SqlServer.1.6.15\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.6.16\lib\net45\Hangfire.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.11.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
@@ -300,7 +300,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7.6\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7.7\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http">
