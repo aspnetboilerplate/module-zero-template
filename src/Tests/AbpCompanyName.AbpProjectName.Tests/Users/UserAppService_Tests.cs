@@ -39,7 +39,8 @@ namespace AbpCompanyName.AbpProjectName.Tests.Users
                     Name = "John",
                     Surname = "Nash",
                     Password = "123qwe",
-                    UserName = "john.nash"
+                    UserName = "john.nash",
+                    RoleNames = new string[0]
                 });
 
             await UsingDbContextAsync(async context =>

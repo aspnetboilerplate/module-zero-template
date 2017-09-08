@@ -108,7 +108,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "~/js/admin.js",
                         "~/js/main.js",
 
-                        "~/Scripts/jquery.signalR-2.2.1.min.js"
+                        "~/Scripts/jquery.signalR-2.2.2.min.js"
                     )
                 );
 
