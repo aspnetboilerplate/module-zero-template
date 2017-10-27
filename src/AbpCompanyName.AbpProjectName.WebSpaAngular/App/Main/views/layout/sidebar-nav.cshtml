@@ -19,7 +19,7 @@
             <ul class="ml-menu" ng-if="menuItem.items">
                 <li ng-repeat="subMenuItem in menuItem.items" ng-if="vm.showMenuItem(subMenuItem)" ui-sref-active="active">
                     <!-- route name -->
-                    <a ui-sref="[subMenuItem.route]" class="toggled" ng-if="!subMenuItem.items && subMenuItem.route.indexOf('http') != 0">
+                    <a ui-sref="{{subMenuItem.route}}" class="toggled" ng-if="!subMenuItem.items && subMenuItem.route.indexOf('http') != 0">
                         <i ng-if="subMenuItem.icon" class="material-icons">{{subMenuItem.icon}}</i>
                         <span>{{subMenuItem.name}}</span>
                     </a>
@@ -36,7 +36,7 @@
                     <ul class="ml-menu" ng-if="subMenuItem.items">
                         <li ng-repeat="subSubMenuItem in subMenuItem.items" ng-if="vm.showMenuItem(subSubMenuItem)" ui-sref-active="active">
                             <!-- route name -->
-                            <a ui-sref="[subSubMenuItem.route]" ng-if="subSubMenuItem.route.indexOf('http') != 0">
+                            <a ui-sref="{{subSubMenuItem.route}}" ng-if="subSubMenuItem.route.indexOf('http') != 0">
                                 <i ng-if="subSubMenuItem.icon" class="material-icons">{{subSubMenuItem.icon}}</i>
                                 <span>{{subSubMenuItem.name}}</span>
                             </a>
