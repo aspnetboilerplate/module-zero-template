@@ -1564,7 +1564,6 @@
     <Content Include="lib\jquery-sparkline\src\vcanvas-canvas.js" />
     <Content Include="lib\jquery-sparkline\src\vcanvas-vml.js" />
     <Content Include="lib\jquery-sparkline\version.txt" />
-    <Content Include="lib\jquery-validation\build\release.js" />
     <Content Include="lib\jquery-validation\dist\additional-methods.js" />
     <Content Include="lib\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="lib\jquery-validation\dist\jquery.validate.js" />
