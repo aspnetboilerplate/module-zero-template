@@ -155,7 +155,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
                     new AuthenticationProperties
                     {
                         IsPersistent = true,
-                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(int.Parse(System.Configuration.ConfigurationManager.AppSettings["AuthSession.ExpireTimeInMinutes.WhenNotPersistet"] ?? "30"))
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(int.Parse(System.Configuration.ConfigurationManager.AppSettings["AuthSession.ExpireTimeInMinutes.WhenNotPersistent"] ?? "30"))
                     },
                     identity);
             }
