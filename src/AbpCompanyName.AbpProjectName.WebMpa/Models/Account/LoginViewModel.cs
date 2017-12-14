@@ -4,6 +4,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Account
 {
     public class LoginViewModel
     {
+        public string TenancyName { get; set; } // Gp - fix #xxx
+
         [Required]
         public string UsernameOrEmailAddress { get; set; }
 
