@@ -100,7 +100,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
             var loginResult = await GetLoginResultAsync(
                 loginModel.UsernameOrEmailAddress,
                 loginModel.Password,
-                GetTenancyNameOrNull()
+                loginModel.TenancyName ?? GetTenancyNameOrNull()    // Gp - fix #xxx 
                 );
 
             await SignInAsync(loginResult.User, loginResult.Identity, loginModel.RememberMe);
