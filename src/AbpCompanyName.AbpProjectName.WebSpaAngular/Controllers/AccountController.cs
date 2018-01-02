@@ -144,7 +144,21 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             }
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = rememberMe }, identity);
+            // Many browsers do not clean up session cookies when you close them. So the rule of thumb must be:
+            // For having a consistent behaviour across all browsers, don't rely solely on browser behaviour for proper clean-up
+            // of session cookies. It is safer to use non-session cookies (IsPersistent == true) in bundle with an expiration date.
+            // See http://blog.petersondave.com/cookies/Session-Cookies-in-Chrome-Firefox-and-Sitecore/
+            if (rememberMe) {
+                _authenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, identity);
+            } else {
+                _authenticationManager.SignIn(
+                    new AuthenticationProperties
+                    {
+                        IsPersistent = true,
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(int.Parse(System.Configuration.ConfigurationManager.AppSettings["AuthSession.ExpireTimeInMinutes.WhenNotPersistent"] ?? "30"))
+                    },
+                    identity);
+            }
         }
 
         private Exception CreateExceptionForFailedLoginAttempt(AbpLoginResultType result, string usernameOrEmailAddress, string tenancyName)

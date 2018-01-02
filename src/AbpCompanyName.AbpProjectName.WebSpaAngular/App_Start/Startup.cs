@@ -21,7 +21,10 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login")
+                LoginPath = new PathString("/Account/Login"),
+                // evaluate for Persistent cookies (IsPermanent == true). Defaults to 14 days when not set.
+                ExpireTimeSpan = new TimeSpan(int.Parse(ConfigurationManager.AppSettings["AuthSession.ExpireTimeInDays.WhenPersistent"] ?? "14"), 0, 0, 0),
+                SlidingExpiration = bool.Parse(ConfigurationManager.AppSettings["AuthSession.SlidingExpirationEnabled"] ?? bool.FalseString)
             });
 
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
