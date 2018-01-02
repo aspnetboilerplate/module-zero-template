@@ -529,7 +529,9 @@
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="css\materialize.css" />
     <Content Include="css\style.css" />
-    <Content Include="css\style.min.css" />
+    <Content Include="css\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="css\themes\all-themes.css" />
     <Content Include="css\themes\all-themes.min.css" />
     <Content Include="css\themes\theme-amber.css" />
@@ -2278,47 +2280,7 @@
     <Content Include="lib\spin.js\jquery.spin.js" />
     <Content Include="lib\spin.js\spin.js" />
     <Content Include="lib\spin.js\spin.min.js" />
-    <Content Include="lib\sweetalert\.gitignore" />
-    <Content Include="lib\sweetalert\dev\gulpfile-wrap-template.js" />
-    <Content Include="lib\sweetalert\dev\ie9.css" />
-    <Content Include="lib\sweetalert\dev\loader-animation.css" />
-    <Content Include="lib\sweetalert\dev\modules\default-params.js" />
-    <Content Include="lib\sweetalert\dev\modules\handle-click.js" />
-    <Content Include="lib\sweetalert\dev\modules\handle-dom.js" />
-    <Content Include="lib\sweetalert\dev\modules\handle-key.js" />
-    <Content Include="lib\sweetalert\dev\modules\handle-swal-dom.js" />
-    <Content Include="lib\sweetalert\dev\modules\injected-html.js" />
-    <Content Include="lib\sweetalert\dev\modules\set-params.js" />
-    <Content Include="lib\sweetalert\dev\modules\utils.js" />
-    <Content Include="lib\sweetalert\dev\sweetalert.es6.js" />
-    <Content Include="lib\sweetalert\dist\sweetalert-dev.js" />
-    <Content Include="lib\sweetalert\dist\sweetalert.css" />
     <Content Include="lib\sweetalert\dist\sweetalert.min.js" />
-    <Content Include="lib\sweetalert\example\example.css" />
-    <Content Include="lib\sweetalert\example\images\logo_big%402x.png" />
-    <Content Include="lib\sweetalert\example\images\logo_big.png" />
-    <Content Include="lib\sweetalert\example\images\logo_small%402x.png" />
-    <Content Include="lib\sweetalert\example\images\logo_small.png" />
-    <Content Include="lib\sweetalert\example\images\thumbs-up.jpg" />
-    <Content Include="lib\sweetalert\example\images\vs_icon%402x.png" />
-    <Content Include="lib\sweetalert\example\images\vs_icon.png" />
-    <Content Include="lib\sweetalert\gulpfile.js" />
-    <Content Include="lib\sweetalert\index.html" />
-    <Content Include="lib\sweetalert\lib\modules\default-params.js" />
-    <Content Include="lib\sweetalert\lib\modules\handle-click.js" />
-    <Content Include="lib\sweetalert\lib\modules\handle-dom.js" />
-    <Content Include="lib\sweetalert\lib\modules\handle-key.js" />
-    <Content Include="lib\sweetalert\lib\modules\handle-swal-dom.js" />
-    <Content Include="lib\sweetalert\lib\modules\injected-html.js" />
-    <Content Include="lib\sweetalert\lib\modules\set-params.js" />
-    <Content Include="lib\sweetalert\lib\modules\utils.js" />
-    <Content Include="lib\sweetalert\lib\sweetalert.js" />
-    <Content Include="lib\sweetalert\sweetalert.gif" />
-    <Content Include="lib\sweetalert\test\index.html" />
-    <Content Include="lib\sweetalert\test\tests.js" />
-    <Content Include="lib\sweetalert\themes\facebook\facebook.css" />
-    <Content Include="lib\sweetalert\themes\google\google.css" />
-    <Content Include="lib\sweetalert\themes\twitter\twitter.css" />
     <Content Include="lib\toastr\toastr.css" />
     <Content Include="lib\toastr\toastr.js" />
     <Content Include="lib\toastr\toastr.min.css" />
@@ -2791,20 +2753,8 @@
     <Content Include="lib\spin.js\bower.json" />
     <Content Include="lib\spin.js\LICENSE.md" />
     <Content Include="lib\spin.js\README.md" />
-    <Content Include="lib\sweetalert\.bower.json" />
-    <Content Include="lib\sweetalert\.editorconfig" />
-    <Content Include="lib\sweetalert\.jshintrc" />
-    <Content Include="lib\sweetalert\.travis.yml" />
-    <Content Include="lib\sweetalert\bower.json" />
-    <Content Include="lib\sweetalert\dev\sweetalert.scss" />
-    <Content Include="lib\sweetalert\example\example.scss" />
-    <Content Include="lib\sweetalert\example\images\te-logo-small.svg" />
-    <Content Include="lib\sweetalert\LICENSE" />
     <Content Include="lib\sweetalert\package.json" />
     <Content Include="lib\sweetalert\README.md" />
-    <Content Include="lib\sweetalert\themes\facebook\facebook.scss" />
-    <Content Include="lib\sweetalert\themes\google\google.scss" />
-    <Content Include="lib\sweetalert\themes\twitter\twitter.scss" />
     <Content Include="lib\toastr\.bower.json" />
     <Content Include="lib\toastr\bower.json" />
     <Content Include="lib\toastr\README.md" />
@@ -2851,6 +2801,7 @@
     <Content Include="Abp\Framework\styles\abp.mixings.css.map" />
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -2885,6 +2836,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="lib\sweetalert\LICENSE.md" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -3847,6 +3799,30 @@
     <TypeScriptCompile Include="Abp\Framework\scripts\abp.d.ts" />
     <TypeScriptCompile Include="Abp\Framework\scripts\libs\abp.jquery.d.ts" />
     <TypeScriptCompile Include="Abp\Framework\scripts\libs\abp.signalr.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\core.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\actions.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\class-list\index.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\event-listeners.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\buttons.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\content.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\icon.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\index.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\modal.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\overlay.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\init\text.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\markup\buttons.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\markup\content.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\markup\icons.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\markup\index.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\markup\modal.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\markup\overlay.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\options\buttons.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\options\content.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\options\deprecations.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\options\index.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\state.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\modules\utils.d.ts" />
+    <TypeScriptCompile Include="lib\sweetalert\typings\sweetalert.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
