@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
@@ -144,7 +145,32 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular.Controllers
             }
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = rememberMe }, identity);
+
+            // Gp - fix code for NOT using session cookies
+            // Don’t rely solely on browser behaviour for proper clean-up of session cookies during a given browsing session. 
+            // It’s safer to use non-session cookies (IsPersistent == true) with an expiration date for having a 
+            // consistent behaviour across all browsers and versions.
+            // See http://blog.petersondave.com/cookies/Session-Cookies-in-Chrome-Firefox-and-Sitecore/
+
+            // Gp Commented out: AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = rememberMe }, identity);
+            if (rememberMe)
+            {
+                //var rememberBrowserIdentity = AuthenticationManager.CreateTwoFactorRememberBrowserIdentity(user.Id.ToString());
+                AuthenticationManager.SignIn(
+                    new AuthenticationProperties { IsPersistent = true },
+                    identity /*, rememberBrowserIdentity*/);
+            }
+            else
+            {
+                AuthenticationManager.SignIn(
+                    new AuthenticationProperties
+                    {
+                        IsPersistent = true,
+                        ExpiresUtc =
+                            DateTimeOffset.UtcNow.AddMinutes(int.Parse(ConfigurationManager.AppSettings["AuthSession.ExpireTimeInMinutes.WhenNotPersistet"] ?? "30"))
+                    },
+                    identity);
+            }
         }
 
         private Exception CreateExceptionForFailedLoginAttempt(AbpLoginResultType result, string usernameOrEmailAddress, string tenancyName)
