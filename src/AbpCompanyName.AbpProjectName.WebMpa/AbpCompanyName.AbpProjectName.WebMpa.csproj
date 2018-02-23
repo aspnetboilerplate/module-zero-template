@@ -2726,7 +2726,6 @@
     <Content Include="fonts\material-icons\materialicons.eot" />
     <Content Include="fonts\material-icons\materialicons.ttf" />
     <Content Include="fonts\material-icons\materialicons.woff" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
