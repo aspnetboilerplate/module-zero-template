@@ -28,7 +28,7 @@
             $form.submit();
         });
 
-        $('#ReturnUrlHash').val(location.hash);
+        $('input[name=returnUrlHash]').val(location.hash);
 
         $('#LoginForm input:first-child').focus();
     });
