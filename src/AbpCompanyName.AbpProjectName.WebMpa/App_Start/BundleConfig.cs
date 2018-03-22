@@ -94,8 +94,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "~/Abp/Framework/scripts/libs/abp.sweet-alert.js",
                         "~/js/admin.js",
                         "~/js/main.js",
-                        "~/Views/Shared/_Layout.js",
-                        "~/lib/signalr/jquery.signalR.js"
+                        "~/Views/Shared/_Layout.js"
                     )
                 );
 
