@@ -104,6 +104,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "~/Abp/Framework/scripts/libs/angularjs/abp.ng.js",
 
                         "~/js/admin.js",
+                        "~/Scripts/jquery.signalR-2.2.2.min.js",
                         "~/js/main.js"
                     )
                 );
