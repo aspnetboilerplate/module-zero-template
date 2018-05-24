@@ -64,6 +64,8 @@ namespace AbpCompanyName.AbpProjectName.Users
 
             CheckErrors(await _userManager.CreateAsync(user));
 
+            await CurrentUnitOfWork.SaveChangesAsync();
+
             return MapToEntityDto(user);
         }
 
