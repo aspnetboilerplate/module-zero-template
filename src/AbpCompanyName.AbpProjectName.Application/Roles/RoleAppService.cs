@@ -49,6 +49,8 @@ namespace AbpCompanyName.AbpProjectName.Roles
 
             CheckErrors(await _roleManager.CreateAsync(role));
 
+            UnitOfWorkManager.Current.SaveChanges();
+
             var grantedPermissions = PermissionManager
                 .GetAllPermissions()
                 .Where(p => input.Permissions.Contains(p.Name))
