@@ -86,7 +86,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "~/lib/jquery-slimscroll/jquery.slimscroll.js",
                         "~/lib/Waves/dist/waves.js",
                         "~/lib/push.js/push.js",
-                      
+                        "~/lib/jquery.serializejson/jquery.serializejson.js",
+
                         "~/Scripts/angular.min.js",
                         "~/Scripts/angular-animate.min.js",
                         "~/Scripts/angular-sanitize.min.js",

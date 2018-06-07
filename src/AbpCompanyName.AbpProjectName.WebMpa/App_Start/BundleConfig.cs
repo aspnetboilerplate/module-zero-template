@@ -86,6 +86,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "~/lib/jquery-slimscroll/jquery.slimscroll.js",
                         "~/lib/Waves/dist/waves.js",
                         "~/lib/push.js/push.js",
+                        "~/lib/jquery.serializejson/jquery.serializejson.js",
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",
                         "~/Abp/Framework/scripts/libs/abp.toastr.js",

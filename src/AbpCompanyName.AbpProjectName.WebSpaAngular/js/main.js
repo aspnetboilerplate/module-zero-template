@@ -18,19 +18,12 @@
 
     //serializeFormToObject plugin for jQuery
     $.fn.serializeFormToObject = function () {
-        //serialize to array
-        var data = $(this).serializeArray();
-
-        //add also disabled items
-        $(':disabled[name]', this).each(function () {
-            data.push({ name: this.name, value: $(this).val() });
-        });
-
-        //map to object
-        var obj = {};
-        data.map(function (x) { obj[x.name] = x.value; });
-
-        return obj;
+        var $form = $(this);
+        var fields = $form.find('[disabled]');
+        fields.prop('disabled', false);
+        var json = $form.serializeJSON();
+        fields.prop('disabled', true);
+        return json;
     };
 
     //Configure blockUI
