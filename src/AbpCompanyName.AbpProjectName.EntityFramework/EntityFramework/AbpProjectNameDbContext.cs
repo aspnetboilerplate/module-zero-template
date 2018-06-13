@@ -1,4 +1,5 @@
 ﻿using System.Data.Common;
+using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
@@ -41,6 +42,12 @@ namespace AbpCompanyName.AbpProjectName.EntityFramework
         public AbpProjectNameDbContext(DbConnection existingConnection, bool contextOwnsConnection)
          : base(existingConnection, contextOwnsConnection)
         {
+
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
         }
     }
