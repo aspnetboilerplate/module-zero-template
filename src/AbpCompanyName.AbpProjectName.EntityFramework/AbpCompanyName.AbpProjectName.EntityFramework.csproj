@@ -235,10 +235,6 @@
     <Compile Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.Designer.cs">
       <DependentUpon>201803261403237_Upgraded_To_Abp_v3_5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807270535111_Updated_ABP.cs" />
-    <Compile Include="Migrations\201807270535111_Updated_ABP.Designer.cs">
-      <DependentUpon>201807270535111_Updated_ABP.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201807271154374_Upgraded_ABP_3.8.1.cs" />
     <Compile Include="Migrations\201807271154374_Upgraded_ABP_3.8.1.Designer.cs">
       <DependentUpon>201807271154374_Upgraded_ABP_3.8.1.cs</DependentUpon>
@@ -277,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.resx">
       <DependentUpon>201803261403237_Upgraded_To_Abp_v3_5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807270535111_Updated_ABP.resx">
-      <DependentUpon>201807270535111_Updated_ABP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807271154374_Upgraded_ABP_3.8.1.resx">
       <DependentUpon>201807271154374_Upgraded_ABP_3.8.1.cs</DependentUpon>
