@@ -219,29 +219,9 @@
   <ItemGroup>
     <Compile Include="EntityFramework\AbpProjectNameDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\AbpProjectNameRepositoryBase.cs" />
-    <Compile Include="Migrations\201707261347311_Initial_Migration.cs" />
-    <Compile Include="Migrations\201707261347311_Initial_Migration.Designer.cs">
-      <DependentUpon>201707261347311_Initial_Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710131316266_UpgradedTo_ABP_3.1.cs" />
-    <Compile Include="Migrations\201710131316266_UpgradedTo_ABP_3.1.Designer.cs">
-      <DependentUpon>201710131316266_UpgradedTo_ABP_3.1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801311121458_Modified_Authorization_Entities.cs" />
-    <Compile Include="Migrations\201801311121458_Modified_Authorization_Entities.Designer.cs">
-      <DependentUpon>201801311121458_Modified_Authorization_Entities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.cs" />
-    <Compile Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.Designer.cs">
-      <DependentUpon>201803261403237_Upgraded_To_Abp_v3_5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807270535111_Updated_ABP.cs" />
-    <Compile Include="Migrations\201807270535111_Updated_ABP.Designer.cs">
-      <DependentUpon>201807270535111_Updated_ABP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807271154374_Upgraded_ABP_3.8.1.cs" />
-    <Compile Include="Migrations\201807271154374_Upgraded_ABP_3.8.1.Designer.cs">
-      <DependentUpon>201807271154374_Upgraded_ABP_3.8.1.cs</DependentUpon>
+    <Compile Include="Migrations\201808080557241_InitialMigration.cs" />
+    <Compile Include="Migrations\201808080557241_InitialMigration.Designer.cs">
+      <DependentUpon>201808080557241_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -266,23 +246,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707261347311_Initial_Migration.resx">
-      <DependentUpon>201707261347311_Initial_Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710131316266_UpgradedTo_ABP_3.1.resx">
-      <DependentUpon>201710131316266_UpgradedTo_ABP_3.1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801311121458_Modified_Authorization_Entities.resx">
-      <DependentUpon>201801311121458_Modified_Authorization_Entities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.resx">
-      <DependentUpon>201803261403237_Upgraded_To_Abp_v3_5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807270535111_Updated_ABP.resx">
-      <DependentUpon>201807270535111_Updated_ABP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807271154374_Upgraded_ABP_3.8.1.resx">
-      <DependentUpon>201807271154374_Upgraded_ABP_3.8.1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808080557241_InitialMigration.resx">
+      <DependentUpon>201808080557241_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
