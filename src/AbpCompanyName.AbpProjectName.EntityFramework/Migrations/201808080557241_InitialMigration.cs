@@ -5,7 +5,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
     using System.Data.Entity.Infrastructure.Annotations;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial_Migration : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -23,7 +23,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         ExecutionDuration = c.Int(nullable: false),
                         ClientIpAddress = c.String(maxLength: 64),
                         ClientName = c.String(maxLength: 128),
-                        BrowserInfo = c.String(maxLength: 256),
+                        BrowserInfo = c.String(maxLength: 512),
                         Exception = c.String(maxLength: 2000),
                         ImpersonatorUserId = c.Long(),
                         ImpersonatorTenantId = c.Int(),
@@ -58,17 +58,19 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
+                        TenantId = c.Int(),
                         Name = c.String(nullable: false, maxLength: 128),
                         Value = c.String(nullable: false, maxLength: 2000),
                         CreationTime = c.DateTime(nullable: false),
                         CreatorUserId = c.Long(),
                         EditionId = c.Int(),
-                        TenantId = c.Int(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     },
                 annotations: new Dictionary<string, object>
                 {
-                    { "DynamicFilter_TenantFeatureSetting_MustHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_EditionFeatureSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_FeatureSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_TenantFeatureSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AbpEditions", t => t.EditionId, cascadeDelete: true)
@@ -272,7 +274,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     {
                         Id = c.Long(nullable: false, identity: true),
                         AuthenticationSource = c.String(maxLength: 64),
-                        UserName = c.String(nullable: false, maxLength: 32),
+                        UserName = c.String(nullable: false, maxLength: 256),
                         TenantId = c.Int(),
                         EmailAddress = c.String(nullable: false, maxLength: 256),
                         Name = c.String(nullable: false, maxLength: 32),
@@ -283,9 +285,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         LockoutEndDateUtc = c.DateTime(),
                         AccessFailedCount = c.Int(nullable: false),
                         IsLockoutEnabled = c.Boolean(nullable: false),
-                        PhoneNumber = c.String(),
+                        PhoneNumber = c.String(maxLength: 32),
                         IsPhoneNumberConfirmed = c.Boolean(nullable: false),
-                        SecurityStamp = c.String(),
+                        SecurityStamp = c.String(maxLength: 128),
                         IsTwoFactorEnabled = c.Boolean(nullable: false),
                         IsEmailConfirmed = c.Boolean(nullable: false),
                         IsActive = c.Boolean(nullable: false),
@@ -318,7 +320,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         Id = c.Long(nullable: false, identity: true),
                         TenantId = c.Int(),
                         UserId = c.Long(nullable: false),
-                        ClaimType = c.String(),
+                        ClaimType = c.String(maxLength: 256),
                         ClaimValue = c.String(),
                         CreationTime = c.DateTime(nullable: false),
                         CreatorUserId = c.Long(),
@@ -418,8 +420,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         EditionId = c.Int(),
-                        Name = c.String(nullable: false, maxLength: 128),
                         TenancyName = c.String(nullable: false, maxLength: 64),
+                        Name = c.String(nullable: false, maxLength: 128),
                         ConnectionString = c.String(maxLength: 1024),
                         IsActive = c.Boolean(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
@@ -452,8 +454,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         TenantId = c.Int(),
                         UserId = c.Long(nullable: false),
                         UserLinkId = c.Long(),
-                        UserName = c.String(),
-                        EmailAddress = c.String(),
+                        UserName = c.String(maxLength: 256),
+                        EmailAddress = c.String(maxLength: 256),
                         LastLoginTime = c.DateTime(),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
@@ -480,7 +482,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         UserNameOrEmailAddress = c.String(maxLength: 255),
                         ClientIpAddress = c.String(maxLength: 64),
                         ClientName = c.String(maxLength: 128),
-                        BrowserInfo = c.String(maxLength: 256),
+                        BrowserInfo = c.String(maxLength: 512),
                         Result = c.Byte(nullable: false),
                         CreationTime = c.DateTime(nullable: false),
                     },
@@ -675,7 +677,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
             DropTable("dbo.AbpFeatures",
                 removedAnnotations: new Dictionary<string, object>
                 {
-                    { "DynamicFilter_TenantFeatureSetting_MustHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_EditionFeatureSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_FeatureSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_TenantFeatureSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpBackgroundJobs");
             DropTable("dbo.AbpAuditLogs",
