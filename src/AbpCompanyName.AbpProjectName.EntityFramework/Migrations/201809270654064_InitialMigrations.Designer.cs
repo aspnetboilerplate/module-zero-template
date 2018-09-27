@@ -7,13 +7,13 @@ namespace AbpCompanyName.AbpProjectName.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class InitialMigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808080557241_InitialMigration"; }
+            get { return "201809270654064_InitialMigrations"; }
         }
         
         string IMigrationMetadata.Source

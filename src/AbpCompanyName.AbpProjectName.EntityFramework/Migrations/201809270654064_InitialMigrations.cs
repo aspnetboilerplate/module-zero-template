@@ -5,7 +5,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
     using System.Data.Entity.Infrastructure.Annotations;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class InitialMigrations : DbMigration
     {
         public override void Up()
         {
