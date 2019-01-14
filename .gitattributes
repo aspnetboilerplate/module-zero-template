@@ -1,2 +1,2 @@
-**/AbpCompanyName.AbpProjectName.WebSpaAngular/lib/** linguist-vendored
-**/AbpCompanyName.AbpProjectName.WebSpaAngular/Scripts/** linguist-vendored
+**/lib/** linguist-vendored
+**/Scripts/** linguist-vendored
