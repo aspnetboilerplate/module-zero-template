@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abp, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Abp.4.1.0\lib\netstandard2.0\Abp.dll</HintPath>
