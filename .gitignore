@@ -197,7 +197,6 @@ FakesAssemblies/
 
 # Custom
 /src/AbpCompanyName.AbpProjectName.WebMpa/Logs
-/src/AbpCompanyName.AbpProjectName.WebSpaAngular/Logs
-/src/AbpCompanyName.AbpProjectName.WebSpaDurandal/Logs
-/src/AbpCompanyName.AbpProjectName.WebSpaAngular/App_Data/Logs/
 /src/AbpCompanyName.AbpProjectName.WebMpa/App_Data/Logs/
+/src/AbpCompanyName.AbpProjectName.WebSpaAngular/Logs
+/src/AbpCompanyName.AbpProjectName.WebSpaAngular/App_Data/Logs/
