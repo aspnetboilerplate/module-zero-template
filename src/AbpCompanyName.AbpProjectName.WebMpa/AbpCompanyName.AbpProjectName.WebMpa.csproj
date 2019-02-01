@@ -1743,6 +1743,8 @@
     <Content Include="lib\jquery-validation\src\localization\methods_fi.js" />
     <Content Include="lib\jquery-validation\src\localization\methods_nl.js" />
     <Content Include="lib\jquery-validation\src\localization\methods_pt.js" />
+    <Content Include="lib\jquery.serializejson\jquery.serializejson.js" />
+    <Content Include="lib\jquery.serializejson\jquery.serializejson.min.js" />
     <Content Include="lib\jquery\AUTHORS.txt" />
     <Content Include="lib\jquery\dist\jquery.js" />
     <Content Include="lib\jquery\dist\jquery.min.js" />
