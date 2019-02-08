@@ -26,6 +26,8 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
                 Password = new PasswordHasher().HashPassword(password)
             };
 
+            user.SetNormalizedNames();
+
             return user;
         }
     }
