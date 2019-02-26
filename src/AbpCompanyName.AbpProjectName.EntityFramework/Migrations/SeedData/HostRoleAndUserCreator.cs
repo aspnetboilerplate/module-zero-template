@@ -32,7 +32,17 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
             var adminRoleForHost = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == StaticRoleNames.Host.Admin);
             if (adminRoleForHost == null)
             {
-                adminRoleForHost = _context.Roles.Add(new Role { Name = StaticRoleNames.Host.Admin, DisplayName = StaticRoleNames.Host.Admin, IsStatic = true });
+
+                adminRoleForHost = new Role
+                {
+                    Name = StaticRoleNames.Host.Admin,
+                    DisplayName = StaticRoleNames.Host.Admin,
+                    IsStatic = true
+                };
+
+                adminRoleForHost.SetNormalizedName();
+
+                _context.Roles.Add(adminRoleForHost);
                 _context.SaveChanges();
 
                 //Grant all tenant permissions
@@ -71,10 +81,11 @@ namespace AbpCompanyName.AbpProjectName.Migrations.SeedData
                         Password = new PasswordHasher().HashPassword(User.DefaultPassword)
                     });
 
+                adminUserForHost.SetNormalizedNames();
+
                 _context.SaveChanges();
 
                 _context.UserRoles.Add(new UserRole(null, adminUserForHost.Id, adminRoleForHost.Id));
-
                 _context.SaveChanges();
             }
         }
