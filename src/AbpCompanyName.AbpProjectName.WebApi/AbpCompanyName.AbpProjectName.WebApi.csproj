@@ -41,14 +41,14 @@
     <Reference Include="Abp.AutoMapper, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.AutoMapper.4.5.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.4.4.0\lib\net461\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.4.5.0\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.4.4.0\lib\net461\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.4.5.0\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Common, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Common.4.4.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+    <Reference Include="Abp.Web.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.4.5.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.Zero.4.5.0\lib\net461\Abp.Zero.dll</HintPath>

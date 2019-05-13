@@ -80,26 +80,26 @@
     <Reference Include="Abp.EntityFramework.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.EntityFramework.Common.4.5.0\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.HangFire, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.HangFire.4.4.0\lib\netstandard2.0\Abp.HangFire.dll</HintPath>
+    <Reference Include="Abp.HangFire, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.HangFire.4.5.0\lib\netstandard2.0\Abp.HangFire.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Owin, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Owin.4.4.0\lib\net461\Abp.Owin.dll</HintPath>
+    <Reference Include="Abp.Owin, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Owin.4.5.0\lib\net461\Abp.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.4.4.0\lib\net461\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.4.5.0\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.4.4.0\lib\net461\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.4.5.0\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Common, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Common.4.4.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+    <Reference Include="Abp.Web.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.4.5.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Mvc.4.4.0\lib\net461\Abp.Web.Mvc.dll</HintPath>
+    <Reference Include="Abp.Web.Mvc, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.4.5.0\lib\net461\Abp.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.SignalR, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.SignalR.4.4.0\lib\net461\Abp.Web.SignalR.dll</HintPath>
+    <Reference Include="Abp.Web.SignalR, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.SignalR.4.5.0\lib\net461\Abp.Web.SignalR.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.Zero.4.5.0\lib\net461\Abp.Zero.dll</HintPath>
