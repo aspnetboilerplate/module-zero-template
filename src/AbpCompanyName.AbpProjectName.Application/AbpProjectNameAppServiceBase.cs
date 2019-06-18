@@ -24,9 +24,9 @@ namespace AbpCompanyName.AbpProjectName
             LocalizationSourceName = AbpProjectNameConsts.LocalizationSourceName;
         }
 
-        protected virtual Task<User> GetCurrentUserAsync()
+        protected virtual async Task<User> GetCurrentUserAsync()
         {
-            var user = UserManager.FindByIdAsync(AbpSession.GetUserId());
+            var user = await UserManager.FindByIdAsync(AbpSession.GetUserId());
             if (user == null)
             {
                 throw new ApplicationException("There is no current user!");
