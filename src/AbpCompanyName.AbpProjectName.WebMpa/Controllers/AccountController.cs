@@ -112,7 +112,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
 
             if (!string.IsNullOrWhiteSpace(returnUrlHash))
             {
-                returnUrl = returnUrl + returnUrlHash;
+                returnUrl += returnUrlHash;
             }
 
             return Json(new AjaxResponse { TargetUrl = returnUrl });
@@ -374,7 +374,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
                         return View("TenantSelection", new TenantSelectionViewModel
                         {
                             Action = Url.Action("ExternalLoginCallback", "Account", new { returnUrl }),
-                            Tenants = tenants.MapTo<List<TenantSelectionViewModel.TenantInfo>>()
+                            Tenants = ObjectMapper.Map<List<TenantSelectionViewModel.TenantInfo>>(tenants)
                         });
                 }
             }

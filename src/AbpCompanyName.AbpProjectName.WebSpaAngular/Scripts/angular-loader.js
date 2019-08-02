@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.6.9
+ * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -76,7 +76,8 @@ function toDebugString(obj, maxDepth) {
 */
 
 var minErrConfig = {
-  objectMaxDepth: 5
+  objectMaxDepth: 5,
+  urlErrorParamsEnabled: true
 };
 
 /**
@@ -99,11 +100,20 @@ var minErrConfig = {
  * * `objectMaxDepth`  **{Number}** - The max depth for stringifying objects. Setting to a
  *   non-positive or non-numeric value, removes the max depth limit.
  *   Default: 5
+ *
+ * * `urlErrorParamsEnabled`  **{Boolean}** - Specifies wether the generated error url will
+ *   contain the parameters of the thrown error. Disabling the parameters can be useful if the
+ *   generated error url is very long.
+ *
+ *   Default: true. When used without argument, it returns the current value.
  */
 function errorHandlingConfig(config) {
   if (isObject(config)) {
     if (isDefined(config.objectMaxDepth)) {
       minErrConfig.objectMaxDepth = isValidObjectMaxDepth(config.objectMaxDepth) ? config.objectMaxDepth : NaN;
+    }
+    if (isDefined(config.urlErrorParamsEnabled) && isBoolean(config.urlErrorParamsEnabled)) {
+      minErrConfig.urlErrorParamsEnabled = config.urlErrorParamsEnabled;
     }
   } else {
     return minErrConfig;
@@ -118,6 +128,7 @@ function errorHandlingConfig(config) {
 function isValidObjectMaxDepth(maxDepth) {
   return isNumber(maxDepth) && maxDepth > 0;
 }
+
 
 /**
  * @description
@@ -151,6 +162,11 @@ function isValidObjectMaxDepth(maxDepth) {
 
 function minErr(module, ErrorConstructor) {
   ErrorConstructor = ErrorConstructor || Error;
+
+  var url = 'https://errors.angularjs.org/1.7.8/';
+  var regex = url.replace('.', '\\.') + '[\\s\\S]*';
+  var errRegExp = new RegExp(regex, 'g');
+
   return function() {
     var code = arguments[0],
       template = arguments[1],
@@ -160,21 +176,27 @@ function minErr(module, ErrorConstructor) {
       }),
       paramPrefix, i;
 
+    // A minErr message has two parts: the message itself and the url that contains the
+    // encoded message.
+    // The message's parameters can contain other error messages which also include error urls.
+    // To prevent the messages from getting too long, we strip the error urls from the parameters.
+
     message += template.replace(/\{\d+\}/g, function(match) {
       var index = +match.slice(1, -1);
 
       if (index < templateArgs.length) {
-        return templateArgs[index];
+        return templateArgs[index].replace(errRegExp, '');
       }
 
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.6.9/' +
-      (module ? module + '/' : '') + code;
+    message += '\n' + url + (module ? module + '/' : '') + code;
 
-    for (i = 0, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
-      message += paramPrefix + 'p' + i + '=' + encodeURIComponent(templateArgs[i]);
+    if (minErrConfig.urlErrorParamsEnabled) {
+      for (i = 0, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
+        message += paramPrefix + 'p' + i + '=' + encodeURIComponent(templateArgs[i]);
+      }
     }
 
     return new ErrorConstructor(message);
@@ -509,7 +531,8 @@ function setupModuleLoader(window) {
            * @ngdoc method
            * @name angular.Module#component
            * @module ng
-           * @param {string} name Name of the component in camel-case (i.e. myComp which will match as my-comp)
+           * @param {string|Object} name Name of the component in camelCase (i.e. `myComp` which will match `<my-comp>`),
+           *    or an object map of components where the keys are the names and the values are the component definition objects.
            * @param {Object} options Component definition object (a simplified
            *    {@link ng.$compile#directive-definition-object directive definition object})
            *

@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.6.9
+ * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -1055,10 +1055,10 @@ var noop;
 var toJson;
 var $$stringify;
 
-var module = window['angular']['module']('ngMessageFormat', ['ng']);
-module['info']({ 'angularVersion': '1.6.9' });
-module['factory']('$$messageFormat', $$MessageFormatFactory);
-module['config'](['$provide', function($provide) {
+var ngModule = window['angular']['module']('ngMessageFormat', ['ng']);
+ngModule['info']({ 'angularVersion': '1.7.8' });
+ngModule['factory']('$$messageFormat', $$MessageFormatFactory);
+ngModule['config'](['$provide', function($provide) {
   $interpolateMinErr = window['angular']['$interpolateMinErr'];
   isFunction = window['angular']['isFunction'];
   noop = window['angular']['noop'];
