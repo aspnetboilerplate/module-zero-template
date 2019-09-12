@@ -12,7 +12,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Models.Roles
 
         public bool HasPermission(PermissionDto permission)
         {
-            return Permissions != null && Role.Permissions.Any(p => p == permission.Name);
+            return Permissions != null && Role.GrantedPermissions.Any(p => p == permission.Name);
         }
     }
 }

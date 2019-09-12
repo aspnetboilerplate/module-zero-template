@@ -10,7 +10,7 @@
             var setAssignedPermissions = function (role, permissions) {
                 for (var i = 0; i < permissions.length; i++) {
                     var permission = permissions[i];
-                    permission.isAssigned = $.inArray(permission.name, role.permissions) >= 0;
+                    permission.isAssigned = $.inArray(permission.name, role.grantedPermissions) >= 0;
                 }
             }
 
@@ -39,7 +39,7 @@
                     assignedPermissions.push(permission.name);
                 }
 
-                vm.role.permissions = assignedPermissions;
+                vm.role.grantedPermissions = assignedPermissions;
                 roleService.update(vm.role)
                     .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));

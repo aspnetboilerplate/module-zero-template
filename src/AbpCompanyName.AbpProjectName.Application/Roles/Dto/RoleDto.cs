@@ -2,12 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 using Abp.Authorization.Roles;
-using Abp.AutoMapper;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 
 namespace AbpCompanyName.AbpProjectName.Roles.Dto
 {
-    [AutoMapFrom(typeof(Role)), AutoMapTo(typeof(Role))]
     public class RoleDto : EntityDto<int>
     {
         [Required]
@@ -23,6 +21,6 @@ namespace AbpCompanyName.AbpProjectName.Roles.Dto
 
         public bool IsStatic { get; set; }
 
-        public List<string> Permissions { get; set; }
+        public List<string> GrantedPermissions { get; set; }
     }
 }

@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Authorization.Roles;
-using Abp.AutoMapper;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 
 namespace AbpCompanyName.AbpProjectName.Roles.Dto
 {
-    [AutoMapTo(typeof(Role))]
     public class CreateRoleDto
     {
         [Required]
@@ -24,6 +22,6 @@ namespace AbpCompanyName.AbpProjectName.Roles.Dto
 
         public bool IsStatic { get; set; }
 
-        public List<string> Permissions { get; set; }
+        public List<string> GrantedPermissions { get; set; }
     }
 }
