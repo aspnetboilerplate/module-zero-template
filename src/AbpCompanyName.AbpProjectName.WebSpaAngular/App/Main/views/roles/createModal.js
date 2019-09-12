@@ -25,7 +25,7 @@
                     assignedPermissions.push(permission.name);
                 }
                 
-                vm.role.permissions = assignedPermissions;
+                vm.role.grantedPermissions = assignedPermissions;
                 roleService.create(vm.role)
                     .then(function () {
                         abp.notify.info(App.localize('SavedSuccessfully'));
