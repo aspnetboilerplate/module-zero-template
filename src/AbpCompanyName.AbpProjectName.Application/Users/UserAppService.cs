@@ -25,9 +25,9 @@ namespace AbpCompanyName.AbpProjectName.Users
         private readonly IRepository<Role> _roleRepository;
 
         public UserAppService(
-            IRepository<User, long> repository, 
-            UserManager userManager, 
-            IRepository<Role> roleRepository, 
+            IRepository<User, long> repository,
+            UserManager userManager,
+            IRepository<Role> roleRepository,
             RoleManager roleManager)
             : base(repository)
         {
@@ -36,15 +36,15 @@ namespace AbpCompanyName.AbpProjectName.Users
             _roleManager = roleManager;
         }
 
-        public override async Task<UserDto> Get(EntityDto<long> input)
+        public override async Task<UserDto> GetAsync(EntityDto<long> input)
         {
-            var user = await base.Get(input);
+            var user = await base.GetAsync(input);
             var userRoles = await _userManager.GetRolesAsync(user.Id);
             user.Roles = userRoles.Select(ur => ur).ToArray();
             return user;
         }
 
-        public override async Task<UserDto> Create(CreateUserDto input)
+        public override async Task<UserDto> CreateAsync(CreateUserDto input)
         {
             CheckCreatePermission();
 
@@ -69,7 +69,7 @@ namespace AbpCompanyName.AbpProjectName.Users
             return MapToEntityDto(user);
         }
 
-        public override async Task<UserDto> Update(UpdateUserDto input)
+        public override async Task<UserDto> UpdateAsync(UpdateUserDto input)
         {
             CheckUpdatePermission();
 
@@ -84,10 +84,10 @@ namespace AbpCompanyName.AbpProjectName.Users
                 CheckErrors(await _userManager.SetRoles(user, input.RoleNames));
             }
 
-            return await Get(input);
+            return await GetAsync(input);
         }
 
-        public override async Task Delete(EntityDto<long> input)
+        public override async Task DeleteAsync(EntityDto<long> input)
         {
             var user = await _userManager.GetUserByIdAsync(input.Id);
             await _userManager.DeleteAsync(user);

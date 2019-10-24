@@ -21,7 +21,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var roles = (await _roleAppService.GetAll(new PagedAndSortedResultRequestDto())).Items;
+            var roles = (await _roleAppService.GetAllAsync(new PagedAndSortedResultRequestDto())).Items;
             var permissions = (await _roleAppService.GetAllPermissions()).Items;
             var model = new RoleListViewModel
             {
@@ -34,7 +34,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
 
         public async Task<ActionResult> EditRoleModal(int roleId)
         {
-            var role = await _roleAppService.Get(new EntityDto(roleId));
+            var role = await _roleAppService.GetAsync(new EntityDto(roleId));
             var permissions = (await _roleAppService.GetAllPermissions()).Items;
             var model = new EditRoleModalViewModel
             {
