@@ -43,7 +43,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                     new MenuItemDefinition(
                         "Roles",
                         L("Roles"),
-                        url: "#users",
+                        url: "#roles",
                         icon: "fa fa-tag",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
