@@ -3,6 +3,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Abp.Auditing;
+using Abp.Dependency;
 using Abp.Hangfire;
 using Abp.Hangfire.Configuration;
 using Abp.Zero.Configuration;
@@ -10,6 +12,7 @@ using Abp.Modules;
 using Abp.Web.Mvc;
 using Abp.Web.SignalR;
 using AbpCompanyName.AbpProjectName.Api;
+using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Hangfire;
 using Microsoft.Owin.Security;
@@ -38,6 +41,11 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
             //{
             //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
             //});
+
+            Configuration.ReplaceService(typeof(IClientInfoProvider), () =>
+            {
+                Configuration.IocManager.Register<IClientInfoProvider, AbpZeroTemplateClientInfoProvider>(DependencyLifeStyle.Transient);
+            });
         }
 
         public override void Initialize()

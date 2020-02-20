@@ -3579,6 +3579,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbpZeroTemplateClientInfoProvider.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AbpProjectNameNavigationProvider.cs" />
     <Compile Include="App_Start\AbpProjectNameWebModule.cs" />
