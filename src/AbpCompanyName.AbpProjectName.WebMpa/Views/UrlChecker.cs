@@ -8,7 +8,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Views
 
         public static bool IsRooted(string url)
         {
-            if (url.StartsWith("/"))
+            if (url.StartsWith("/") || url.StartsWith("~/"))
             {
                 return true;
             }
