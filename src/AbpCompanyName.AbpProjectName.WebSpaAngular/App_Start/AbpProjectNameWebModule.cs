@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Abp.Auditing;
+using Abp.Dependency;
 using Abp.Hangfire;
 using Abp.Hangfire.Configuration;
 using Abp.Modules;
@@ -9,6 +11,7 @@ using Abp.Web.Mvc;
 using Abp.Web.SignalR;
 using Abp.Zero.Configuration;
 using AbpCompanyName.AbpProjectName.Api;
+using AbpCompanyName.AbpProjectName.WebMpa;
 using Hangfire;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular
@@ -35,6 +38,11 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             //{
             //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
             //});
+
+            Configuration.ReplaceService(typeof(IClientInfoProvider), () =>
+            {
+                Configuration.IocManager.Register<IClientInfoProvider, AbpZeroTemplateClientInfoProvider>(DependencyLifeStyle.Transient);
+            });
         }
 
         public override void Initialize()
