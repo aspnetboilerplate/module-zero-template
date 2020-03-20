@@ -41,11 +41,6 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
             //{
             //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
             //});
-
-            Configuration.ReplaceService(typeof(IClientInfoProvider), () =>
-            {
-                Configuration.IocManager.Register<IClientInfoProvider, AbpZeroTemplateClientInfoProvider>(DependencyLifeStyle.Transient);
-            });
         }
 
         public override void Initialize()
