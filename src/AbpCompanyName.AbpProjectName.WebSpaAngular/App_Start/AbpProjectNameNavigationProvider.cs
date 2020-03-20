@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Navigation;
+using Abp.Authorization;
 using Abp.Localization;
 using AbpCompanyName.AbpProjectName.Authorization;
 
@@ -29,7 +30,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         L("Tenants"),
                         url: "#tenants",
                         icon: "fa fa-globe",
-                        requiredPermissionName: PermissionNames.Pages_Tenants
+                        permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Tenants)
                         )
                 ).AddItem(
                     new MenuItemDefinition(
@@ -37,7 +38,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         L("Users"),
                         url: "#users",
                         icon: "fa fa-users",
-                        requiredPermissionName: PermissionNames.Pages_Users
+                        permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
                         )
                 ).AddItem(
                     new MenuItemDefinition(
@@ -45,7 +46,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         L("Roles"),
                         url: "#roles",
                         icon: "fa fa-tag",
-                        requiredPermissionName: PermissionNames.Pages_Roles
+                        permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Roles)
                     )
                 )
                 .AddItem(
