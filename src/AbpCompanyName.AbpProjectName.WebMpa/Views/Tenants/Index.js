@@ -61,7 +61,7 @@
 
         function deleteTenant(tenantId, tenancyName) {
             abp.message.confirm(
-                "Delete tenant '" + tenancyName + "'?",
+                "Delete tenant '" + tenancyName + "'?", "Delete",
                 function (isConfirmed) {
                     if (isConfirmed) {
                         _tenantService.delete({
