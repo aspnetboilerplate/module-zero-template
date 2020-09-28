@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 using System.Data.Entity;
-using Abp.DynamicEntityParameters;
+using Abp.DynamicEntityProperties;
 using Abp.Zero.EntityFramework;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
@@ -50,8 +50,8 @@ namespace AbpCompanyName.AbpProjectName.EntityFramework
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<DynamicParameter>().Property(p => p.ParameterName).HasMaxLength(250);
-            modelBuilder.Entity<EntityDynamicParameter>().Property(p => p.EntityFullName).HasMaxLength(250);
+            modelBuilder.Entity<DynamicProperty>().Property(p => p.PropertyName).HasMaxLength(250);
+            modelBuilder.Entity<DynamicEntityProperty>().Property(p => p.EntityFullName).HasMaxLength(250);
         }
     }
 }
