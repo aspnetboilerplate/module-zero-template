@@ -289,6 +289,10 @@
     <Compile Include="Migrations\202012180651436_Upgraded_To_ABP_6_1_1.designer.cs">
       <DependentUpon>202012180651436_Upgraded_To_ABP_6_1_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103241020465_Upgradd_To_ABP_6_3_0.cs" />
+    <Compile Include="Migrations\202103241020465_Upgradd_To_ABP_6_3_0.designer.cs">
+      <DependentUpon>202103241020465_Upgradd_To_ABP_6_3_0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsCreator.cs" />
@@ -352,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012180651436_Upgraded_To_ABP_6_1_1.resx">
       <DependentUpon>202012180651436_Upgraded_To_ABP_6_1_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103241020465_Upgradd_To_ABP_6_3_0.resx">
+      <DependentUpon>202103241020465_Upgradd_To_ABP_6_3_0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
