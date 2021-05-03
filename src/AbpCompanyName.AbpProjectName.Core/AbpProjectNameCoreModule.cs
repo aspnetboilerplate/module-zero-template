@@ -43,6 +43,8 @@ namespace AbpCompanyName.AbpProjectName
             Configuration.Authorization.Providers.Add<AbpProjectNameAuthorizationProvider>();
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
+            
+            Configuration.Settings.SettingEncryptionConfiguration.DefaultPassPhrase = AbpProjectNameConsts.DefaultPassPhrase;
         }
 
         public override void Initialize()
