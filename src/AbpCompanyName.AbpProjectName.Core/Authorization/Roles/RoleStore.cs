@@ -1,6 +1,7 @@
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
+using Abp.Domain.Uow;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
 
 namespace AbpCompanyName.AbpProjectName.Authorization.Roles
@@ -10,11 +11,13 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Roles
         public RoleStore(
             IRepository<Role> roleRepository,
             IRepository<UserRole, long> userRoleRepository,
-            IRepository<RolePermissionSetting, long> rolePermissionSettingRepository)
+            IRepository<RolePermissionSetting, long> rolePermissionSettingRepository,
+            IUnitOfWorkManager unitOfWorkManager)
             : base(
                 roleRepository,
                 userRoleRepository,
-                rolePermissionSettingRepository)
+                rolePermissionSettingRepository,
+                unitOfWorkManager)
         {
         }
     }
