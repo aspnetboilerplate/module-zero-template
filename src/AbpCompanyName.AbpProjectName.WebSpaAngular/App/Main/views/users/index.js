@@ -54,6 +54,7 @@
             vm.delete = function (user) {
                 abp.message.confirm(
                     "Delete user '" + user.userName + "'?",
+                    "Delete",
                     function (result) {
                         if (result) {
                             userService.delete({ id: user.id })

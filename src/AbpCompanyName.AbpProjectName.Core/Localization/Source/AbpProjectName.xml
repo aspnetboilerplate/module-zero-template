@@ -77,6 +77,6 @@
     <text name="Edit">Edit</text>
     <text name="Delete">Delete</text>
 
-
+    <text name="AreYouSure">Are you sure?</text>
   </texts>
 </localizationDictionary>

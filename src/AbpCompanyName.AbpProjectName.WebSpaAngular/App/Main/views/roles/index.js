@@ -52,6 +52,7 @@
             vm.delete = function (role) {
                 abp.message.confirm(
                     "Delete role '" + role.name + "'?",
+                    "Delete",
                     function (result) {
                         if (result) {
                             roleService.delete({ id: role.id })

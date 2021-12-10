@@ -71,6 +71,7 @@
         function deleteRole(roleId, roleName) {
             abp.message.confirm(
                 "Remove Users from Role and delete Role '" + roleName + "'?",
+                "Delete",
                 function (isConfirmed) {
                     if (isConfirmed) {
                         _roleService.delete({

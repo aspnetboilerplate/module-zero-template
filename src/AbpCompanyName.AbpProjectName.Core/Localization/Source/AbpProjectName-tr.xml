@@ -76,5 +76,7 @@
     <text name="EditUser">Kullanıcı Düenle</text>
     <text name="Edit">Düzenle</text>
     <text name="Delete">Sil</text>
+
+    <text name="AreYouSure">Emin misiniz?</text>
   </texts>
 </localizationDictionary>

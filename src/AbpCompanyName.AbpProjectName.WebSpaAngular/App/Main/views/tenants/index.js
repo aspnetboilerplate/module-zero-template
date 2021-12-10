@@ -52,6 +52,7 @@
             vm.delete = function (tenant) {
                 abp.message.confirm(
                     "Delete tenant '" + tenant.name + "'?",
+                    "Delete",
                     function (result) {
                         if (result) {
                             tenantService.delete({ id: tenant.id })

@@ -77,6 +77,7 @@
         function deleteUser(userId, userName) {
             abp.message.confirm(
                 "Delete user '" + userName + "'?",
+                "Delete",
                 function (isConfirmed) {
                     if (isConfirmed) {
                         _userService.delete({
