@@ -25,7 +25,8 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
             ILocalizationManager localizationManager,
             ISettingManager settingManager,
             IdentityEmailMessageService emailService,
-            IUserTokenProviderAccessor userTokenProviderAccessor)
+            IUserTokenProviderAccessor userTokenProviderAccessor,
+            IRepository<UserLogin,long> userLogin)
             : base(
                   userStore,
                   roleManager,
@@ -38,7 +39,8 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
                   localizationManager,
                   emailService,
                   settingManager,
-                  userTokenProviderAccessor)
+                  userTokenProviderAccessor, 
+                  userLogin)
         {
         }
     }
