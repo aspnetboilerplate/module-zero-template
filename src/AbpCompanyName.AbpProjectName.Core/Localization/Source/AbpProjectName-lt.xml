@@ -76,5 +76,7 @@
     <text name="EditUser">Keisti vartotoją</text>
     <text name="Edit">Keisti</text>
     <text name="Delete">Trinti</text>
+    
+    <text name="AreYouSure">Ar esate tikras?</text>
   </texts>
 </localizationDictionary>
