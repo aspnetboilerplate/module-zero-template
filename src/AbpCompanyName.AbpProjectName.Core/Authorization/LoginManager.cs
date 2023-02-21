@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+﻿using System.Threading.Tasks;
+using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.Configuration;
 using Abp.Configuration.Startup;
@@ -34,6 +35,17 @@ namespace AbpCompanyName.AbpProjectName.Authorization
                   iocResolver,
                   roleManager)
         {
+        }
+
+        public override async Task<AbpLoginResult<Tenant, User>> LoginAsync(string userNameOrEmailAddress, string plainPassword, string tenancyName = null,
+            bool shouldLockout = true)
+        {
+            return await UnitOfWorkManager.WithUnitOfWorkAsync(async () =>
+            {
+                var result = await LoginAsyncInternal(userNameOrEmailAddress, plainPassword, tenancyName, shouldLockout);
+                await SaveLoginAttempt(result, tenancyName, userNameOrEmailAddress);
+                return result;
+            });
         }
     }
 }
