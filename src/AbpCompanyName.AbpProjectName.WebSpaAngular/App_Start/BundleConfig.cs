@@ -1,4 +1,5 @@
-﻿using System.Web.Optimization;
+﻿using AbpCompanyName.AbpProjectName.Helpers;
+using System.Web.Optimization;
 
 namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 {
@@ -6,22 +7,23 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = !DebugHelper.IsDebug;
             bundles.IgnoreList.Clear();
 
             //ACCOUNT BUNDLES
             bundles.Add(
                 new StyleBundle("~/Bundles/account-vendor/css")
-                    .Include("~/fonts/roboto/roboto.css", new CssRewriteUrlTransform())
-                    .Include("~/fonts/material-icons/materialicons.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/bootstrap/dist/css/bootstrap.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/toastr/toastr.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/font-awesome/css/font-awesome.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/Waves/dist/waves.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/animate.css/animate.css", new CssRewriteUrlTransform())
-                    .Include("~/css/materialize.css", new CssRewriteUrlTransform())
-                    .Include("~/css/style.css", new CssRewriteUrlTransform())
-                    .Include("~/Views/Account/_Layout.css", new CssRewriteUrlTransform())
+                    .Include("~/fonts/roboto/roboto.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/fonts/material-icons/materialicons.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/bootstrap/dist/css/bootstrap.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/toastr/toastr.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/font-awesome/css/font-awesome.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/Waves/dist/waves.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/animate.css/animate.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/css/materialize.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/css/style.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/Views/Account/_Layout.css", new CssRewriteUrlTransformWrapper())
             );
 
             bundles.Add(
@@ -54,17 +56,17 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
             //~/Bundles/App/vendor/css
             bundles.Add(
                 new StyleBundle("~/Bundles/App/vendor/css")
-                    .Include("~/fonts/roboto/roboto.css", new CssRewriteUrlTransform())
-                    .Include("~/fonts/material-icons/materialicons.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/bootstrap/dist/css/bootstrap.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/toastr/toastr.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/font-awesome/css/font-awesome.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/Waves/dist/waves.css", new CssRewriteUrlTransform())
-                    .Include("~/lib/animate.css/animate.css", new CssRewriteUrlTransform())
-                    .Include("~/css/materialize.css", new CssRewriteUrlTransform())
-                    .Include("~/css/style.css", new CssRewriteUrlTransform())
-                    .Include("~/css/themes/all-themes.css", new CssRewriteUrlTransform())
+                    .Include("~/fonts/roboto/roboto.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/fonts/material-icons/materialicons.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/bootstrap/dist/css/bootstrap.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/toastr/toastr.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/font-awesome/css/font-awesome.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/Waves/dist/waves.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/lib/animate.css/animate.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/css/materialize.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/css/style.css", new CssRewriteUrlTransformWrapper())
+                    .Include("~/css/themes/all-themes.css", new CssRewriteUrlTransformWrapper())
                 );
 
             //~/Bundles/App/vendor/js
