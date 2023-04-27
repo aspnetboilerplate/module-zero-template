@@ -1,5 +1,4 @@
 ﻿using AbpCompanyName.AbpProjectName.Helpers;
-using System.Collections.Generic;
 using System.Web.Optimization;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa
@@ -8,7 +7,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            BundleTable.EnableOptimizations = true; // !DebugHelper.IsDebug;
+            BundleTable.EnableOptimizations = !DebugHelper.IsDebug;
             bundles.IgnoreList.Clear();
 
             bundles.Add(
